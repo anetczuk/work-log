@@ -22,7 +22,8 @@
 #
 
 import logging
-import glob
+from datetime import date, time
+from typing import List
 
 from worklog import persist
 
@@ -30,42 +31,99 @@ from worklog import persist
 _LOGGER = logging.getLogger(__name__)
 
 
-class UserContainer():
+class WorkLogEntry( persist.Versionable ):
 
-    ## 0 - first version
-    ## 1 - wallet added
-    ## 2 - extract History class from WalletData
-    _class_version = 2
+    _class_version = 0
 
     def __init__(self):
-        self.notes  = { "notes": "" }        ## default notes
+        ## Date    In    Out    Break    in_out_diff    Duration    Overtime    Project    Task
+        self.entryDate: date     = None
+        self.startTime: time     = None
+        self.endTime: time       = None
+        self.breakTime: time     = None
+        self.duration: time      = None
+        self.project             = None
+        self.task                = None
+        self.description         = ""
 
-    def store( self, outputDir ):
-        changed = False
+    def printData( self ):
+        return self.project + " " + self.task
 
-        outputFile = outputDir + "/version.obj"
-        if persist.store_object( self._class_version, outputFile ) is True:
-            changed = True
 
-        outputFile = outputDir + "/notes.obj"
-        if persist.store_object( self.notes, outputFile ) is True:
-            changed = True
+class WorkLogData( persist.Versionable ):
 
-        ## backup data
-        objFiles = glob.glob( outputDir + "/*.obj" )
-        storedZipFile = outputDir + "/data.zip"
-        persist.backup_files( objFiles, storedZipFile )
+    _class_version = 0
 
-        return changed
+    def __init__(self):
+        self.entries: List[ WorkLogEntry ] = list()
 
-    def load( self, inputDir ):
-        inputFile = inputDir + "/version.obj"
-        mngrVersion = persist.load_object( inputFile, self._class_version )
-        if mngrVersion != self. _class_version:
-            _LOGGER.info( "converting object from version %s to %s", mngrVersion, self._class_version )
-            ## do nothing for now
+    ## [] (array) operator
+    def __getitem__(self, arg):
+        return self.getEntry( arg )
 
-        inputFile = inputDir + "/notes.obj"
-        self.notes = persist.load_object( inputFile, self._class_version )
-        if self.notes is None:
-            self.notes = { "notes": "" }
+    def size(self):
+        return len( self.entries )
+
+    def getEntry(self, row) -> WorkLogEntry:
+        return self.entries[ row ]
+
+    def getEntriesForDate(self, dateValue):
+        retList = []
+        for entry in self.entries:
+            if entry.entryDate == dateValue:
+                retList.append( entry )
+        return retList
+
+    def addEntryTime(self, entryDate: date, startTime: time, endTime: time, project: str, task: str):
+        entry = WorkLogEntry()
+        entry.entryDate = entryDate
+        entry.startTime = startTime
+        entry.endTime   = endTime
+        ## no break
+        ## no duration
+        entry.project   = project
+        entry.task      = task
+        self.entries.append( entry )
+        return entry
+
+    def addEntryDuration(self, entryDate: date, duration: time, project: str, task: str):
+        entry = WorkLogEntry()
+        entry.entryDate = entryDate
+        ## no startTime
+        ## no endTime
+        ## no break
+        entry.duration  = duration
+        entry.project   = project
+        entry.task      = task
+        self.entries.append( entry )
+        return entry
+
+    def replaceEntry( self, oldEntry: WorkLogEntry, newEntry: WorkLogEntry ):
+        _LOGGER.debug( "replacing entry %s with %s", oldEntry, newEntry )
+        for i, _ in enumerate( self.entries ):
+            currItem = self.entries[i]
+            if currItem == oldEntry:
+                self.entries[i] = newEntry
+                return True
+        _LOGGER.debug( "replacing failed" )
+        return False
+
+    def printData( self ):
+        retStr = ""
+        for currItem in self.entries:
+            retStr += "item: " + currItem.printData() + "\n"
+        return retStr
+
+
+## ==================================================================
+
+
+class DataContainer( persist.Versionable ):
+
+    ## 0 - first version
+    ## 1 - add worklog history
+    _class_version = 1
+
+    def __init__(self):
+        self.history: WorkLogData = WorkLogData()
+        self.notes                = { "notes": "" }        ## default notes

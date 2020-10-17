@@ -22,6 +22,7 @@
 #
 
 import logging
+from datetime import date
 
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QDialog
@@ -30,11 +31,12 @@ from PyQt5.QtWidgets import qApp
 from worklog.gui import trayicon
 from worklog.gui.appwindow import AppWindow
 from worklog.gui.dataobject import DataObject
+from worklog.gui.datatypes import WorkLogData
+from worklog.gui.widget.settingsdialog import SettingsDialog, AppSettings
+from worklog.gui.widget.navcalendar import NavCalendarHighlightModel
 
 from . import uiloader
 from . import guistate
-
-from .widget.settingsdialog import SettingsDialog, AppSettings
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -77,7 +79,16 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.trayIcon = trayicon.TrayIcon(self)
         self._updateIconTheme( trayicon.TrayIconTheme.WHITE )
 
+        self.ui.navcalendar.highlightModel = DataHighlightModel( self.data )
+
         ## ================== connecting signals ==================
+
+        self.ui.navcalendar.currentPageChanged.connect( self.calendarPageChanged )
+        self.ui.navcalendar.selectionChanged.connect( self.calendarSelectionChanged )
+        self.ui.scopeCB.currentTextChanged.connect( self.scopeChanged )
+
+        self.ui.worklogTable.selectedItem.connect( self.showDetails )
+        self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
 
         self.ui.notesWidget.dataChanged.connect( self._handleNotesChange )
 
@@ -85,6 +96,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.trayIcon.show()
 
         self.setWindowTitle()
+
+        self.ui.scopeCB.setCurrentIndex( 1 )
+        self.ui.navcalendar.setSelectedDate( date.today() )
 
         self.setStatusMessage( "Ready", timeout=10000 )
 
@@ -143,7 +157,32 @@ class MainWindow( QtBaseClass ):           # type: ignore
             self.trayIcon.setToolTip( newTitle )
 
     def refreshView(self):
+        self.ui.worklogTable.connectData( self.data )
         self.ui.notesWidget.setNotes( self.data.notes )
+        self.showDetails( None )
+
+    def calendarPageChanged(self, year: int, month: int):
+        self.ui.worklogTable.setMonth( year, month )
+
+    def calendarSelectionChanged(self):
+        selectedDate = self.ui.navcalendar.selectedDate()
+        dateValue = selectedDate.toPyDate()
+        self.ui.worklogTable.setDay( dateValue )
+
+    def scopeChanged(self):
+        scope = self.ui.scopeCB.currentText()
+        self.ui.worklogTable.setScope( scope )
+
+    def showDetails(self, entity):
+        if entity is None:
+            self.hideDetails()
+            return
+        self.ui.entrydetails.setObject( entity )
+        self.ui.itemSW.setCurrentIndex( 1 )
+        return
+
+    def hideDetails(self):
+        self.ui.itemSW.setCurrentIndex( 0 )
 
     ## ====================================================================
 
@@ -270,3 +309,19 @@ class MainWindow( QtBaseClass ):           # type: ignore
         appName = qApp.applicationName()
         settings = QtCore.QSettings(QtCore.QSettings.IniFormat, QtCore.QSettings.UserScope, orgName, appName, self)
         return settings
+
+
+class DataHighlightModel( NavCalendarHighlightModel ):
+
+    def __init__(self, dataObject ):
+        super().__init__()
+        self.dataObject = dataObject
+
+    def isHighlighted(self, dateValue: QtCore.QDate):
+        return False
+
+    def isOccupied(self, dateValue: QtCore.QDate):
+        history: WorkLogData = self.dataObject.history
+        entryDate = dateValue.toPyDate()
+        entriesList = history.getEntriesForDate( entryDate )
+        return len(entriesList) > 0
