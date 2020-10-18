@@ -156,7 +156,7 @@ class WorkLogData( persist.Versionable ):
                 return True
         _LOGGER.debug( "replacing failed" )
         return False
-    
+
     def sort(self):
         self.entries.sort( key=self._sortKey, reverse=False )
 

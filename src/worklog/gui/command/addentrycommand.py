@@ -25,6 +25,8 @@ import logging
 
 from PyQt5.QtWidgets import QUndoCommand
 
+from worklog.gui.datatypes import WorkLogData
+
 
 _LOGGER = logging.getLogger(__name__)
 

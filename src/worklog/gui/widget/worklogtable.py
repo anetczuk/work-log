@@ -36,10 +36,10 @@ from worklog.gui.datatypes import WorkLogData, WorkLogEntry
 from worklog.gui.dataobject import DataObject
 from worklog.gui.widget.entrydialog import EntryDialog
 from worklog.gui.command.editentrycommand import EditEntryCommand
-
-from .. import guistate
 from worklog.gui.command.addentrycommand import AddEntryCommand
 from worklog.gui.command.removeentrycommand import RemoveEntryCommand
+
+from .. import guistate
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -277,23 +277,23 @@ class WorkLogTable( QTableView ):
         if mIndex is not None:
             entry = self.getItem( mIndex )
 
-        self.contextMenu      = QMenu( self )
-        self.addAction        = self.contextMenu.addAction("Add Entry")
-        self.editAction       = self.contextMenu.addAction("Edit Entry")
-        self.removeAction     = self.contextMenu.addAction("Remove Entry")
+        contextMenu      = QMenu( self )
+        addAction        = contextMenu.addAction("Add Entry")
+        editAction       = contextMenu.addAction("Edit Entry")
+        removeAction     = contextMenu.addAction("Remove Entry")
 
         if entry is None:
-            self.editAction.setEnabled( False )
-            self.removeAction.setEnabled( False )
+            editAction.setEnabled( False )
+            removeAction.setEnabled( False )
 
         globalPos = QCursor.pos()
-        action = self.contextMenu.exec_( globalPos )
-        
-        if action == self.addAction:
+        action = contextMenu.exec_( globalPos )
+
+        if action == addAction:
             self._addEntry()
-        elif action == self.editAction:
+        elif action == editAction:
             self._editEntry( entry )
-        elif action == self.removeAction:
+        elif action == removeAction:
             self._removeEntry( entry )
 
     def currentChanged(self, current, previous):
@@ -316,7 +316,7 @@ class WorkLogTable( QTableView ):
         else:
             self._editEntry(entry)
 
-        return super().mouseDoubleClickEvent(event)    
+        return super().mouseDoubleClickEvent(event)
 
     def _addEntry(self):
         entry = WorkLogEntry()
@@ -334,7 +334,7 @@ class WorkLogTable( QTableView ):
         history = self.dataObject.history
         entry = history.getEntry( item.row() )
         self._editEntry( entry )
-        
+
     def _editEntry(self, entry):
         if entry is None:
             return
@@ -346,7 +346,7 @@ class WorkLogTable( QTableView ):
             return
         command = EditEntryCommand( self.dataObject, entry, entryDialog.entry )
         self.dataObject.pushUndo( command )
-        
+
     def _removeEntry(self, entry):
         if entry is None:
             return

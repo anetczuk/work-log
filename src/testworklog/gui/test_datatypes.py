@@ -22,10 +22,9 @@
 #
 
 import unittest
-
-import worklog.gui.uiloader as uiloader
-from worklog.gui.datatypes import WorkLogData
 from datetime import date, time
+
+from worklog.gui.datatypes import WorkLogData
 
 
 class WorkLogDataTest(unittest.TestCase):
@@ -39,13 +38,13 @@ class WorkLogDataTest(unittest.TestCase):
 
     def test_addEntry(self):
         history = WorkLogData()
-        
+
         history.addEntryDuration( date(year=2020, month=3, day=24),
                                   time(hour=6, minute=0), "Project A", "Task 1" )
-        
+
         history.addEntryDuration( date(year=2020, month=3, day=25),
                                   time(hour=6, minute=0), "Project A", "Task 2" )
-        
+
         history.addEntryDuration( date(year=2020, month=3, day=23),
                                   time(hour=6, minute=0), "Project A", "Task 3" )
 
