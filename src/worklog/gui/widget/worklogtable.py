@@ -116,7 +116,7 @@ class WorkLogTableModel( QAbstractTableModel ):
             if index.column() == 7:
                 return Qt.AlignLeft | Qt.AlignVCenter
             return Qt.AlignHCenter | Qt.AlignVCenter
-        
+
         if role == Qt.BackgroundRole:
             entry = self._rawData.getEntry( index.row() )
             weekday = entry.entryDate.weekday()
@@ -254,17 +254,11 @@ class WorkLogTable( QTableView ):
         visDict = settings.value("columnsVisible", None, type=dict)
         if visDict is None:
             visDict = dict()
-        headersDict = settings.value("customHeaders", None, type=dict)
-        settings.endGroup()
-        self.setColumnsVisibility( visDict )
-        if headersDict is not None:
-            self.pandaModel.setHeaders( headersDict )
 
     def saveSettings(self, settings):
         wkey = guistate.get_widget_key(self, "tablesettings")
         settings.beginGroup( wkey )
         settings.setValue("columnsVisible", self.columnsVisible )
-        settings.setValue("customHeaders", self.pandaModel.customHeader )
         settings.endGroup()
 
     ## ===============================================

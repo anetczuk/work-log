@@ -33,7 +33,7 @@ from worklog.gui.utils import get_parent
 _LOGGER = logging.getLogger(__name__)
 
 
-# pylint: disable=R0915
+# pylint: disable=R0915,R0912
 def load_state(window: QMainWindow, settings: QSettings):
     settings.beginGroup( window.objectName() )
     geometry = settings.value("geometry")
@@ -99,6 +99,14 @@ def load_state(window: QMainWindow, settings: QSettings):
         sortOrder = settings.value( "sortOrder" )
         if sortColumn is not None and sortOrder is not None:
             w.sortByColumn( int(sortColumn), int(sortOrder) )
+        stretchLast = settings.value( "stretchLast" )
+        if stretchLast is not None:
+            stretchLastValue = bool(stretchLast)
+            header = w.horizontalHeader()
+            header.setStretchLastSection( stretchLastValue )
+            if stretchLastValue:
+                colsNum = header.count()
+                w.resizeColumnToContents( colsNum - 1 )
 
     widgets = window.findChildren( QtWidgets.QTableWidget )
     widgetsList = sort_widgets( widgets )
@@ -180,6 +188,8 @@ def save_state(window: QMainWindow, settings: QSettings):
         settings.setValue( "sortColumn", sortColumn )
         sortOrder = header.sortIndicatorOrder()
         settings.setValue( "sortOrder", sortOrder )
+        stretchLast = header.stretchLastSection()
+        settings.setValue( "stretchLast", stretchLast )
 
     widgets = window.findChildren( QtWidgets.QTableWidget )
     widgetsList = sort_widgets( widgets )
