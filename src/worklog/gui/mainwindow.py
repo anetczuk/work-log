@@ -101,6 +101,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.ui.scopeCB.setCurrentIndex( 1 )
         self.ui.navcalendar.setSelectedDate( date.today() )
+        self.calendarSelectionChanged()                         ## update table's filter
 
         self.setStatusMessage( "Ready", timeout=10000 )
 

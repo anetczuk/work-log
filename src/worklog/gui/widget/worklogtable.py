@@ -30,7 +30,7 @@ from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import QAbstractTableModel
 from PyQt5.QtWidgets import QTableView
 from PyQt5.QtWidgets import QMenu
-from PyQt5.QtGui import QCursor
+from PyQt5.QtGui import QCursor, QColor
 
 from worklog.gui.datatypes import WorkLogData, WorkLogEntry
 from worklog.gui.dataobject import DataObject
@@ -99,16 +99,29 @@ class WorkLogTableModel( QAbstractTableModel ):
 #                 return print_timedelta( rawData )
             strData = str(rawData)
             return strData
+
         if role == Qt.UserRole:
             entry = self._rawData.getEntry( index.row() )
             rawData = self.attribute( entry, index.column() )
             return rawData
+
         if role == Qt.EditRole:
             entry = self._rawData.getEntry( index.row() )
             rawData = self.attribute( entry, index.column() )
             return rawData
+
         if role == Qt.TextAlignmentRole:
+            if index.column() == 6:
+                return Qt.AlignLeft | Qt.AlignVCenter
+            if index.column() == 7:
+                return Qt.AlignLeft | Qt.AlignVCenter
             return Qt.AlignHCenter | Qt.AlignVCenter
+        
+        if role == Qt.BackgroundRole:
+            entry = self._rawData.getEntry( index.row() )
+            weekday = entry.entryDate.weekday()
+            if weekday == 5 or weekday == 6:
+                return QColor( "#FFCC00" )
 
         return None
 
@@ -160,28 +173,32 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
         self.invalidateFilter()
 
     def filterAcceptsRow(self, sourceRow, sourceParent: QModelIndex):
-        if self._dayDate is None:
-            return True
-        if self._monthDate is None:
-            return True
-
         dataIndex = self.sourceModel().index( sourceRow, 0, sourceParent )
         data = self.sourceModel().data(dataIndex, QtCore.Qt.EditRole)
         if data is None:
             return True
 
         if self._scope == "Day":
+            if self._dayDate is None:
+                return True
             return data == self._dayDate
+
         if self._scope == "Month":
+            if self._monthDate is None:
+                return True
             if data.year != self._monthDate.year:
                 return False
             if data.month != self._monthDate.month:
                 return False
             return True
+
         if self._scope == "Year":
+            if self._monthDate is None:
+                return True
             if data.year != self._monthDate.year:
                 return False
             return True
+
         if self._scope == "All":
             return True
 

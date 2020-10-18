@@ -99,20 +99,24 @@ class WorkLogData( persist.Versionable ):
                 retList.append( entry )
         return retList
 
-    def getProjectsSet(self):
-        retSet = set()
+    def getProjectsList(self):
+        retSet = list()
         for entry in self.entries:
             if entry.project is None or not entry.project:
                 continue
-            retSet.add( entry.project )
+            if entry.project in retSet:
+                continue
+            retSet.append( entry.project )
         return retSet
 
-    def getTasksSet(self):
-        retSet = set()
+    def getTasksList(self):
+        retSet = list()
         for entry in self.entries:
             if entry.task is None or not entry.task:
                 continue
-            retSet.add( entry.task )
+            if entry.task in retSet:
+                continue
+            retSet.append( entry.task )
         return retSet
 
     def addEntry(self, entry):

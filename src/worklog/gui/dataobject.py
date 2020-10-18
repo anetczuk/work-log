@@ -23,6 +23,7 @@
 
 import logging
 from typing import Dict
+import datetime
 
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtCore import QObject
@@ -85,7 +86,12 @@ class DataObject( QObject ):
 
     def addEntry(self, entryDate: QtCore.QDate = None):
         entry = WorkLogEntry()
-        entry.entryDate = entryDate.toPyDate()
+        if entryDate is not None:
+            entry.entryDate = entryDate.toPyDate()
+            entry.startTime = datetime.time( hour=9 )
+            entry.endTime   = datetime.time( hour=17 )
+        entry.breakTime = datetime.time( minute=30 )
+
         parentWidget = self.parent()
         entryDialog = EntryDialog( self.history, entry, parentWidget )
         entryDialog.setModal( True )

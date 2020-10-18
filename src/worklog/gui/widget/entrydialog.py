@@ -51,13 +51,15 @@ class EntryDialog( QtBaseClass ):           # type: ignore
 
         self.finished.connect( self._done )
 
-        projectsList = self.history.getProjectsSet()
+        projectsList = self.history.getProjectsList()
         for item in projectsList:
             self.ui.projectCB.addItem( item )
+        self.ui.projectCB.setCurrentIndex( len(projectsList) - 1 )
 
-        tasksList = self.history.getTasksSet()
+        tasksList = self.history.getTasksList()
         for item in tasksList:
             self.ui.taskCB.addItem( item )
+        self.ui.taskCB.setCurrentIndex( len(tasksList) - 1 )
 
         self.setObject( entry )
 
@@ -93,8 +95,10 @@ class EntryDialog( QtBaseClass ):           # type: ignore
             if entry.duration is not None:
                 self.ui.durationTE.setTime( entry.duration )
 
-        self.ui.projectCB.setCurrentText( entry.project )
-        self.ui.taskCB.setCurrentText( entry.task )
+        if entry.project is not None:
+            self.ui.projectCB.setCurrentText( entry.project )
+        if entry.task is not None:
+            self.ui.taskCB.setCurrentText( entry.task )
         self.ui.descriptionTE.setText( entry.description )
 
         self.adjustSize()
