@@ -35,11 +35,11 @@ class EditEntryCommand( QUndoCommand ):
         super().__init__(parentCommand)
 
         self.data = dataObject
-        self.history = self.data.history
+        self.history: WorkLogData = self.data.history
         self.oldEntry = oldEntry
         self.newEntry = newEntry
 
-        self.setText( "Edit Entry: " + newEntry.task )
+        self.setText( "Edit Entry: " + str(newEntry.task) )
 
     def redo(self):
         self.history.replaceEntry( self.oldEntry, self.newEntry )

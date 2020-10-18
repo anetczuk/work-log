@@ -21,39 +21,34 @@
 # SOFTWARE.
 #
 
-import logging
+import unittest
 
-from worklog.gui.datatypes import WorkLogEntry
-
-from .. import uiloader
-
-
-UiTargetClass, QtBaseClass = uiloader.load_ui_from_class_name( __file__ )
+import worklog.gui.uiloader as uiloader
+from worklog.gui.datatypes import WorkLogData
+from datetime import date, time
 
 
-_LOGGER = logging.getLogger(__name__)
+class WorkLogDataTest(unittest.TestCase):
+    def setUp(self):
+        ## Called before testfunction is executed
+        pass
 
+    def tearDown(self):
+        ## Called after testfunction was executed
+        pass
 
-class EntryDetailsWidget( QtBaseClass ):           # type: ignore
+    def test_addEntry(self):
+        history = WorkLogData()
+        
+        history.addEntryDuration( date(year=2020, month=3, day=24),
+                                  time(hour=6, minute=0), "Project A", "Task 1" )
+        
+        history.addEntryDuration( date(year=2020, month=3, day=25),
+                                  time(hour=6, minute=0), "Project A", "Task 2" )
+        
+        history.addEntryDuration( date(year=2020, month=3, day=23),
+                                  time(hour=6, minute=0), "Project A", "Task 3" )
 
-    def __init__(self, parentWidget=None):
-        super().__init__(parentWidget)
-        self.ui = UiTargetClass()
-        self.ui.setupUi(self)
-
-        self.entry = None
-        self.setObject( self.entry )
-
-    def setObject(self, entry: WorkLogEntry):
-        self.entry = entry
-        if self.entry is None:
-            return
-
-        self.ui.entryDate.setText( str( self.entry.entryDate ) )
-        self.ui.startTime.setText( str( self.entry.startTime ) )
-        self.ui.endTime.setText( str( self.entry.endTime ) )
-        self.ui.breakTime.setText( str( self.entry.breakTime ) )
-        self.ui.durationTime.setText( str( self.entry.getDuration() ) )
-        self.ui.project.setText( str( self.entry.project ) )
-        self.ui.task.setText( str( self.entry.task ) )
-        self.ui.description.setText( str( self.entry.description ) )
+        self.assertEqual( history[0].task, "Task 3" )
+        self.assertEqual( history[1].task, "Task 1" )
+        self.assertEqual( history[2].task, "Task 2" )

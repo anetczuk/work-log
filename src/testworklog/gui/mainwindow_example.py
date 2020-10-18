@@ -78,7 +78,7 @@ window.data.history.addEntryTime( date(year=2020, month=3, day=21),
 window.data.history.addEntryTime( date(year=2020, month=3, day=22),
                                   time(hour=8, minute=0), time(hour=15, minute=0), "Project A", "Task 2" )
 window.data.history.addEntryDuration( date(year=2020, month=3, day=24),
-                                      time(hour=6, minute=0), "Project A", "Task 2" )
+                                      time(hour=6, minute=0), "Project B", "Task 2" )
 window.data.history.addEntryDuration( date(year=2020, month=4, day=5),
                                       time(hour=6, minute=0), "Project A", "Task 2b" )
 

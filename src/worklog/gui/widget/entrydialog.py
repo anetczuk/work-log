@@ -25,7 +25,7 @@ import logging
 from datetime import datetime
 import copy
 
-from worklog.gui.datatypes import WorkLogEntry
+from worklog.gui.datatypes import WorkLogEntry, WorkLogData
 
 from .. import uiloader
 
@@ -38,17 +38,26 @@ _LOGGER = logging.getLogger(__name__)
 
 class EntryDialog( QtBaseClass ):           # type: ignore
 
-    def __init__(self, entry: WorkLogEntry, parentWidget=None):
+    def __init__(self, history: WorkLogData, entry: WorkLogEntry, parentWidget=None):
         super().__init__(parentWidget)
         self.ui = UiTargetClass()
         self.ui.setupUi(self)
 
+        self.history: WorkLogData = history
         self.entry: WorkLogEntry = None
 
         self.ui.timeRangeRB.clicked.connect( self._disableDuration )
         self.ui.durationRB.clicked.connect( self._disableRange )
 
         self.finished.connect( self._done )
+
+        projectsList = self.history.getProjectsSet()
+        for item in projectsList:
+            self.ui.projectCB.addItem( item )
+
+        tasksList = self.history.getTasksSet()
+        for item in tasksList:
+            self.ui.taskCB.addItem( item )
 
         self.setObject( entry )
 
@@ -58,7 +67,11 @@ class EntryDialog( QtBaseClass ):           # type: ignore
         else:
             self.entry = WorkLogEntry()
 
-        self.ui.entryDateDE.setDate( entry.entryDate )
+        entryDate = entry.entryDate
+        if entryDate is None:
+            entryDate = datetime.now().date()
+        self.ui.entryDateDE.setDate( entryDate )
+
         if entry.duration is None:
             self.ui.timeRangeRB.click()
 
@@ -80,8 +93,8 @@ class EntryDialog( QtBaseClass ):           # type: ignore
             if entry.duration is not None:
                 self.ui.durationTE.setTime( entry.duration )
 
-        self.ui.projectLE.setText( entry.project )
-        self.ui.taskLE.setText( entry.task )
+        self.ui.projectCB.setCurrentText( entry.project )
+        self.ui.taskCB.setCurrentText( entry.task )
         self.ui.descriptionTE.setText( entry.description )
 
         self.adjustSize()
@@ -106,31 +119,31 @@ class EntryDialog( QtBaseClass ):           # type: ignore
         if self.ui.fromTE.isEnabled():
             newValue = self.ui.fromTE.time()
             data = newValue.toPyTime()
-            self.entry.startTime = data.replace( second=0 )
+            self.entry.startTime = data.replace( second=0, microsecond=0 )
         else:
             self.entry.startTime = None
 
         if self.ui.toTE.isEnabled():
             newValue = self.ui.toTE.time()
             data = newValue.toPyTime()
-            self.entry.endTime = data.replace( second=0 )
+            self.entry.endTime = data.replace( second=0, microsecond=0 )
         else:
             self.entry.endTime = None
 
         if self.ui.breakTE.isEnabled():
             newValue = self.ui.breakTE.time()
             data = newValue.toPyTime()
-            self.entry.breakTime = data.replace( second=0 )
+            self.entry.breakTime = data.replace( second=0, microsecond=0 )
         else:
             self.entry.breakTime = None
 
         if self.ui.durationTE.isEnabled():
             newValue = self.ui.durationTE.time()
             data = newValue.toPyTime()
-            self.entry.duration = data.replace( second=0 )
+            self.entry.duration = data.replace( second=0, microsecond=0 )
         else:
             self.entry.duration = None
 
-        self.entry.project     = self.ui.projectLE.text()
-        self.entry.task        = self.ui.taskLE.text()
+        self.entry.project     = self.ui.projectCB.currentText()
+        self.entry.task        = self.ui.taskCB.currentText()
         self.entry.description = self.ui.descriptionTE.toPlainText()

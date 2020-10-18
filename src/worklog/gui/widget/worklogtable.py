@@ -22,13 +22,15 @@
 #
 
 import logging
-from datetime import date
+from datetime import date, time, timedelta
 
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtCore import Qt, QModelIndex
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import QAbstractTableModel
 from PyQt5.QtWidgets import QTableView
+from PyQt5.QtWidgets import QMenu
+from PyQt5.QtGui import QCursor
 
 from worklog.gui.datatypes import WorkLogData, WorkLogEntry
 from worklog.gui.dataobject import DataObject
@@ -36,6 +38,8 @@ from worklog.gui.widget.entrydialog import EntryDialog
 from worklog.gui.command.editentrycommand import EditEntryCommand
 
 from .. import guistate
+from worklog.gui.command.addentrycommand import AddEntryCommand
+from worklog.gui.command.removeentrycommand import RemoveEntryCommand
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -93,6 +97,10 @@ class WorkLogTableModel( QAbstractTableModel ):
             rawData = self.attribute( entry, index.column() )
             if rawData is None:
                 return "-"
+            if isinstance(rawData, time):
+                return rawData.strftime("%H:%M")
+#             if isinstance(rawData, timedelta):
+#                 return print_timedelta( rawData )
             strData = str(rawData)
             return strData
         if role == Qt.UserRole:
@@ -118,7 +126,7 @@ class WorkLogTableModel( QAbstractTableModel ):
         elif index == 3:
             return entry.breakTime
         elif index == 4:
-            return entry.duration
+            return entry.getDuration()
         elif index == 5:
             return entry.project
         elif index == 6:
@@ -163,6 +171,8 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
 
         dataIndex = self.sourceModel().index( sourceRow, 0, sourceParent )
         data = self.sourceModel().data(dataIndex, QtCore.Qt.EditRole)
+        if data is None:
+            return True
 
         if self._scope == "Day":
             return data == self._dayDate
@@ -214,7 +224,7 @@ class WorkLogTable( QTableView ):
         self.proxyModel.setSourceModel( self.dataModel )
         self.setModel( self.proxyModel )
 
-        self.doubleClicked.connect( self._editEntry )
+#         self.doubleClicked.connect( self._editEntryByIndex )
 
     def setScope(self, scope: str):
         self.proxyModel.setScope( scope )
@@ -260,6 +270,32 @@ class WorkLogTable( QTableView ):
         sourceIndex = self.proxyModel.mapToSource( itemIndex )
         return self.dataModel.getItem( sourceIndex )
 
+    def contextMenuEvent( self, event ):
+        evPos               = event.pos()
+        entry: WorkLogEntry = None
+        mIndex = self.indexAt( evPos )
+        if mIndex is not None:
+            entry = self.getItem( mIndex )
+
+        self.contextMenu      = QMenu( self )
+        self.addAction        = self.contextMenu.addAction("Add Entry")
+        self.editAction       = self.contextMenu.addAction("Edit Entry")
+        self.removeAction     = self.contextMenu.addAction("Remove Entry")
+
+        if entry is None:
+            self.editAction.setEnabled( False )
+            self.removeAction.setEnabled( False )
+
+        globalPos = QCursor.pos()
+        action = self.contextMenu.exec_( globalPos )
+        
+        if action == self.addAction:
+            self._addEntry()
+        elif action == self.editAction:
+            self._editEntry( entry )
+        elif action == self.removeAction:
+            self._removeEntry( entry )
+
     def currentChanged(self, current, previous):
         super().currentChanged( current, previous )
         item = self.getItem( current )
@@ -268,16 +304,73 @@ class WorkLogTable( QTableView ):
         else:
             self.itemUnselected.emit()
 
-    def _editEntry(self, item: QModelIndex):
+    def mouseDoubleClickEvent( self, event ):
+        evPos               = event.pos()
+        entry: WorkLogEntry = None
+        mIndex = self.indexAt( evPos )
+        if mIndex is not None:
+            entry = self.getItem( mIndex )
+
+        if entry is None:
+            self._addEntry()
+        else:
+            self._editEntry(entry)
+
+        return super().mouseDoubleClickEvent(event)    
+
+    def _addEntry(self):
+        entry = WorkLogEntry()
+        parentWidget = self.parent()
+        entryDialog = EntryDialog( self.dataObject.history, entry, parentWidget )
+        entryDialog.setModal( True )
+        dialogCode = entryDialog.exec_()
+        if dialogCode == QtWidgets.QDialog.Rejected:
+            return
+        _LOGGER.debug( "adding entry: %s", entryDialog.entry.printData() )
+        command = AddEntryCommand( self.dataObject, entryDialog.entry )
+        self.dataObject.pushUndo( command )
+
+    def _editEntryByIndex(self, item: QModelIndex):
         history = self.dataObject.history
         entry = history.getEntry( item.row() )
+        self._editEntry( entry )
+        
+    def _editEntry(self, entry):
         if entry is None:
             return
         parentWidget = self.parent()
-        entryDialog = EntryDialog( entry, parentWidget )
+        entryDialog = EntryDialog( self.dataObject.history, entry, parentWidget )
         entryDialog.setModal( True )
         dialogCode = entryDialog.exec_()
         if dialogCode == QtWidgets.QDialog.Rejected:
             return
         command = EditEntryCommand( self.dataObject, entry, entryDialog.entry )
         self.dataObject.pushUndo( command )
+        
+    def _removeEntry(self, entry):
+        if entry is None:
+            return
+        command = RemoveEntryCommand( self.dataObject, entry )
+        self.dataObject.pushUndo( command )
+
+
+def print_timedelta( value: timedelta ):
+    s = ""
+    secs = value.seconds
+    days = value.days
+    if secs != 0 or days == 0:
+        mm, _ = divmod(secs, 60)
+        hh, mm = divmod(mm, 60)
+        s = "%d:%02d" % (hh, mm)
+#         s = "%d:%02d:%02d" % (hh, mm, ss)
+    if days:
+        def plural(n):
+            return n, abs(n) != 1 and "s" or ""
+        if s != "":
+            s = ("%d day%s, " % plural(days)) + s
+        else:
+            s = ("%d day%s" % plural(days)) + s
+#     micros = value.microseconds
+#     if micros:
+#         s = s + ".%06d" % micros
+    return s

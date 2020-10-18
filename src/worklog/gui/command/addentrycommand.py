@@ -23,37 +23,27 @@
 
 import logging
 
-from worklog.gui.datatypes import WorkLogEntry
-
-from .. import uiloader
-
-
-UiTargetClass, QtBaseClass = uiloader.load_ui_from_class_name( __file__ )
+from PyQt5.QtWidgets import QUndoCommand
 
 
 _LOGGER = logging.getLogger(__name__)
 
 
-class EntryDetailsWidget( QtBaseClass ):           # type: ignore
+class AddEntryCommand( QUndoCommand ):
 
-    def __init__(self, parentWidget=None):
-        super().__init__(parentWidget)
-        self.ui = UiTargetClass()
-        self.ui.setupUi(self)
+    def __init__(self, dataObject, newEntry, parentCommand=None):
+        super().__init__(parentCommand)
 
-        self.entry = None
-        self.setObject( self.entry )
+        self.data = dataObject
+        self.history: WorkLogData = self.data.history
+        self.newEntry = newEntry
 
-    def setObject(self, entry: WorkLogEntry):
-        self.entry = entry
-        if self.entry is None:
-            return
+        self.setText( "Add Entry: " + str(newEntry.task) )
 
-        self.ui.entryDate.setText( str( self.entry.entryDate ) )
-        self.ui.startTime.setText( str( self.entry.startTime ) )
-        self.ui.endTime.setText( str( self.entry.endTime ) )
-        self.ui.breakTime.setText( str( self.entry.breakTime ) )
-        self.ui.durationTime.setText( str( self.entry.getDuration() ) )
-        self.ui.project.setText( str( self.entry.project ) )
-        self.ui.task.setText( str( self.entry.task ) )
-        self.ui.description.setText( str( self.entry.description ) )
+    def redo(self):
+        self.history.addEntry( self.newEntry )
+        self.data.entryChanged.emit()
+
+    def undo(self):
+        self.history.removeEntry( self.newEntry )
+        self.data.entryChanged.emit()

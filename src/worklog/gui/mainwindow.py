@@ -87,6 +87,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.navcalendar.selectionChanged.connect( self.calendarSelectionChanged )
         self.ui.scopeCB.currentTextChanged.connect( self.scopeChanged )
 
+        self.ui.worklogTable.connectData( self.data )
         self.ui.worklogTable.selectedItem.connect( self.showDetails )
         self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
 
@@ -157,7 +158,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
             self.trayIcon.setToolTip( newTitle )
 
     def refreshView(self):
-        self.ui.worklogTable.connectData( self.data )
+        self.ui.worklogTable.refreshData()
         self.ui.notesWidget.setNotes( self.data.notes )
         self.showDetails( None )
 

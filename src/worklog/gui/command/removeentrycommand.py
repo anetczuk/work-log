@@ -23,37 +23,27 @@
 
 import logging
 
-from worklog.gui.datatypes import WorkLogEntry
-
-from .. import uiloader
-
-
-UiTargetClass, QtBaseClass = uiloader.load_ui_from_class_name( __file__ )
+from PyQt5.QtWidgets import QUndoCommand
 
 
 _LOGGER = logging.getLogger(__name__)
 
 
-class EntryDetailsWidget( QtBaseClass ):           # type: ignore
+class RemoveEntryCommand( QUndoCommand ):
 
-    def __init__(self, parentWidget=None):
-        super().__init__(parentWidget)
-        self.ui = UiTargetClass()
-        self.ui.setupUi(self)
+    def __init__(self, dataObject, entry, parentCommand=None):
+        super().__init__(parentCommand)
 
-        self.entry = None
-        self.setObject( self.entry )
-
-    def setObject(self, entry: WorkLogEntry):
+        self.data = dataObject
+        self.history: WorkLogData = self.data.history
         self.entry = entry
-        if self.entry is None:
-            return
 
-        self.ui.entryDate.setText( str( self.entry.entryDate ) )
-        self.ui.startTime.setText( str( self.entry.startTime ) )
-        self.ui.endTime.setText( str( self.entry.endTime ) )
-        self.ui.breakTime.setText( str( self.entry.breakTime ) )
-        self.ui.durationTime.setText( str( self.entry.getDuration() ) )
-        self.ui.project.setText( str( self.entry.project ) )
-        self.ui.task.setText( str( self.entry.task ) )
-        self.ui.description.setText( str( self.entry.description ) )
+        self.setText( "Remove Entry: " + str(entry.task) )
+
+    def redo(self):
+        self.history.removeEntry( self.entry )
+        self.data.entryChanged.emit()
+
+    def undo(self):
+        self.history.addEntry( self.entry )
+        self.data.entryChanged.emit()

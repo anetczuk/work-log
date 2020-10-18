@@ -22,7 +22,7 @@
 #
 
 import logging
-from datetime import date, time
+from datetime import datetime, date, time, timedelta
 from typing import List
 
 from worklog import persist
@@ -46,16 +46,41 @@ class WorkLogEntry( persist.Versionable ):
         self.task                = None
         self.description         = ""
 
+    def getDuration(self):
+        if self.entryDate is None or self.startTime is None or self.endTime is None:
+            return self.duration
+        dateTimeA = datetime.combine( self.entryDate, self.startTime )
+        dateTimeB = datetime.combine( self.entryDate, self.endTime )
+        timeDiff = dateTimeB - dateTimeA
+        if self.breakTime is not None:
+            deltaA = datetime.combine(date.min, self.breakTime) - datetime.min
+            timeDiff -= deltaA
+            if timeDiff < timedelta():
+                timeDiff = timedelta()
+        return (datetime.min + timeDiff).time()
+
     def printData( self ):
-        return self.project + " " + self.task
+        return str( self.entryDate ) + " " + str( self.project ) + " " + str( self.task )
 
 
 class WorkLogData( persist.Versionable ):
 
-    _class_version = 0
+    ## 1 - rename field
+    _class_version = 1
 
     def __init__(self):
         self.entries: List[ WorkLogEntry ] = list()
+
+    def _convertstate_(self, dict_, dictVersion_ ):
+        _LOGGER.info( "converting object from version %s to %s", dictVersion_, self._class_version )
+
+        if dictVersion_ < 1:
+            ## skip old version data
+            self.entries = list()
+            return
+
+        # pylint: disable=W0201
+        self.__dict__ = dict_
 
     ## [] (array) operator
     def __getitem__(self, arg):
@@ -74,6 +99,29 @@ class WorkLogData( persist.Versionable ):
                 retList.append( entry )
         return retList
 
+    def getProjectsSet(self):
+        retSet = set()
+        for entry in self.entries:
+            if entry.project is None or not entry.project:
+                continue
+            retSet.add( entry.project )
+        return retSet
+
+    def getTasksSet(self):
+        retSet = set()
+        for entry in self.entries:
+            if entry.task is None or not entry.task:
+                continue
+            retSet.add( entry.task )
+        return retSet
+
+    def addEntry(self, entry):
+        self.entries.append( entry )
+        self.sort()
+
+    def removeEntry(self, entry):
+        self.entries.remove( entry )
+
     def addEntryTime(self, entryDate: date, startTime: time, endTime: time, project: str, task: str):
         entry = WorkLogEntry()
         entry.entryDate = entryDate
@@ -83,7 +131,7 @@ class WorkLogData( persist.Versionable ):
         ## no duration
         entry.project   = project
         entry.task      = task
-        self.entries.append( entry )
+        self.addEntry( entry )
         return entry
 
     def addEntryDuration(self, entryDate: date, duration: time, project: str, task: str):
@@ -95,7 +143,7 @@ class WorkLogData( persist.Versionable ):
         entry.duration  = duration
         entry.project   = project
         entry.task      = task
-        self.entries.append( entry )
+        self.addEntry( entry )
         return entry
 
     def replaceEntry( self, oldEntry: WorkLogEntry, newEntry: WorkLogEntry ):
@@ -104,9 +152,20 @@ class WorkLogData( persist.Versionable ):
             currItem = self.entries[i]
             if currItem == oldEntry:
                 self.entries[i] = newEntry
+                self.sort()
                 return True
         _LOGGER.debug( "replacing failed" )
         return False
+    
+    def sort(self):
+        self.entries.sort( key=self._sortKey, reverse=False )
+
+    @staticmethod
+    def _sortKey( entry: WorkLogEntry ):
+        retDate = entry.entryDate
+        if retDate is None:
+            return date.min
+        return retDate
 
     def printData( self ):
         retStr = ""
