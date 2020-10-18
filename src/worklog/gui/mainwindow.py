@@ -85,6 +85,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.ui.navcalendar.currentPageChanged.connect( self.calendarPageChanged )
         self.ui.navcalendar.selectionChanged.connect( self.calendarSelectionChanged )
+        self.ui.navcalendar.addEntry.connect( self.data.addEntry )
         self.ui.scopeCB.currentTextChanged.connect( self.scopeChanged )
 
         self.ui.worklogTable.connectData( self.data )

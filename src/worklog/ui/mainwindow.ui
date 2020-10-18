@@ -21,7 +21,7 @@
        <enum>Qt::Horizontal</enum>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget">
-       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
         <item>
          <widget class="NavCalendar" name="navcalendar">
           <property name="gridVisible">

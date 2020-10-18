@@ -24,7 +24,7 @@
 import logging
 from datetime import date, time, timedelta
 
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore
 from PyQt5.QtCore import Qt, QModelIndex
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import QAbstractTableModel
@@ -34,10 +34,6 @@ from PyQt5.QtGui import QCursor
 
 from worklog.gui.datatypes import WorkLogData, WorkLogEntry
 from worklog.gui.dataobject import DataObject
-from worklog.gui.widget.entrydialog import EntryDialog
-from worklog.gui.command.editentrycommand import EditEntryCommand
-from worklog.gui.command.addentrycommand import AddEntryCommand
-from worklog.gui.command.removeentrycommand import RemoveEntryCommand
 
 from .. import guistate
 
@@ -319,16 +315,7 @@ class WorkLogTable( QTableView ):
         return super().mouseDoubleClickEvent(event)
 
     def _addEntry(self):
-        entry = WorkLogEntry()
-        parentWidget = self.parent()
-        entryDialog = EntryDialog( self.dataObject.history, entry, parentWidget )
-        entryDialog.setModal( True )
-        dialogCode = entryDialog.exec_()
-        if dialogCode == QtWidgets.QDialog.Rejected:
-            return
-        _LOGGER.debug( "adding entry: %s", entryDialog.entry.printData() )
-        command = AddEntryCommand( self.dataObject, entryDialog.entry )
-        self.dataObject.pushUndo( command )
+        self.dataObject.addEntry()
 
     def _editEntryByIndex(self, item: QModelIndex):
         history = self.dataObject.history
@@ -336,22 +323,10 @@ class WorkLogTable( QTableView ):
         self._editEntry( entry )
 
     def _editEntry(self, entry):
-        if entry is None:
-            return
-        parentWidget = self.parent()
-        entryDialog = EntryDialog( self.dataObject.history, entry, parentWidget )
-        entryDialog.setModal( True )
-        dialogCode = entryDialog.exec_()
-        if dialogCode == QtWidgets.QDialog.Rejected:
-            return
-        command = EditEntryCommand( self.dataObject, entry, entryDialog.entry )
-        self.dataObject.pushUndo( command )
+        self.dataObject.editEntry(entry)
 
     def _removeEntry(self, entry):
-        if entry is None:
-            return
-        command = RemoveEntryCommand( self.dataObject, entry )
-        self.dataObject.pushUndo( command )
+        self.dataObject.removeEntry(entry)
 
 
 def print_timedelta( value: timedelta ):

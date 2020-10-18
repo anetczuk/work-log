@@ -24,12 +24,17 @@
 import logging
 from typing import Dict
 
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtCore import QObject
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QUndoStack
 
-from worklog.gui.datatypes import DataContainer, WorkLogData
+from worklog.gui.datatypes import DataContainer, WorkLogData, WorkLogEntry
 from worklog import persist
+from worklog.gui.widget.entrydialog import EntryDialog
+from worklog.gui.command.addentrycommand import AddEntryCommand
+from worklog.gui.command.editentrycommand import EditEntryCommand
+from worklog.gui.command.removeentrycommand import RemoveEntryCommand
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -75,3 +80,37 @@ class DataObject( QObject ):
 
     def pushUndo(self, undoCommand):
         self.undoStack.push( undoCommand )
+
+    ## =========================================================
+
+    def addEntry(self, entryDate: QtCore.QDate = None):
+        entry = WorkLogEntry()
+        entry.entryDate = entryDate.toPyDate()
+        parentWidget = self.parent()
+        entryDialog = EntryDialog( self.history, entry, parentWidget )
+        entryDialog.setModal( True )
+        dialogCode = entryDialog.exec_()
+        if dialogCode == QtWidgets.QDialog.Rejected:
+            return
+        _LOGGER.debug( "adding entry: %s", entryDialog.entry.printData() )
+        command = AddEntryCommand( self, entryDialog.entry )
+        self.pushUndo( command )
+
+    def editEntry(self, entry):
+        if entry is None:
+            return
+        parentWidget = self.parent()
+        entryDialog = EntryDialog( self.history, entry, parentWidget )
+        entryDialog.setModal( True )
+        dialogCode = entryDialog.exec_()
+        if dialogCode == QtWidgets.QDialog.Rejected:
+            return
+        command = EditEntryCommand( self, entry, entryDialog.entry )
+        self.pushUndo( command )
+
+    def removeEntry(self, entry):
+        self.removeEntry(entry)
+        if entry is None:
+            return
+        command = RemoveEntryCommand( self, entry )
+        self.pushUndo( command )
