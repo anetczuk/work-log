@@ -81,7 +81,8 @@ finally:
     else:
         _LOGGER.info( "Storing profiler data to %s", profiler_outfile )
         profiler.dump_stats( profiler_outfile )
-        _LOGGER.info( "pyprof2calltree -k -i: %s", profiler_outfile )
+        _LOGGER.info( "to view output file run: pyprof2calltree -k -i %s", profiler_outfile )
+        _LOGGER.info( "if missing then pyprof2calltree can be installed by: pip3 install --user pyprof2calltree" )
 
     timeDiff = (time.time() - starttime) * 1000.0
     _LOGGER.info( "Calculation time: {:13.8f}ms".format(timeDiff) )
