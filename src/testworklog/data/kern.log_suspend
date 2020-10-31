@@ -1,0 +1,2827 @@
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.000000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001140] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001140] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001142] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001149] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001156] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001157] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001158] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001159] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001160] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001161] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001163] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001164] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001165] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001165] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001166] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001167] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001168] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001169] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001169] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001170] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001713] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.001941] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027167] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027172] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027186] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027190] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027869] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027871] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027883] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027886] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027890] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027895] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027901] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027904] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027907] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027910] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027913] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027916] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027918] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027921] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027924] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027928] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027931] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027934] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027937] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027940] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027943] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027945] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027948] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027951] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027954] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027957] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027960] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027962] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027965] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.027976] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028294] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028295] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028305] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028542] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028543] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028544] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028545] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028546] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028547] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028550] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028551] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028552] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028553] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028554] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028555] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028857] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028858] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028860] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028861] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028861] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028862] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028917] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.028918] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.038957] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.038958] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086203] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086233] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086600] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086602] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086610] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086610] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086611] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086612] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086612] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086613] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086613] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086614] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086615] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086615] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086616] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086617] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086677] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086680] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086681] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086683] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086684] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086686] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086691] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086700] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086701] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086717] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086719] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086720] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086722] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086723] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086725] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086726] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086728] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086728] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086730] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086731] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086731] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086732] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086732] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086733] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086734] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086734] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086735] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086735] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086736] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086736] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086737] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086739] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086740] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086743] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.086749] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.087141] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.087148] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.087149] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.087180] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.087181] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.087182] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.088376] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.088900] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.089026] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.093346] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.093348] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.132012] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.132018] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.132203] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.132226] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.132242] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.153076] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.153077] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.153078] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.153079] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.153080] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.156506] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157289] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157314] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157323] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157328] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157352] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157752] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157754] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157756] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157761] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157762] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157766] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157767] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157768] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157770] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157771] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.157771] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.160930] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.160931] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.160963] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.170117] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.170122] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.170124] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.173922] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.173933] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.173986] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174057] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174083] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174105] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.174119] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.186917] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.186917] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.190792] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.190792] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.190792] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.194676] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.194676] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.195980] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.199177] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.199815] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.199815] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.202232] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.202233] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.202234] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.202235] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.202236] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.202237] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.202238] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.279881] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.284680] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.291515] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.291522] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.293866] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.296370] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.296376] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.299265] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.299274] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.302800] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.302805] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.312082] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.312083] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.313715] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.313717] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.313718] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.313719] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.313780] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.313781] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.313836] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.315789] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.317264] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.347088] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.347185] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.356061] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.361178] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.361481] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.361781] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.370869] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.380752] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.381462] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.381469] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.385852] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387057] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387059] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387060] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387061] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387063] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387064] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387065] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387066] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387067] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387068] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387069] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387070] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387082] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387649] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.387706] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388058] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388070] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388077] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388081] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388104] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388363] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388376] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388659] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.388694] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389028] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389062] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389174] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389471] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389499] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389514] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389794] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389827] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.389923] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390299] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390329] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390341] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390353] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390365] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390376] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390388] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390470] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.390839] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.391022] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.391060] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.391412] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.391596] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.391632] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.391942] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.392126] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.392161] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.392474] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.392657] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.392694] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.393002] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.393509] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.393583] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.393647] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.393796] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.394250] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.394346] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.394450] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.394797] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.394819] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395103] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395118] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395126] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395135] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395140] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395146] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395162] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395336] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395347] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395472] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395474] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395476] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395480] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395622] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.395663] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.406179] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.406187] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.406366] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.406426] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.406696] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.406954] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418175] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418183] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418317] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418349] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418378] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418396] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418520] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418521] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418696] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418700] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418704] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418711] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418833] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418862] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.418871] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.419000] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.419001] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.419175] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.419183] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421574] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421631] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421684] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421737] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421790] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421842] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421894] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.421947] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.746918] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.746945] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.746965] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.746966] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.747096] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831500] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831653] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831654] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831654] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831655] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831656] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831657] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831658] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831659] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831760] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831761] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831761] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831776] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.831791] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843263] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843341] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843358] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843388] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843394] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843483] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843509] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843992] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.843996] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844002] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844027] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844172] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844176] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844207] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844390] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844583] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844584] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844586] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844587] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844588] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844590] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844591] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844593] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844596] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844942] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844944] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844945] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844947] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844948] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844949] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844951] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.844954] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.845423] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.845427] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.845850] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.845851] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.845853] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.845854] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.845858] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    0.847446] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.162399] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.163743] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.163744] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.163744] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.163745] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.163746] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168249] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168289] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168291] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168294] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168297] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168301] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168310] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168320] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168326] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168336] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168339] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168345] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168349] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168356] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168362] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168373] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168375] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168376] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168377] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168378] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168379] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168380] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168381] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168382] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168384] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168385] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168386] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168387] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168388] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168389] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168391] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168392] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168393] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168394] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168631] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168817] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.168910] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169132] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169215] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169265] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169330] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169414] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169420] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169432] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169546] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169588] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    1.169654] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.381640] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.402151] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.402155] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.402616] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.403166] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.403183] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.403213] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.404638] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.405052] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.405219] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.405236] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.405238] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.405340] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.409141] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.409141] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.409148] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.409196] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.409603] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.409874] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.409950] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.410004] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.410340] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.410410] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.410467] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.410791] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.410859] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.410916] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.411241] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.411309] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.411366] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.411486] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.411548] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.411566] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412946] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412947] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412947] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412949] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412987] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412988] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412996] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.412997] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.413726] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.414717] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416122] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416158] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416190] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416215] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416247] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416270] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416300] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.416321] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.417141] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.417142] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.417337] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.419312] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.419368] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.425681] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457102] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457354] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457355] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457407] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457557] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457707] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457710] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457722] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457733] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457734] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457742] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457749] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457824] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.457832] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.458954] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.458960] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.459214] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.459215] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.459217] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.459218] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.459219] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.459340] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.459364] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460051] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460054] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460057] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460091] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460092] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460093] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460095] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460095] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460220] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460238] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.460648] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.467630] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.472826] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.472829] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.472857] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.472876] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.472894] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.473021] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.473424] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474542] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474556] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474563] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474604] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474657] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474675] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474677] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474678] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474679] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474680] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474681] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474682] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474683] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474684] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474685] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474686] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474694] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.474739] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.476058] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.476786] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.476788] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.477686] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.501763] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.501842] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.501989] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.505027] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.505038] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.505056] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.505708] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.505724] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.506040] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.506042] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.506047] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.506267] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.506273] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.506841] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.506867] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.507040] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.507041] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.509528] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.509530] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.510784] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.510785] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.511710] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.511722] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.511722] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.511736] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.511736] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.511752] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.512503] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.512518] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.512518] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.512930] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.513869] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567545] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567557] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567558] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567558] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567558] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567559] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567559] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567559] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567559] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567560] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.567560] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.568686] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.569029] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.731569] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.742022] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.742374] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.742451] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.743159] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.743477] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.749177] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.749178] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.754644] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.754645] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.802130] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.811718] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.820421] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.822581] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.822582] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.824224] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.826034] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.826047] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.828916] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.830736] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.830738] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.831862] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.834146] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.834378] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835199] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835587] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835778] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835779] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835841] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835895] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835895] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835896] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835896] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.835902] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.839271] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.845880] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.845881] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.845975] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.848124] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.848125] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.848863] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.849240] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.865314] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.866028] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.866392] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.866480] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.866507] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.868265] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.868266] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.868267] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.963606] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.963607] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.963608] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    2.963609] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.038926] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.038941] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.053767] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.060662] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.090413] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.150602] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.162732] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.162734] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.162735] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.240143] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.240144] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.240145] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.291327] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.291328] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.314650] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.314651] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.314670] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352228] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352407] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352628] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352630] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352637] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352638] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352648] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.352668] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.370124] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.434128] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.434132] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.434211] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.505528] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.506361] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.523485] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    3.523486] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.093742] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.220381] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.220385] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.372367] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.415532] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525911] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525912] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525913] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525914] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525914] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525914] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525916] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525951] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.525975] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.526959] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.527328] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.543869] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.815803] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.827530] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.830508] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.834536] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.834557] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.834919] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.841537] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.883022] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.917838] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.929537] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.940197] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.995807] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.999745] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.999747] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    4.999971] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.003280] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.007019] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.007036] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.007037] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.007042] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.007045] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.007048] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.011841] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.011842] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.011959] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.012811] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.016030] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.016033] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.016451] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.016913] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.018300] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.019258] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.019259] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.019260] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.019261] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.019262] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.019263] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.020551] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.020736] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.020738] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.020739] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.020740] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.020741] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.020742] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.023992] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.030797] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.030799] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.035987] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.035989] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.035990] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.035990] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.036037] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.036078] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.036078] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.045036] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.051895] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.052391] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.100822] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.130063] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.130401] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.130483] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.130549] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.130555] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.169834] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.170134] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.170878] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.170879] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.170880] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.170880] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.173671] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175629] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175631] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175632] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175633] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175634] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175634] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175635] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.175636] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.182312] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.185827] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.185859] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    5.880071] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.036092] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.036168] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.036181] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.036697] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.036701] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.036704] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.037618] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.037877] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.037878] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.038198] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.073848] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.073850] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.073853] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.186727] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.314990] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.323370] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.438301] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.469959] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.503916] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.519941] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.647784] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.647827] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.647866] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.647896] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.647923] abc log entry
+Oct 31 10:46:16 wxyz kernel: [    6.647950] abc log entry
+Oct 31 10:46:21 wxyz kernel: [   11.187711] abc log entry
+Oct 31 10:46:21 wxyz kernel: [   11.188932] abc log entry
+Oct 31 10:46:21 wxyz kernel: [   11.328277] abc log entry
+Oct 31 10:46:21 wxyz kernel: [   11.330139] abc log entry
+Oct 31 10:46:21 wxyz kernel: [   11.330971] abc log entry
+Oct 31 10:46:21 wxyz kernel: [   11.333096] abc log entry
+Oct 31 10:46:21 wxyz kernel: [   11.377934] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.500135] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.518287] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.518289] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.525158] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.532789] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.540180] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.542238] abc log entry
+Oct 31 10:46:22 wxyz kernel: [   12.650180] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098158] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098165] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098168] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098170] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098173] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098175] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098178] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098180] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098183] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098185] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098188] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098190] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.098193] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418145] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418150] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418153] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418156] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418160] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418163] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418166] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418169] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418172] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418175] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418178] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.418181] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738250] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738261] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738268] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738275] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738282] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738289] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738296] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738302] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738309] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738316] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738323] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   13.738330] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058277] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058294] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058304] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058314] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058327] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058336] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058345] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058354] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058364] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058372] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058402] abc log entry
+Oct 31 10:46:23 wxyz kernel: [   14.058413] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378256] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378267] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378274] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378280] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378288] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378295] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378301] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378308] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378315] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378322] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378329] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.378336] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698191] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698200] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698206] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698211] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698218] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698223] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698228] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698234] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698239] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698245] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698250] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   14.698255] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018252] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018263] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018270] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018277] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018284] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018291] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018298] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018304] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018312] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018318] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018325] abc log entry
+Oct 31 10:46:24 wxyz kernel: [   15.018332] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338624] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338630] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338633] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338637] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338641] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338645] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338648] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338652] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338656] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338659] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338663] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.338666] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658200] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658217] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658219] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658221] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658224] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658241] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658244] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658246] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658248] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658250] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658252] abc log entry
+Oct 31 10:46:25 wxyz kernel: [   15.658254] abc log entry
+Oct 31 10:46:26 wxyz kernel: [   16.300816] abc log entry
+Oct 31 10:46:26 wxyz kernel: [   16.352685] abc log entry
+Oct 31 10:46:26 wxyz kernel: [   16.399827] abc log entry
+Oct 31 10:53:29 wxyz kernel: [  440.693560] abc log entry
+Oct 31 10:53:30 wxyz kernel: [  441.668255] abc log entry
+Oct 31 10:53:30 wxyz kernel: [  441.696067] PM: suspend entry (deep)
+Oct 31 16:44:59 wxyz kernel: [  442.068364] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  442.070082] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  442.073327] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  442.073329] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  442.074911] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  442.091779] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  442.102688] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.016353] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.437518] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.517893] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.520924] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.520926] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.520927] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.520949] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.522864] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.524502] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.525530] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.527137] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.528186] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.529759] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.529769] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.530799] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.532345] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.532359] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.533387] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.534918] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.535963] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.537913] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.537929] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.537936] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.538955] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.540991] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.543103] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.545186] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.547258] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.551991] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.552095] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.552095] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.555060] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.555107] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.555108] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.557496] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.559455] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.559645] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.559833] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.559854] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.561410] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.561429] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.562993] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.563011] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.564603] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.564621] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.566211] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.566230] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.566572] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.566875] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.566897] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.567434] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.567454] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.568005] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.568023] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.568590] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.568608] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.569181] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.569199] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.569782] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.572866] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  444.576446] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  449.674652] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  449.869632] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  449.977464] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  449.993601] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.117021] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.184405] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.196132] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.196136] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.196139] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244753] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244759] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244764] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244768] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244772] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244778] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244782] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244786] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244790] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244794] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244798] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244802] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.244806] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.257093] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.257097] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.257099] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.294034] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.392942] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548682] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548684] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548687] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548688] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548691] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548693] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548695] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548697] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548699] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548701] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548703] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.548705] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.668908] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.841450] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.841462] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.841531] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.841587] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.841625] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.841625] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.843819] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.843820] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.858083] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.858853] PM: suspend exit
+Oct 31 16:44:59 wxyz kernel: [  450.868687] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868721] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868740] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868746] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868752] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868758] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868764] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868770] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868776] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868782] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868786] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  450.868790] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.016704] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188720] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188723] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188725] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188728] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188730] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188733] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188735] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188737] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188739] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188741] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188743] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.188746] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.193025] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.317607] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.325771] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.445075] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.480227] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508711] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508714] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508716] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508718] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508720] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508723] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508725] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508727] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508729] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508731] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508733] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.508735] abc log entry
+Oct 31 16:44:59 wxyz kernel: [  451.510037] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.611219] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.709844] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833208] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833213] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833215] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833218] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833221] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833224] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833226] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833229] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833231] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833234] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833236] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.833239] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.846433] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.927796] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.929587] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.929591] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.929594] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.929596] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.929599] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.929603] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  451.929612] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148776] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148780] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148782] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148785] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148787] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148789] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148791] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148793] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148796] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148798] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148800] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.148805] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468761] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468772] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468779] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468786] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468794] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468800] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468807] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468814] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468824] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468830] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468840] abc log entry
+Oct 31 16:45:00 wxyz kernel: [  452.468847] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788708] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788711] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788714] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788716] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788718] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788720] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788722] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788724] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788726] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788729] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788731] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  452.788733] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  453.477399] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  453.477524] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  453.477537] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  453.490573] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  453.493593] abc log entry
+Oct 31 16:45:01 wxyz kernel: [  453.496594] abc log entry
+Oct 31 16:45:02 wxyz kernel: [  453.562762] abc log entry
+Oct 31 16:45:02 wxyz kernel: [  453.562767] abc log entry
+Oct 31 16:45:02 wxyz kernel: [  453.562770] abc log entry
+Oct 31 16:45:02 wxyz kernel: [  454.512979] abc log entry
+Oct 31 16:45:03 wxyz kernel: [  455.139011] abc log entry
+Oct 31 16:45:03 wxyz kernel: [  455.140741] abc log entry
+Oct 31 16:45:03 wxyz kernel: [  455.233633] abc log entry
+Oct 31 16:45:03 wxyz kernel: [  455.237139] abc log entry
+Oct 31 16:45:03 wxyz kernel: [  455.238396] abc log entry
+Oct 31 16:45:03 wxyz kernel: [  455.241518] abc log entry
+Oct 31 16:45:03 wxyz kernel: [  455.278375] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.741412] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.891587] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.891593] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.891597] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.891599] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.950911] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.955206] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.955207] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  466.958154] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.017667] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.018299] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.077729] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.078029] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.078736] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.230277] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.426794] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.486520] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.487996] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.488505] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.489169] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.489571] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.490043] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.490839] abc log entry
+Oct 31 16:45:15 wxyz kernel: [  467.491319] abc log entry
+Oct 31 16:45:16 wxyz kernel: [  468.058926] abc log entry
+Oct 31 16:45:16 wxyz kernel: [  468.413488] abc log entry
+Oct 31 16:45:16 wxyz kernel: [  468.414281] abc log entry
+Oct 31 16:45:16 wxyz kernel: [  468.456789] abc log entry
+Oct 31 16:45:16 wxyz kernel: [  468.457550] abc log entry
+Oct 31 16:45:26 wxyz kernel: [  478.510905] abc log entry
+Oct 31 16:46:07 wxyz kernel: [  518.753966] abc log entry
+Oct 31 16:47:00 wxyz kernel: [  572.271107] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113167] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113168] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113169] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113170] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113170] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113171] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113251] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113252] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113253] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113254] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113255] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113255] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113257] abc log entry
+Oct 31 16:50:42 wxyz kernel: [  794.113257] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158166] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158167] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158168] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158169] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158170] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158171] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158247] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158248] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158249] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158250] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158251] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158252] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158253] abc log entry
+Oct 31 16:50:43 wxyz kernel: [  794.158254] abc log entry
+Oct 31 17:02:31 wxyz kernel: [ 1502.332019] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.315948] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755395] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755407] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755414] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755419] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755424] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755430] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755435] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755441] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755446] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755452] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755457] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755463] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1509.755468] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083331] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083335] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083337] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083339] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083358] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083360] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083362] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083364] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083366] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083368] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083371] abc log entry
+Oct 31 17:02:38 wxyz kernel: [ 1510.083373] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403760] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403773] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403781] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403789] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403797] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403804] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403812] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403819] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403827] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403834] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403842] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.403850] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723372] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723384] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723392] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723400] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723408] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723416] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723424] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723431] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723439] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723447] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723454] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1510.723461] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043382] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043386] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043388] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043390] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043392] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043395] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043397] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043399] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043401] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043403] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043405] abc log entry
+Oct 31 17:02:39 wxyz kernel: [ 1511.043408] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363376] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363388] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363395] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363402] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363410] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363417] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363423] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363430] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363437] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363444] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363451] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.363457] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683355] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683359] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683362] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683365] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683368] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683371] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683373] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683376] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683379] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683382] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683384] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1511.683387] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003369] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003373] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003375] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003377] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003380] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003395] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003397] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003399] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003402] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003419] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003421] abc log entry
+Oct 31 17:02:40 wxyz kernel: [ 1512.003424] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323387] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323398] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323406] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323413] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323421] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323428] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323435] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323443] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323450] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323458] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323465] abc log entry
+Oct 31 17:02:41 wxyz kernel: [ 1512.323472] abc log entry
+Oct 31 17:03:17 wxyz kernel: [ 1548.429055] abc log entry
+Oct 31 17:03:22 wxyz kernel: [ 1554.009489] abc log entry
+Oct 31 17:03:22 wxyz kernel: [ 1554.033969] PM: suspend entry (deep)
+Oct 31 17:03:22 wxyz kernel: [ 1554.067007] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1554.068364] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1554.078192] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1554.078193] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1554.079725] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1554.104827] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1554.114645] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.036546] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.457754] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.537887] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.540665] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.540666] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.540667] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.540687] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.541555] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.541558] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.542592] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.544105] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.545133] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.546615] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.548418] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.550513] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.551612] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.552658] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.554057] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.555093] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.556418] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.556433] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.556438] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.557457] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.558368] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.558389] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.559412] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.561434] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.563482] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.565515] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.569987] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.570090] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.570090] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.573052] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.573101] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.573102] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.573570] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.575719] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.575911] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.575932] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.577495] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.577514] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.579085] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.579104] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.580697] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.580722] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.582326] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.582348] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.582627] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.582927] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.582947] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.583565] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.583589] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.584138] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.584157] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.584730] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.584749] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.585332] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.585351] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.585940] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.589000] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1556.592575] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1561.694987] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1561.889428] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1561.997666] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.015381] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.137205] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.204321] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.215952] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.215956] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.215958] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264877] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264886] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264890] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264894] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264898] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264902] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264906] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264909] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264913] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264917] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264921] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264925] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.264929] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.276793] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.276797] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.276800] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.313627] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.413006] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568802] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568805] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568807] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568809] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568811] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568813] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568815] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568817] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568819] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568821] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568823] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.568825] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.689069] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.861003] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.861015] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.861081] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.861136] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.861173] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.861173] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.862924] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.863530] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.863685] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.864662] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.864663] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.864663] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.864664] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.864664] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.864665] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.864888] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.868418] PM: suspend exit
+Oct 31 17:12:03 wxyz kernel: [ 1562.883689] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892833] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892837] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892840] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892842] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892845] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892848] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892850] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892853] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892856] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892858] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892860] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1562.892863] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.008052] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208794] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208798] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208800] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208802] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208821] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208838] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208852] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208854] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208856] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208858] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208860] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.208862] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.211111] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.337638] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.345888] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.407017] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.465449] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528822] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528828] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528833] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528837] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528843] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528847] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528851] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528856] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528860] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528865] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528867] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.528869] abc log entry
+Oct 31 17:12:03 wxyz kernel: [ 1563.530653] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.535005] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.658199] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848864] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848874] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848880] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848887] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848893] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848900] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848906] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848912] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848919] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848925] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848931] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1563.848937] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168826] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168829] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168831] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168833] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168836] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168838] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168840] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168842] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168844] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168846] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168849] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.168851] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488831] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488843] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488850] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488857] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488864] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488871] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488878] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488885] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488892] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488899] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488905] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.488912] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.491606] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.491643] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.491754] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.504834] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.504841] abc log entry
+Oct 31 17:12:04 wxyz kernel: [ 1564.507802] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808903] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808914] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808921] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808927] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808934] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808941] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808947] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808954] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808961] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808968] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808974] abc log entry
+Oct 31 17:12:05 wxyz kernel: [ 1564.808981] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1566.693393] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1566.883246] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1566.884776] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1567.032254] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1567.032867] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1567.034155] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1567.037515] abc log entry
+Oct 31 17:12:07 wxyz kernel: [ 1567.074094] abc log entry
+Oct 31 17:12:34 wxyz kernel: [ 1594.512967] abc log entry
+Oct 31 17:28:58 wxyz kernel: [ 2577.627424] abc log entry
+Oct 31 17:29:05 wxyz kernel: [ 2585.303978] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747678] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747686] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747691] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747696] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747700] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747705] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747709] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747713] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747717] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747721] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747724] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747727] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2585.747730] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072250] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072253] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072255] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072258] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072260] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072262] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072264] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072267] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072269] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072271] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072273] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.072275] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391826] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391838] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391846] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391853] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391861] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391869] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391876] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391884] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391892] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391899] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391907] abc log entry
+Oct 31 17:29:06 wxyz kernel: [ 2586.391914] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.646799] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715863] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715875] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715882] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715889] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715896] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715903] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715910] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715917] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715924] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715931] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715937] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2586.715944] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032163] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032167] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032170] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032172] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032175] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032178] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032180] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032183] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032185] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032188] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032191] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.032193] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352064] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352068] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352071] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352074] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352077] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352080] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352083] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352085] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352088] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352091] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352094] abc log entry
+Oct 31 17:29:07 wxyz kernel: [ 2587.352096] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.646586] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672220] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672224] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672227] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672229] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672231] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672233] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672236] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672238] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672240] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672242] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672244] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.672260] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992313] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992317] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992319] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992322] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992326] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992328] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992331] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992334] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992337] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992340] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992342] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2587.992345] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312799] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312810] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312817] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312824] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312832] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312839] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312847] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312854] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312862] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312869] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312876] abc log entry
+Oct 31 17:29:08 wxyz kernel: [ 2588.312884] abc log entry
+Oct 31 17:35:36 wxyz kernel: [ 2976.441542] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327173] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327173] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327174] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327175] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327247] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327248] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327249] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327249] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327250] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327251] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327252] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327253] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327254] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.327254] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328184] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328185] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328186] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328186] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328187] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328187] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328245] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328246] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328246] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328247] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328248] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328249] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328249] abc log entry
+Oct 31 18:16:38 wxyz kernel: [ 5438.328250] abc log entry
+Oct 31 18:17:27 wxyz kernel: [ 5486.891466] abc log entry
+Oct 31 18:17:34 wxyz kernel: [ 5494.281046] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659752] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659759] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659763] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659765] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659767] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659770] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659772] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659775] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659777] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659781] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659783] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659786] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.659789] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980010] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980017] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980020] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980025] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980029] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980032] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980035] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980038] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980042] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980045] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980048] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5494.980051] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300222] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300237] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300245] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300252] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300260] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300268] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300275] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300283] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300291] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300298] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300306] abc log entry
+Oct 31 18:17:35 wxyz kernel: [ 5495.300313] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619804] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619819] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619827] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619835] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619845] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619853] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619873] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619883] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619891] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619899] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619906] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.619913] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.907198] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939876] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939879] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939882] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939884] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939886] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939888] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939890] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939893] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939895] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939897] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939899] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5495.939901] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259814] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259819] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259822] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259825] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259828] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259858] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259861] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259864] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259880] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259883] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259885] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.259903] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579822] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579827] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579830] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579833] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579836] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579838] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579841] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579844] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579847] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579865] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579868] abc log entry
+Oct 31 18:17:36 wxyz kernel: [ 5496.579871] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899844] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899850] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899853] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899855] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899859] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899862] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899864] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899867] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899870] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899873] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899875] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.899878] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5496.907931] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220411] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220422] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220430] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220437] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220444] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220452] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220459] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220466] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220474] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220481] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220489] abc log entry
+Oct 31 18:17:37 wxyz kernel: [ 5497.220496] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138087] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138088] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138089] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138090] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138166] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138167] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138167] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138168] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138169] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138170] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138171] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138172] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138173] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.138174] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140070] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140071] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140072] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140072] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140140] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140140] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140141] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140142] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140143] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140143] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140144] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140145] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140146] abc log entry
+Oct 31 18:46:31 wxyz kernel: [ 7231.140146] abc log entry
+Oct 31 19:18:24 wxyz kernel: [ 9143.820331] abc log entry
+Oct 31 19:20:40 wxyz kernel: [ 9280.394967] abc log entry
+Oct 31 19:20:41 wxyz kernel: [ 9281.416576] abc log entry
+Oct 31 19:29:17 wxyz kernel: [ 9797.306355] abc log entry
+Oct 31 19:29:17 wxyz kernel: [ 9797.480312] abc log entry
+Oct 31 19:29:18 wxyz kernel: [ 9798.336492] PM: suspend entry (deep)
+Oct 31 19:29:31 wxyz kernel: [ 9798.489542] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9798.490325] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9798.492687] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9798.492688] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9798.494134] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9798.508278] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9798.523974] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.444229] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.865331] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.945693] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.949975] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.949977] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.949978] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.949998] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.951888] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.954530] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.956168] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.956171] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.957205] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.959428] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.960664] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.961724] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.963236] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.964293] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.965755] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.965771] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.965776] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.966799] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.967862] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.967883] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.968908] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.969939] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.969952] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.970989] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.973025] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.974963] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.979467] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.979570] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.979570] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.982517] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.982566] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.982567] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.983028] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.985171] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.985365] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.985387] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.986945] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.986964] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.988542] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.988561] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.990138] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.990156] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.991748] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.991766] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.992094] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.992436] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.992458] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.992999] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.993017] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.993569] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.993587] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.994143] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.994160] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.994729] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.994747] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.995327] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9800.998389] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9801.002024] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.102431] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.296447] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.405234] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.427622] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.540910] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.612556] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.624209] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.624213] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.624216] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672566] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672571] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672576] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672579] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672583] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672587] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672591] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672595] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672598] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672602] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672606] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672610] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.672614] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.685059] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.685063] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.685065] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.722039] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.816704] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976487] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976490] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976492] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976494] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976496] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976498] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976500] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976502] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976504] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976506] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976508] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9806.976523] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.092758] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.268887] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.268899] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.268967] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.269023] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.269061] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.269061] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.275963] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.276600] PM: suspend exit
+Oct 31 19:29:31 wxyz kernel: [ 9807.280470] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281431] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281590] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281591] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281591] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281592] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281592] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281593] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.281595] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296504] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296508] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296510] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296512] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296515] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296517] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296519] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296521] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296523] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296526] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296528] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.296530] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.300628] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.357361] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.425768] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.489369] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.497686] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617472] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617576] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617579] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617582] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617584] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617617] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617619] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617621] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617623] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617626] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617629] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617631] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.617633] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.683051] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.819387] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.934096] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936471] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936476] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936479] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936481] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936484] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936486] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936488] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936490] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936493] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936495] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936497] abc log entry
+Oct 31 19:29:31 wxyz kernel: [ 9807.936499] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9807.947859] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256510] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256522] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256530] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256537] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256545] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256553] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256560] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256568] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256575] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256583] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256590] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.256597] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.276420] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576537] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576542] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576546] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576549] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576553] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576556] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576560] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576563] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576567] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576570] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576573] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.576578] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.887074] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.887737] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.887753] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897059] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897064] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897066] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897069] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897072] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897074] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897077] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897079] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897082] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897084] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897087] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.897089] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.900775] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.900803] abc log entry
+Oct 31 19:29:32 wxyz kernel: [ 9808.903627] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220498] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220505] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220510] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220514] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220519] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220523] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220527] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220531] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220536] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220540] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220545] abc log entry
+Oct 31 19:29:33 wxyz kernel: [ 9809.220549] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.108630] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.259121] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.266445] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.304781] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.308565] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.309633] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.312314] abc log entry
+Oct 31 19:29:35 wxyz kernel: [ 9811.340080] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292273] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292275] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292276] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292277] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292277] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292278] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292279] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292280] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292341] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292342] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292343] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292344] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292345] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.292346] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301265] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301266] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301267] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301267] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301268] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301268] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301346] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301347] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301348] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301348] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301349] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301350] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301351] abc log entry
+Oct 31 19:31:33 wxyz kernel: [ 9929.301351] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444740] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444741] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444742] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444743] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444820] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444821] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444821] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444822] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444823] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444824] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444825] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444826] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444827] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.444827] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445735] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445736] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445737] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445737] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445738] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445738] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445740] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445740] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445795] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445796] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445797] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445798] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445798] abc log entry
+Oct 31 19:40:46 wxyz kernel: [10482.445799] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865062] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865063] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865064] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865065] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865066] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865067] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865134] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865135] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865136] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865137] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865138] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.865139] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893027] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893028] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893029] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893030] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893031] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893031] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893088] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893089] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893090] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893091] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893092] abc log entry
+Oct 31 19:45:59 wxyz kernel: [10795.893092] abc log entry
+Oct 31 19:47:55 wxyz kernel: [10911.741861] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147414] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147415] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147416] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147416] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147472] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147473] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147474] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147475] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147494] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147495] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147526] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.147527] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151405] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151405] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151526] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151527] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151527] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151528] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151529] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151529] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151530] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151531] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151532] abc log entry
+Oct 31 19:52:39 wxyz kernel: [11195.151533] abc log entry
+Oct 31 19:54:45 wxyz kernel: [11321.961506] abc log entry
+Oct 31 19:54:45 wxyz kernel: [11321.961506] abc log entry
+Oct 31 19:54:45 wxyz kernel: [11321.984524] abc log entry
+Oct 31 19:54:45 wxyz kernel: [11321.984525] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181681] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181682] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181683] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181684] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181762] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181763] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181764] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181764] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181765] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181766] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181767] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.181768] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182671] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182672] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182672] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182673] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182682] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182683] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182736] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182736] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182738] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182738] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182739] abc log entry
+Oct 31 19:57:42 wxyz kernel: [11498.182740] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509963] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509964] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509965] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509966] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509967] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509967] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509968] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509969] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509970] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509971] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509972] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.509973] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510936] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510936] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510937] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510937] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510938] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510938] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510939] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510939] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510939] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510940] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510940] abc log entry
+Oct 31 20:02:50 wxyz kernel: [11806.510941] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857218] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857219] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857220] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857220] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857221] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857222] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857223] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857223] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857274] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857275] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857276] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857277] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857278] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.857279] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865242] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865243] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865243] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865244] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865245] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865245] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865247] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865247] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865299] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865299] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865300] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865301] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865302] abc log entry
+Oct 31 20:07:53 wxyz kernel: [12108.865302] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091550] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091551] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091552] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091552] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091553] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091554] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091633] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091634] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091635] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091636] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091636] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091637] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091638] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.091639] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134518] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134518] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134520] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134520] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134521] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134522] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134526] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134527] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134587] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134587] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134588] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134589] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134590] abc log entry
+Oct 31 20:13:42 wxyz kernel: [12458.134591] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510872] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510873] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510874] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510875] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510876] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510877] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510878] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510879] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510880] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510881] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510882] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510882] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510883] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.510884] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532841] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532842] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532843] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532843] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532851] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532852] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532901] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532902] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532903] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532903] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532904] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532905] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532905] abc log entry
+Oct 31 20:19:34 wxyz kernel: [12809.532906] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308114] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308114] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308116] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308116] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308212] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308213] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308214] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308215] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308215] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308216] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308217] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308218] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308219] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.308220] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315155] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315156] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315157] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315157] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315254] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315255] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315255] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315256] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315257] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315257] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315258] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315259] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315260] abc log entry
+Oct 31 20:24:43 wxyz kernel: [13118.315261] abc log entry
+Oct 31 20:28:13 wxyz kernel: [13329.067318] abc log entry
+Oct 31 20:28:13 wxyz kernel: [13329.067318] abc log entry
+Oct 31 20:28:13 wxyz kernel: [13329.068353] abc log entry
+Oct 31 20:28:13 wxyz kernel: [13329.068354] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256495] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256496] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256497] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256498] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256499] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256500] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256501] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256502] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256503] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256503] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256504] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256505] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256506] abc log entry
+Oct 31 20:31:07 wxyz kernel: [13503.256508] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273471] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273472] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273474] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273474] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273475] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273476] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273477] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273478] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273478] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273479] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273480] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273480] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273501] abc log entry
+Oct 31 20:31:08 wxyz kernel: [13503.273502] abc log entry
+Oct 31 20:33:40 wxyz kernel: [13656.128603] abc log entry
+Oct 31 20:33:40 wxyz kernel: [13656.128603] abc log entry
+Oct 31 20:33:40 wxyz kernel: [13656.147613] abc log entry
+Oct 31 20:33:40 wxyz kernel: [13656.147613] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755774] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755775] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755775] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755776] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755777] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755778] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755852] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755853] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755853] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755854] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755855] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755856] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755857] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.755858] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762736] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762736] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762737] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762738] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762739] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762739] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762798] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762798] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762799] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762800] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762801] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762801] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762802] abc log entry
+Oct 31 20:36:12 wxyz kernel: [13807.762803] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293282] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293283] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293284] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293285] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293285] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293286] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293356] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293357] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293358] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293359] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293360] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293361] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293362] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.293363] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294325] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294326] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294326] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294327] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294330] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294330] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294373] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294374] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294375] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294375] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294376] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294377] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294389] abc log entry
+Oct 31 20:46:13 wxyz kernel: [14408.294390] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833772] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833773] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833774] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833775] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833776] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833777] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833777] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833778] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833779] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833780] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833781] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833782] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833783] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.833784] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834733] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834733] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834733] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834734] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834734] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834735] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834735] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834735] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834736] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834736] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834737] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834737] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834738] abc log entry
+Oct 31 20:54:25 wxyz kernel: [14900.834739] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376192] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376193] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376194] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376194] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376288] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376289] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376290] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376291] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376292] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376292] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376293] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376294] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376295] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.376296] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378152] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378152] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378153] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378154] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378234] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378235] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378236] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378236] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378237] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378238] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378239] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378239] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378239] abc log entry
+Oct 31 21:02:21 wxyz kernel: [15376.378240] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468459] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468460] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468460] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468461] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468462] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468463] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468464] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468465] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468466] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468467] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468468] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468468] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468469] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.468470] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520474] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520475] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520476] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520477] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520478] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520479] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520480] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520480] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520481] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520482] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520483] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520483] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520484] abc log entry
+Oct 31 21:07:42 wxyz kernel: [15697.520485] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228766] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228767] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228769] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228769] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228770] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228771] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228772] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228832] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228833] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228834] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228835] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228836] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228836] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.228881] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229796] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229797] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229797] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229798] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229799] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229799] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229800] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229800] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229866] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229867] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229868] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229868] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229869] abc log entry
+Oct 31 21:13:14 wxyz kernel: [16030.229869] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400058] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400059] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400060] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400061] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400061] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400062] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400063] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400064] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400065] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400066] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400067] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.400068] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432061] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432061] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432062] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432063] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432064] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432064] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432065] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432066] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432067] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432068] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432068] abc log entry
+Oct 31 21:18:24 wxyz kernel: [16339.432069] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048545] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048546] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048547] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048547] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048548] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048549] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048550] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048551] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048552] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048553] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048553] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048554] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048555] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.048556] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050519] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050520] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050521] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050521] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050521] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050522] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050523] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050523] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050524] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050525] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050525] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050526] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050526] abc log entry
+Oct 31 21:27:21 wxyz kernel: [16877.050527] abc log entry
+Oct 31 21:31:50 wxyz kernel: [17146.280061] abc log entry
+Oct 31 21:31:52 wxyz kernel: [17147.847365] abc log entry
+Oct 31 21:31:52 wxyz kernel: [17147.854295] abc log entry
+Oct 31 21:31:52 wxyz kernel: [17147.892608] abc log entry
+Oct 31 21:31:52 wxyz kernel: [17147.893482] abc log entry
+Oct 31 21:31:52 wxyz kernel: [17147.894490] abc log entry
+Oct 31 21:31:52 wxyz kernel: [17147.895949] abc log entry
+Oct 31 21:32:01 wxyz kernel: [17156.417894] abc log entry
+Oct 31 21:32:02 wxyz kernel: [17157.689231] abc log entry
+Oct 31 21:32:02 wxyz kernel: [17157.696567] abc log entry
+Oct 31 21:32:02 wxyz kernel: [17157.700789] abc log entry
+Oct 31 21:32:02 wxyz kernel: [17157.701556] abc log entry
+Oct 31 21:32:02 wxyz kernel: [17157.702672] abc log entry
+Oct 31 21:32:02 wxyz kernel: [17157.705537] abc log entry
+Oct 31 21:34:03 wxyz kernel: [17278.826074] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599915] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599916] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599917] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599918] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599919] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599920] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599921] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599921] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599922] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599923] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599923] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599924] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599925] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.599926] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601929] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601930] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601930] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601931] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601931] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601932] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601933] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601933] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601934] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601935] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601936] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601936] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601937] abc log entry
+Oct 31 21:34:44 wxyz kernel: [17319.601938] abc log entry

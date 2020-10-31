@@ -41,7 +41,7 @@ class EditEntryCommand( QUndoCommand ):
         self.oldEntry = oldEntry
         self.newEntry = newEntry
 
-        self.setText( "Edit Entry: " + str(newEntry.task) )
+        self.setText( "Edit Entry: " + str(newEntry.startTime) )
 
     def redo(self):
         self.history.replaceEntry( self.oldEntry, self.newEntry )

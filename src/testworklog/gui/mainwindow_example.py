@@ -36,7 +36,6 @@ except ImportError as error:
 import sys
 import logging
 import argparse
-from datetime import date, time
 
 from PyQt5.QtWidgets import QApplication
 
@@ -73,25 +72,15 @@ setup_interrupt_handling()
 
 window = MainWindow()
 
-window.data.history.addEntryTime( date(year=2020, month=3, day=21),
-                                  time(hour=9, minute=15), time(hour=12, minute=0), "Project A", "Task 1" )
-window.data.history.addEntryTime( date(year=2020, month=3, day=22),
-                                  time(hour=8, minute=0), time(hour=15, minute=0), "Project A", "Task 2" )
-window.data.history.addEntryDuration( date(year=2020, month=3, day=24),
-                                      time(hour=6, minute=0), "Project B", "Task 2" )
-window.data.history.addEntryDuration( date(year=2020, month=4, day=5),
-                                      time(hour=6, minute=0), "Project A", "Task 2b" )
-
 window.setWindowTitleSuffix( "Preview" )
 window.disableSaving()
 window.setWindowTitle( window.windowTitle() )
 if args.loadUserData:
     window.loadData()
 else:
-    pass
+    window.data.readFromKernlog()
 window.refreshView()
 window.loadSettings()
-window.ui.navcalendar.setSelectedDate( window.data.history[0].entryDate )
 window.show()
 
 exitCode = app.exec_()

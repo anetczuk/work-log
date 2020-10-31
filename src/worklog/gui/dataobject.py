@@ -22,10 +22,11 @@
 #
 
 import logging
-from typing import Dict
+import re
+from typing import Dict, List, Tuple
 import datetime
 
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtCore import QObject
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QUndoStack
@@ -87,10 +88,11 @@ class DataObject( QObject ):
     def addEntry(self, entryDate: QtCore.QDate = None):
         entry = WorkLogEntry()
         if entryDate is not None:
-            entry.entryDate = entryDate.toPyDate()
-            entry.startTime = datetime.time( hour=9 )
-            entry.endTime   = datetime.time( hour=17 )
-        entry.breakTime = datetime.time( minute=30 )
+            entryDate = entryDate.toPyDate()
+        else:
+            entryDate = datetime.datetime.today().date()
+        entry.startTime = datetime.datetime.combine( entryDate, datetime.time( hour=9 ) )
+        entry.endTime   = datetime.datetime.combine( entryDate, datetime.time( hour=17 ) )
 
         parentWidget = self.parent()
         entryDialog = EntryDialog( self.history, entry, parentWidget )
@@ -115,8 +117,145 @@ class DataObject( QObject ):
         self.pushUndo( command )
 
     def removeEntry(self, entry):
-        self.removeEntry(entry)
         if entry is None:
             return
         command = RemoveEntryCommand( self, entry )
         self.pushUndo( command )
+
+    def readFromKernlog(self):
+        self._readKeylogFile( "/var/log/kern.log.1" )
+        self._readKeylogFile( "/var/log/kern.log" )
+
+    def _readKeylogFile(self, filePath: str):
+        items: List[ DateTimePair ] = KernLogParser.parseKernLog( filePath )
+        for item in items:
+            entry = WorkLogEntry()
+            entry.startTime = item[0]
+            entry.endTime   = item[1]
+            foundEntries = self.history.findEntriesInRange( item[0], item[1] )
+            eSize = len(foundEntries)
+            if eSize < 1:
+                self.history.entries.append( entry )
+            elif eSize == 1:
+                currEntry: WorkLogEntry = foundEntries[0]
+                if currEntry.startTime > item[0]:
+                    currEntry.startTime = item[0]
+                if currEntry.endTime < item[1]:
+                    currEntry.endTime = item[1]
+        self.history.sort()
+
+
+## ===================================================
+
+
+def create_entry_contextmenu( parent: QWidget, dataObject: DataObject, entry: WorkLogEntry ):
+    contextMenu      = QtWidgets.QMenu( parent )
+    addAction        = contextMenu.addAction("Add Entry")
+    editAction       = contextMenu.addAction("Edit Entry")
+    removeAction     = contextMenu.addAction("Remove Entry")
+
+    if entry is None:
+        editAction.setEnabled( False )
+        removeAction.setEnabled( False )
+
+    globalPos = QtGui.QCursor.pos()
+    action = contextMenu.exec_( globalPos )
+
+    if action == addAction:
+        dataObject.addEntry()
+    elif action == editAction:
+        dataObject.editEntry( entry )
+    elif action == removeAction:
+        dataObject.removeEntry( entry )
+
+
+## ===================================================
+
+
+KernLogPair  = Tuple[datetime.datetime, float]
+DateTimePair = Tuple[datetime.datetime, datetime.datetime]
+
+
+class KernLogParser():
+
+    def __init__(self):
+        self.datesList: List[ DateTimePair ] = []
+
+    def parse(self, filePath: str):
+        self.datesList.clear()
+
+        suspendDetected = False
+        timestampList: List[ KernLogPair ] = []
+        currentDate = datetime.datetime.today()
+        engLocale   = QtCore.QLocale(QtCore.QLocale.English)
+        with open( filePath ) as fp:
+            for line in fp:
+                ## Oct 29 21:02:01 wxyz kernel: [ 8353.210086] abc log entry
+                matched = re.match( r'^(.*) (\S+) kernel: \[(.*?)\] (.*)$', line )
+                if matched is None:
+                    _LOGGER.warning("log parsing failed: %s", line)
+                    continue
+                logTimestampStr  = matched.group(1)
+
+                logTimestampStr  = logTimestampStr.replace("  ", " ")
+                ## have to use Qt, because Qt corrupts native "datetime.strptime"
+                logTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
+                logTimestamp     = logTimestamp.toPyDateTime()
+    #             logTimestamp     = datetime.strptime( logTimestampStr, '%b %d %H:%M:%S' )
+
+                logTimestamp     = logTimestamp.replace( year=currentDate.year )
+                kernTimestampStr = matched.group(3).strip()
+                kernTimestamp    = float( kernTimestampStr )
+
+                logEntry         = matched.group(4)
+
+                if "PM: suspend entry" in logEntry:
+                    self._addDates(timestampList)
+                    timestampList.clear()
+                    suspendDetected = True
+                    continue
+                elif "PM: suspend exit" in logEntry:
+                    suspendDetected = False
+                else:
+                    if suspendDetected:
+                        continue
+
+                timestampList.append( (logTimestamp, kernTimestamp) )
+
+        self._addDates(timestampList)
+
+        return self.datesList
+
+    def _addDates(self, timestampList):
+        tsSize = len( timestampList )
+        if tsSize < 1:
+            return
+
+        firstLog = None
+        lastLog  = None
+        for i in range(0, tsSize):
+            currLog: KernLogPair = timestampList[i]
+            if firstLog is None:
+                firstLog = currLog
+                continue
+            if lastLog is None:
+                lastLog = currLog
+                continue
+            if currLog[1] >= lastLog[1]:
+                lastLog = currLog
+                continue
+
+            # next boot found
+            entry: DateTimePair = ( firstLog[0], lastLog[0] )
+            self.datesList.append( entry )
+            firstLog = None
+            lastLog  = None
+
+        if lastLog is not None:
+            entry: DateTimePair = ( firstLog[0], lastLog[0] )
+            self.datesList.append( entry )
+
+    @staticmethod
+    def parseKernLog( filePath: str ) -> List[ DateTimePair ]:
+        parser = KernLogParser()
+        return parser.parse( filePath )

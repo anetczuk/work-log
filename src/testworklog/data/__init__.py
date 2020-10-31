@@ -21,31 +21,15 @@
 # SOFTWARE.
 #
 
-import logging
-
-from PyQt5.QtWidgets import QUndoCommand
-
-from worklog.gui.datatypes import WorkLogData
+import os
 
 
-_LOGGER = logging.getLogger(__name__)
+script_dir = os.path.dirname(__file__)
 
 
-class RemoveEntryCommand( QUndoCommand ):
+def get_data_root_path() -> str:
+    return script_dir
 
-    def __init__(self, dataObject, entry, parentCommand=None):
-        super().__init__(parentCommand)
 
-        self.data = dataObject
-        self.history: WorkLogData = self.data.history
-        self.entry = entry
-
-        self.setText( "Remove Entry: " + str(entry.startTime) )
-
-    def redo(self):
-        self.history.removeEntry( self.entry )
-        self.data.entryChanged.emit()
-
-    def undo(self):
-        self.history.addEntry( self.entry )
-        self.data.entryChanged.emit()
+def get_data_path( fileName: str ) -> str:
+    return os.path.join( script_dir, fileName )

@@ -49,11 +49,7 @@ class EntryDetailsWidget( QtBaseClass ):           # type: ignore
         if self.entry is None:
             return
 
-        self.ui.entryDate.setText( str( self.entry.entryDate ) )
         self.ui.startTime.setText( str( self.entry.startTime ) )
         self.ui.endTime.setText( str( self.entry.endTime ) )
-        self.ui.breakTime.setText( str( self.entry.breakTime ) )
         self.ui.durationTime.setText( str( self.entry.getDuration() ) )
-        self.ui.project.setText( str( self.entry.project ) )
-        self.ui.task.setText( str( self.entry.task ) )
         self.ui.description.setText( str( self.entry.description ) )

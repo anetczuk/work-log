@@ -46,20 +46,7 @@ class EntryDialog( QtBaseClass ):           # type: ignore
         self.history: WorkLogData = history
         self.entry: WorkLogEntry = None
 
-        self.ui.timeRangeRB.clicked.connect( self._disableDuration )
-        self.ui.durationRB.clicked.connect( self._disableRange )
-
         self.finished.connect( self._done )
-
-        projectsList = self.history.getProjectsList()
-        for item in projectsList:
-            self.ui.projectCB.addItem( item )
-        self.ui.projectCB.setCurrentIndex( len(projectsList) - 1 )
-
-        tasksList = self.history.getTasksList()
-        for item in tasksList:
-            self.ui.taskCB.addItem( item )
-        self.ui.taskCB.setCurrentIndex( len(tasksList) - 1 )
 
         self.setObject( entry )
 
@@ -69,36 +56,16 @@ class EntryDialog( QtBaseClass ):           # type: ignore
         else:
             self.entry = WorkLogEntry()
 
-        entryDate = entry.entryDate
-        if entryDate is None:
-            entryDate = datetime.now().date()
-        self.ui.entryDateDE.setDate( entryDate )
+        startDate = entry.startTime
+        if startDate is None:
+            startDate = datetime.now()
+        self.ui.startDTE.setDateTime( startDate )
 
-        if entry.duration is None:
-            self.ui.timeRangeRB.click()
+        endDate = entry.endTime
+        if endDate is None:
+            endDate = datetime.now()
+        self.ui.endDTE.setDateTime( endDate )
 
-            startTime = entry.startTime
-            if startTime is None:
-                startTime = datetime.now().time()
-            self.ui.fromTE.setTime( startTime )
-
-            endTime = entry.endTime
-            if endTime is None:
-                endTime = datetime.now().time()
-            self.ui.toTE.setTime( endTime )
-
-            if entry.breakTime is not None:
-                self.ui.breakTE.setTime( entry.breakTime )
-        else:
-            self.ui.durationRB.click()
-
-            if entry.duration is not None:
-                self.ui.durationTE.setTime( entry.duration )
-
-        if entry.project is not None:
-            self.ui.projectCB.setCurrentText( entry.project )
-        if entry.task is not None:
-            self.ui.taskCB.setCurrentText( entry.task )
         self.ui.descriptionTE.setText( entry.description )
 
         self.adjustSize()
@@ -116,38 +83,12 @@ class EntryDialog( QtBaseClass ):           # type: ignore
         self.ui.durationTE.setEnabled( True )
 
     def _done(self, newValue):
-        newValue = self.ui.entryDateDE.date()
-        data = newValue.toPyDate()
-        self.entry.entryDate = data
+        newValue = self.ui.startDTE.dateTime()
+        data     = newValue.toPyDateTime()
+        self.entry.startTime = data
 
-        if self.ui.fromTE.isEnabled():
-            newValue = self.ui.fromTE.time()
-            data = newValue.toPyTime()
-            self.entry.startTime = data.replace( second=0, microsecond=0 )
-        else:
-            self.entry.startTime = None
+        newValue = self.ui.endDTE.dateTime()
+        data     = newValue.toPyDateTime()
+        self.entry.endTime = data.replace( second=0, microsecond=0 )
 
-        if self.ui.toTE.isEnabled():
-            newValue = self.ui.toTE.time()
-            data = newValue.toPyTime()
-            self.entry.endTime = data.replace( second=0, microsecond=0 )
-        else:
-            self.entry.endTime = None
-
-        if self.ui.breakTE.isEnabled():
-            newValue = self.ui.breakTE.time()
-            data = newValue.toPyTime()
-            self.entry.breakTime = data.replace( second=0, microsecond=0 )
-        else:
-            self.entry.breakTime = None
-
-        if self.ui.durationTE.isEnabled():
-            newValue = self.ui.durationTE.time()
-            data = newValue.toPyTime()
-            self.entry.duration = data.replace( second=0, microsecond=0 )
-        else:
-            self.entry.duration = None
-
-        self.entry.project     = self.ui.projectCB.currentText()
-        self.entry.task        = self.ui.taskCB.currentText()
         self.entry.description = self.ui.descriptionTE.toPlainText()

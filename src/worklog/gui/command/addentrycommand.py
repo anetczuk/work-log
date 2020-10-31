@@ -40,7 +40,7 @@ class AddEntryCommand( QUndoCommand ):
         self.history: WorkLogData = self.data.history
         self.newEntry = newEntry
 
-        self.setText( "Add Entry: " + str(newEntry.task) )
+        self.setText( "Add Entry: " + str(newEntry.startTime) )
 
     def redo(self):
         self.history.addEntry( self.newEntry )

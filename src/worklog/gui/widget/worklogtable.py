@@ -29,11 +29,10 @@ from PyQt5.QtCore import Qt, QModelIndex
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import QAbstractTableModel
 from PyQt5.QtWidgets import QTableView
-from PyQt5.QtWidgets import QMenu
-from PyQt5.QtGui import QCursor, QColor
+from PyQt5.QtGui import QColor
 
 from worklog.gui.datatypes import WorkLogData, WorkLogEntry
-from worklog.gui.dataobject import DataObject
+from worklog.gui.dataobject import DataObject, create_entry_contextmenu
 
 from .. import guistate
 
@@ -119,7 +118,7 @@ class WorkLogTableModel( QAbstractTableModel ):
 
         if role == Qt.BackgroundRole:
             entry = self._rawData.getEntry( index.row() )
-            weekday = entry.entryDate.weekday()
+            weekday = entry.startTime.weekday()
             if weekday == 5 or weekday == 6:
                 return QColor( "#FFCC00" )
 
@@ -127,26 +126,18 @@ class WorkLogTableModel( QAbstractTableModel ):
 
     def attribute(self, entry: WorkLogEntry, index):
         if index == 0:
-            return entry.entryDate
-        elif index == 1:
             return entry.startTime
-        elif index == 2:
+        elif index == 1:
             return entry.endTime
-        elif index == 3:
-            return entry.breakTime
-        elif index == 4:
+        elif index == 2:
             return entry.getDuration()
-        elif index == 5:
-            return entry.project
-        elif index == 6:
-            return entry.task
-        elif index == 7:
+        elif index == 3:
             return entry.description
         return None
 
     @staticmethod
     def attributeLabels():
-        return ( "date", "start time", "end time", "break", "duration", "project", "task", "description" )
+        return ( "start time", "end time", "duration", "description" )
 
 
 ## ===========================================================
@@ -156,13 +147,8 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
 
     def __init__(self, parentObject=None):
         super().__init__(parentObject)
-        self._scope     = "Month"
         self._dayDate   = None
         self._monthDate = None
-
-    def setScope(self, scope: str):
-        self._scope = scope
-        self.invalidateFilter()
 
     def setDay(self, dateValue: date):
         self._dayDate = dateValue
@@ -178,31 +164,12 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
         if data is None:
             return True
 
-        if self._scope == "Day":
-            if self._dayDate is None:
-                return True
-            return data == self._dayDate
-
-        if self._scope == "Month":
-            if self._monthDate is None:
-                return True
-            if data.year != self._monthDate.year:
-                return False
-            if data.month != self._monthDate.month:
-                return False
+        if self._monthDate is None:
             return True
-
-        if self._scope == "Year":
-            if self._monthDate is None:
-                return True
-            if data.year != self._monthDate.year:
-                return False
-            return True
-
-        if self._scope == "All":
-            return True
-
-        _LOGGER.warning( "unknown scope value: %s", self._scope )
+        if data.year != self._monthDate.year:
+            return False
+        if data.month != self._monthDate.month:
+            return False
         return True
 
 
@@ -239,9 +206,6 @@ class WorkLogTable( QTableView ):
 
 #         self.doubleClicked.connect( self._editEntryByIndex )
 
-    def setScope(self, scope: str):
-        self.proxyModel.setScope( scope )
-
     def setDay(self, dateValue: date):
         self.proxyModel.setDay( dateValue )
 
@@ -271,6 +235,7 @@ class WorkLogTable( QTableView ):
     def refreshData(self):
         history: WorkLogData = self.dataObject.history
         self.dataModel.setContent( history )
+        self.clearSelection()
 #         _LOGGER.debug( "entries: %s\n%s", type(history), history.printData() )
 
     def getItem(self, itemIndex: QModelIndex ) -> WorkLogEntry:
@@ -284,24 +249,7 @@ class WorkLogTable( QTableView ):
         if mIndex is not None:
             entry = self.getItem( mIndex )
 
-        contextMenu      = QMenu( self )
-        addAction        = contextMenu.addAction("Add Entry")
-        editAction       = contextMenu.addAction("Edit Entry")
-        removeAction     = contextMenu.addAction("Remove Entry")
-
-        if entry is None:
-            editAction.setEnabled( False )
-            removeAction.setEnabled( False )
-
-        globalPos = QCursor.pos()
-        action = contextMenu.exec_( globalPos )
-
-        if action == addAction:
-            self._addEntry()
-        elif action == editAction:
-            self._editEntry( entry )
-        elif action == removeAction:
-            self._removeEntry( entry )
+        create_entry_contextmenu( self, self.dataObject, entry )
 
     def currentChanged(self, current, previous):
         super().currentChanged( current, previous )

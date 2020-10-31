@@ -23,7 +23,7 @@
 
 import logging
 from datetime import datetime, date, time, timedelta
-from typing import List
+from typing import List, Tuple
 
 from worklog import persist
 
@@ -33,34 +33,34 @@ _LOGGER = logging.getLogger(__name__)
 
 class WorkLogEntry( persist.Versionable ):
 
-    _class_version = 0
+    # 1: added "description" field
+    _class_version = 1
 
     def __init__(self):
-        ## Date    In    Out    Break    in_out_diff    Duration    Overtime    Project    Task
-        self.entryDate: date     = None
-        self.startTime: time     = None
-        self.endTime: time       = None
-        self.breakTime: time     = None
-        self.duration: time      = None
-        self.project             = None
-        self.task                = None
+        self.startTime: datetime = None
+        self.endTime: datetime   = None
         self.description         = ""
 
+    def _convertstate_(self, dict_, dictVersion_ ):
+        _LOGGER.info( "converting object from version %s to %s", dictVersion_, self._class_version )
+
+        if dictVersion_ < 1:
+            # pylint: disable=W0201
+            dict_["description"] = ""
+
+        # pylint: disable=W0201
+        self.__dict__ = dict_
+
     def getDuration(self):
-        if self.entryDate is None or self.startTime is None or self.endTime is None:
-            return self.duration
-        dateTimeA = datetime.combine( self.entryDate, self.startTime )
-        dateTimeB = datetime.combine( self.entryDate, self.endTime )
-        timeDiff = dateTimeB - dateTimeA
-        if self.breakTime is not None:
-            deltaA = datetime.combine(date.min, self.breakTime) - datetime.min
-            timeDiff -= deltaA
-            if timeDiff < timedelta():
-                timeDiff = timedelta()
-        return (datetime.min + timeDiff).time()
+        return self.endTime - self.startTime
+
+    def calculateTimeSpan(self, entryDate: date):
+        startDate: datetime = self.startTime
+        endDate: datetime   = self.endTime
+        return calc_time_span( entryDate, startDate, endDate )
 
     def printData( self ):
-        return str( self.entryDate ) + " " + str( self.project ) + " " + str( self.task )
+        return str( self.startTime ) + " " + str( self.getDuration() )
 
 
 class WorkLogData( persist.Versionable ):
@@ -92,32 +92,25 @@ class WorkLogData( persist.Versionable ):
     def getEntry(self, row) -> WorkLogEntry:
         return self.entries[ row ]
 
-    def getEntriesForDate(self, dateValue):
+    def getEntriesForDate(self, dateValue: date) -> List[ WorkLogEntry ]:
         retList = []
         for entry in self.entries:
-            if entry.entryDate == dateValue:
+            startDate = entry.startTime.date()
+            endDate   = entry.endTime.date()
+            if startDate <= dateValue and endDate >= dateValue:
                 retList.append( entry )
+                continue
         return retList
 
-    def getProjectsList(self):
-        retSet = list()
+    def findEntriesInRange(self, fromDate: datetime, toDate: datetime) -> List[ WorkLogEntry ]:
+        retList = []
         for entry in self.entries:
-            if entry.project is None or not entry.project:
+            if entry.endTime < fromDate:
                 continue
-            if entry.project in retSet:
+            if entry.startTime > toDate:
                 continue
-            retSet.append( entry.project )
-        return retSet
-
-    def getTasksList(self):
-        retSet = list()
-        for entry in self.entries:
-            if entry.task is None or not entry.task:
-                continue
-            if entry.task in retSet:
-                continue
-            retSet.append( entry.task )
-        return retSet
+            retList.append( entry )
+        return retList
 
     def addEntry(self, entry):
         self.entries.append( entry )
@@ -126,29 +119,23 @@ class WorkLogData( persist.Versionable ):
     def removeEntry(self, entry):
         self.entries.remove( entry )
 
-    def addEntryTime(self, entryDate: date, startTime: time, endTime: time, project: str, task: str):
+#     def addEntryTime(self, entryDate: date, startTime: time, endTime: time, project: str, task: str):
+    def addEntryTime(self, entryDate: date, startTime: time, endTime: time, desc: str = ""):
+        dateTimeStart = datetime.combine( entryDate, startTime )
+        dateTimeEnd   = datetime.combine( entryDate, endTime )
         entry = WorkLogEntry()
-        entry.entryDate = entryDate
-        entry.startTime = startTime
-        entry.endTime   = endTime
-        ## no break
-        ## no duration
-        entry.project   = project
-        entry.task      = task
+        entry.startTime   = dateTimeStart
+        entry.endTime     = dateTimeEnd
+        entry.description = desc
         self.addEntry( entry )
         return entry
 
-    def addEntryDuration(self, entryDate: date, duration: time, project: str, task: str):
-        entry = WorkLogEntry()
-        entry.entryDate = entryDate
-        ## no startTime
-        ## no endTime
-        ## no break
-        entry.duration  = duration
-        entry.project   = project
-        entry.task      = task
-        self.addEntry( entry )
-        return entry
+    def addEntryTimeList(self, timeList: List[ Tuple[datetime, datetime] ]):
+        for span in timeList:
+            entry = WorkLogEntry()
+            entry.startTime = span[0]
+            entry.endTime   = span[1]
+            self.addEntry( entry )
 
     def replaceEntry( self, oldEntry: WorkLogEntry, newEntry: WorkLogEntry ):
         _LOGGER.debug( "replacing entry %s with %s", oldEntry, newEntry )
@@ -166,9 +153,9 @@ class WorkLogData( persist.Versionable ):
 
     @staticmethod
     def _sortKey( entry: WorkLogEntry ):
-        retDate = entry.entryDate
+        retDate = entry.startTime
         if retDate is None:
-            return date.min
+            return datetime.min
         return retDate
 
     def printData( self ):
@@ -190,3 +177,29 @@ class DataContainer( persist.Versionable ):
     def __init__(self):
         self.history: WorkLogData = WorkLogData()
         self.notes                = { "notes": "" }        ## default notes
+
+
+## ==================================================================
+
+
+def calc_time_span(entryDate: date, start: datetime, end: datetime):
+    midnight = datetime.combine( entryDate, datetime.min.time() )
+    daySecs  = timedelta( days=1 ).total_seconds()
+    startFactor = 0.0
+    if start is not None:
+        startDate = start.date()
+        if entryDate < startDate:
+            return None
+        elif entryDate == startDate:
+            startDiff = start - midnight
+            startFactor = startDiff.total_seconds() / daySecs
+    dueFactor = 1.0
+    if end is not None:
+        endDate = end.date()
+        if entryDate > endDate:
+            return None
+        elif entryDate == endDate:
+            startDiff = end - midnight
+            dueFactor = startDiff.total_seconds() / daySecs
+    ret = [startFactor, dueFactor]
+    return ret

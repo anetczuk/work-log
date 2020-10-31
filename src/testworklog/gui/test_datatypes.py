@@ -22,8 +22,8 @@
 #
 
 import unittest
-from datetime import date, time
 
+from datetime import date, time
 from worklog.gui.datatypes import WorkLogData
 
 
@@ -36,18 +36,18 @@ class WorkLogDataTest(unittest.TestCase):
         ## Called after testfunction was executed
         pass
 
-    def test_addEntry(self):
+    def test_addEntryTime_sort(self):
         history = WorkLogData()
 
-        history.addEntryDuration( date(year=2020, month=3, day=24),
-                                  time(hour=6, minute=0), "Project A", "Task 1" )
+        history.addEntryTime( date(year=2020, month=3, day=24),
+                              time(hour=6, minute=0), time(hour=12, minute=0), "xxx" )
 
-        history.addEntryDuration( date(year=2020, month=3, day=25),
-                                  time(hour=6, minute=0), "Project A", "Task 2" )
+        history.addEntryTime( date(year=2020, month=3, day=25),
+                              time(hour=6, minute=0), time(hour=12, minute=0), "yyy" )
 
-        history.addEntryDuration( date(year=2020, month=3, day=23),
-                                  time(hour=6, minute=0), "Project A", "Task 3" )
+        history.addEntryTime( date(year=2020, month=3, day=23),
+                              time(hour=6, minute=0), time(hour=12, minute=0), "zzz" )
 
-        self.assertEqual( history[0].task, "Task 3" )
-        self.assertEqual( history[1].task, "Task 1" )
-        self.assertEqual( history[2].task, "Task 2" )
+        self.assertEqual( history[0].description, "zzz" )
+        self.assertEqual( history[1].description, "xxx" )
+        self.assertEqual( history[2].description, "yyy" )

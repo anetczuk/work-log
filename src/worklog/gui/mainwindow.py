@@ -83,14 +83,17 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         ## ================== connecting signals ==================
 
+        self.data.entryChanged.connect( self.ui.navcalendar.updateCells )
+        self.data.entryChanged.connect( self.hideDetails )
+
         self.ui.navcalendar.currentPageChanged.connect( self.calendarPageChanged )
         self.ui.navcalendar.selectionChanged.connect( self.calendarSelectionChanged )
         self.ui.navcalendar.addEntry.connect( self.data.addEntry )
-        self.ui.scopeCB.currentTextChanged.connect( self.scopeChanged )
 
         self.ui.worklogTable.connectData( self.data )
         self.ui.worklogTable.selectedItem.connect( self.showDetails )
         self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
+        self.ui.dayListWidget.connectData( self.data )
 
         self.ui.notesWidget.dataChanged.connect( self._handleNotesChange )
 
@@ -99,7 +102,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.setWindowTitle()
 
-        self.ui.scopeCB.setCurrentIndex( 1 )
         self.ui.navcalendar.setSelectedDate( date.today() )
         self.calendarSelectionChanged()                         ## update table's filter
 
@@ -109,6 +111,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         """Load user related data (e.g. favs, notes)."""
         dataPath = self.getDataPath()
         self.data.load( dataPath )
+        self.data.readFromKernlog()
         self.refreshView()
 
     def triggerSaveTimer(self):
@@ -162,6 +165,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
     def refreshView(self):
         self.ui.worklogTable.refreshData()
         self.ui.notesWidget.setNotes( self.data.notes )
+        self.ui.dayListWidget.updateView()
         self.showDetails( None )
 
     def calendarPageChanged(self, year: int, month: int):
@@ -170,11 +174,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
     def calendarSelectionChanged(self):
         selectedDate = self.ui.navcalendar.selectedDate()
         dateValue = selectedDate.toPyDate()
-        self.ui.worklogTable.setDay( dateValue )
-
-    def scopeChanged(self):
-        scope = self.ui.scopeCB.currentText()
-        self.ui.worklogTable.setScope( scope )
+        self.ui.dayListWidget.setCurrentDate( dateValue )
 
     def showDetails(self, entity):
         if entity is None:

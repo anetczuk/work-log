@@ -75,71 +75,23 @@
        <property name="currentIndex">
         <number>0</number>
        </property>
-       <widget class="QWidget" name="logTab">
+       <widget class="QWidget" name="monthTab">
         <attribute name="title">
-         <string>Log</string>
+         <string>Month</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="WorkLogTable" name="worklogTable"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="dayTab">
+        <attribute name="title">
+         <string>Day</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>Scope:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="scopeCB">
-             <property name="currentIndex">
-              <number>1</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>Day</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Month</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Year</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>All</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="WorkLogTable" name="worklogTable">
-           <property name="selectionMode">
-            <enum>QAbstractItemView::SingleSelection</enum>
-           </property>
-           <property name="selectionBehavior">
-            <enum>QAbstractItemView::SelectRows</enum>
-           </property>
-          </widget>
+          <widget class="DayListWidget" name="dayListWidget" native="true"/>
          </item>
         </layout>
        </widget>
@@ -230,26 +182,32 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>NavCalendar</class>
+   <extends>QCalendarWidget</extends>
+   <header>worklog.gui.widget.navcalendar</header>
+  </customwidget>
+  <customwidget>
    <class>NotesWidget</class>
    <extends>QWidget</extends>
    <header>worklog.gui.widget.noteswidget</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>NavCalendar</class>
-   <extends>QCalendarWidget</extends>
-   <header>worklog.gui.widget.navcalendar</header>
-  </customwidget>
-  <customwidget>
-   <class>WorkLogTable</class>
-   <extends>QTableView</extends>
-   <header>worklog.gui.widget.worklogtable</header>
+   <class>DayListWidget</class>
+   <extends>QWidget</extends>
+   <header>worklog.gui.widget.daylistwidget</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>EntryDetailsWidget</class>
    <extends>QWidget</extends>
    <header>worklog.gui.widget.entrydetailswidget</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WorkLogTable</class>
+   <extends>QTableView</extends>
+   <header>worklog.gui.widget.worklogtable</header>
   </customwidget>
  </customwidgets>
  <resources/>
