@@ -178,6 +178,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.worklogTable.setMonth( year, month )
 
     def calendarSelectionChanged(self):
+        self.ui.worklogTable.clearSelection()
         selectedDate = self.ui.navcalendar.selectedDate()
         dateValue = selectedDate.toPyDate()
         self.ui.dayListWidget.setCurrentDate( dateValue )
@@ -186,6 +187,10 @@ class MainWindow( QtBaseClass ):           # type: ignore
         if entity is None:
             self.hideDetails()
             return
+        entryDate = entity.startTime
+        if entryDate is not None:
+            entryDate = entryDate.date()
+            self.ui.navcalendar.setSelectedDate( entryDate )
         self.ui.entrydetails.setObject( entity )
         self.ui.itemSW.setCurrentIndex( 1 )
         return
