@@ -145,10 +145,10 @@ class DayItem( DrawWidget ):
         path = QPainterPath()
         path.addRoundedRect( 2, 0, width - 4, height, 5, 5 )
 
-#         taskBgColor = monthcalendar.get_task_bgcolor( self.task )
+#         itemBgColor = monthcalendar.get_task_bgcolor( self.task )
         selected = self.isSelected()
-        taskBgColor = get_entry_bgcolor( self.entry, selected )
-        painter.fillPath( path, taskBgColor )
+        itemBgColor = get_entry_bgcolor( self.entry, selected )
+        painter.fillPath( path, itemBgColor )
 
         pathPen = QPen( QColor("black") )
         pathPen.setWidth( 2 )
@@ -354,15 +354,8 @@ class DayListWidget( QWidget ):
         self.currentDate = currDate
         self.updateView()
 
-#     def getTask(self, index):
-#         return self.content.getTask( index )
-
     def setEntries(self, entriesList, day: date ):
         self.content.setEntries( entriesList, day )
-
-#     def setTasks(self, tasksList, day: date ):
-#         occurrencesList = [ task.currentOccurrence() for task in tasksList ]
-#         self.content.setTasks( occurrencesList, day )
 
     def contextMenuEvent( self, _ ):
         entry = self.content.getCurrentEntry()
@@ -379,9 +372,9 @@ class DayListWidget( QWidget ):
 
     def handleSelectedEntry(self, index):
         entry = self.content.getEntry( index )
-        self.emitSelectedTask( entry )
+        self.emitSelectedEntry( entry )
 
-    def emitSelectedTask( self, entry=None ):
+    def emitSelectedEntry( self, entry=None ):
         if entry is not None:
             self.selectedEntry.emit( entry )
         else:

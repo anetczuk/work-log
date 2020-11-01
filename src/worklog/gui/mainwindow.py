@@ -105,7 +105,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.setWindowTitle()
 
         self.ui.navcalendar.setSelectedDate( date.today() )
-        
+
         ## update table's filter
         selectedDate = self.ui.navcalendar.selectedDate()
         self.calendarPageChanged( selectedDate.year(), selectedDate.month() )
