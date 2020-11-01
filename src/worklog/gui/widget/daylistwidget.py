@@ -29,7 +29,7 @@ from PyQt5.QtCore import QRect
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QHBoxLayout
-from PyQt5.QtGui import QPainter, QPainterPath, QPen, QColor, QPalette
+from PyQt5.QtGui import QPainter, QPainterPath, QPen, QColor
 from worklog.gui.datatypes import WorkLogEntry
 from worklog.gui.dataobject import create_entry_contextmenu
 
@@ -247,28 +247,54 @@ class DayListContentWidget( QWidget ):
         hourHeight = hourStep * 24 - 1
         painter.drawLine( 0, hourHeight, width, hourHeight )
 
-        if self.currentIndex >= 0:
-            ## paint background
-            lineRect = self._lineRect( self.currentIndex )
-            bgColor = self.palette().color( QPalette.Highlight )
-            painter.fillRect( lineRect, bgColor )
-
     def resizeEvent(self, event):
         self._resizeItems()
         return super().resizeEvent( event )
 
     def _resizeItems(self):
-        sItems = len(self.items)
-        for i in range(0, sItems):
-            widget = self.items[i]
-            lineRect = self._lineRect( i )
+        linesMap, linesNum = self._linesDict()
+
+        for widget in self.items:
+            widgetLine = linesMap[ widget ]
+            lineRect = self._lineRect( widgetLine, linesNum )
             widget.resizeItem( lineRect )
 
-    def _lineRect(self, index) -> QRect:
+    def _linesDict(self):
         sItems = len(self.items)
-        lineWidth  = max( 0, int( (self.width() - 16) / sItems) )
+        if sItems < 1:
+            return ({}, 0)
+
+        firstWidget = self.items[ 0 ]
+        itemLine = {}
+        itemLine[ firstWidget ] = 0
+        lineItem = []
+        lineItem.append( firstWidget )
+
+        for i in range(1, sItems):
+            currWidget = self.items[ i ]
+            currEntry  = currWidget.entry
+
+            linesNum = len( lineItem )
+            found = False
+            for j in range(0, linesNum):
+                lineWidget = lineItem[ j ]
+                lineEntry  = lineWidget.entry
+                if lineEntry.endTime < currEntry.startTime:
+                    found = True
+                    lineItem[ j ] = currWidget
+                    itemLine[ currWidget ] = j
+                    break
+
+            if found is False:
+                itemLine[ currWidget ] = linesNum
+                lineItem.append( currWidget )
+
+        return (itemLine, len( lineItem ))
+
+    def _lineRect(self, lineIndex, linesNum ) -> QRect:
+        lineWidth  = max( 0, int( (self.width() - 16) / linesNum) )
         lineHeight = self.height()
-        xPos = lineWidth * index + 8
+        xPos = lineWidth * lineIndex + 8
         return QRect( xPos, 0, lineWidth, lineHeight)
 
     def handleItemSelect(self, item: DayItem):
