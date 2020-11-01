@@ -105,7 +105,11 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.setWindowTitle()
 
         self.ui.navcalendar.setSelectedDate( date.today() )
-        self.calendarSelectionChanged()                         ## update table's filter
+        
+        ## update table's filter
+        selectedDate = self.ui.navcalendar.selectedDate()
+        self.calendarPageChanged( selectedDate.year(), selectedDate.month() )
+        self.calendarSelectionChanged()
 
         self.setStatusMessage( "Ready", timeout=10000 )
 
