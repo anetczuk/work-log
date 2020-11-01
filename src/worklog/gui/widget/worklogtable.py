@@ -160,17 +160,25 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
         self.invalidateFilter()
 
     def filterAcceptsRow(self, sourceRow, sourceParent: QModelIndex):
-        dataIndex = self.sourceModel().index( sourceRow, 0, sourceParent )
-        data = self.sourceModel().data(dataIndex, QtCore.Qt.EditRole)
-        if data is None:
+        startIndex = self.sourceModel().index( sourceRow, 0, sourceParent )
+        endIndex   = self.sourceModel().index( sourceRow, 1, sourceParent )
+        startData = self.sourceModel().data(startIndex, QtCore.Qt.EditRole)
+        endData   = self.sourceModel().data(endIndex, QtCore.Qt.EditRole)
+        if startData is None or endData is None:
             return True
 
         if self._monthDate is None:
             return True
-        if data.year != self._monthDate.year:
+
+        if startData.year > self._monthDate.year or endData.year < self._monthDate.year:
             return False
-        if data.month != self._monthDate.month:
-            return False
+        if startData.year == self._monthDate.year:
+            if startData.month > self._monthDate.month:
+                return False
+        if endData.year == self._monthDate.year:
+            if endData.month < self._monthDate.month:
+                return False
+
         return True
 
 
