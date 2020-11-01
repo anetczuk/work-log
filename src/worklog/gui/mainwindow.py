@@ -22,7 +22,7 @@
 #
 
 import logging
-from datetime import date
+from datetime import datetime, date, timedelta
 
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QDialog
@@ -56,6 +56,10 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.data = DataObject( self )
         self.appSettings = AppSettings()
+
+        self.tickTimer = QtCore.QTimer( self )
+        self.tickTimer.timeout.connect( self.handleTimerTick )
+        self.tickTimer.start( 60 * 1000 )                           ## every minute
 
         ## =============================================================
 
@@ -113,11 +117,15 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.setStatusMessage( "Ready", timeout=10000 )
 
+        ## for mainwindow example mostly
+        QtCore.QTimer.singleShot( 1000, self.handleTimerTick )
+
     def loadData(self):
         """Load user related data (e.g. favs, notes)."""
         dataPath = self.getDataPath()
         self.data.load( dataPath )
         self.data.readFromKernlog()
+        self.handleTimerTick()
         self.refreshView()
 
     def triggerSaveTimer(self):
@@ -151,6 +159,17 @@ class MainWindow( QtBaseClass ):           # type: ignore
         settingsDir = settingsDir[0:-4]       ## remove extension
         settingsDir += "-data"
         return settingsDir
+
+    def handleTimerTick(self):
+        history = self.data.history
+        recentEntry = history.recentEntry()
+        if recentEntry is None:
+            return
+        currTime = datetime.today()
+        timeDiff = currTime - recentEntry.endTime
+        if timeDiff > timedelta( hours=2 ):
+            return
+        recentEntry.endTime = currTime
 
     ## ====================================================================
 
