@@ -51,3 +51,11 @@ class WorkLogDataTest(unittest.TestCase):
         self.assertEqual( history[0].description, "zzz" )
         self.assertEqual( history[1].description, "xxx" )
         self.assertEqual( history[2].description, "yyy" )
+
+    def test_getEntry_negative(self):
+        history = WorkLogData()
+        history.addEntryTime( date(year=2020, month=3, day=24),
+                              time(hour=6, minute=0), time(hour=12, minute=0), "xxx" )
+        history.addEntryTime( date(year=2020, month=3, day=25),
+                              time(hour=6, minute=0), time(hour=12, minute=0), "yyy" )
+        self.assertEqual( history[-1].description, "yyy" )

@@ -92,6 +92,11 @@ class WorkLogData( persist.Versionable ):
     def getEntry(self, row) -> WorkLogEntry:
         return self.entries[ row ]
 
+    def recentEntry(self) -> WorkLogEntry:
+        if self.entries:
+            return self.entries[-1]
+        return None
+
     def getEntriesForDate(self, dateValue: date) -> List[ WorkLogEntry ]:
         retList = []
         for entry in self.entries:

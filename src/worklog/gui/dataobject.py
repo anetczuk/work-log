@@ -141,8 +141,16 @@ class DataObject( QObject ):
         self._readKeylogFile( "/var/log/kern.log" )
 
     def _readKeylogFile(self, filePath: str):
+        recentEntry = self.history.recentEntry()
+        recentDate = None
+        if recentEntry is not None:
+            recentDate = recentEntry.endTime
+
         items: List[ DateTimePair ] = KernLogParser.parseKernLog( filePath )
         for item in items:
+            if recentDate is not None:
+                if item[1] < recentDate:
+                    continue
             entry = WorkLogEntry()
             entry.startTime = item[0]
             entry.endTime   = item[1]
