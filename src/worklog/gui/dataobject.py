@@ -37,6 +37,8 @@ from worklog.gui.widget.entrydialog import EntryDialog
 from worklog.gui.command.addentrycommand import AddEntryCommand
 from worklog.gui.command.editentrycommand import EditEntryCommand
 from worklog.gui.command.removeentrycommand import RemoveEntryCommand
+from worklog.gui.command.joinentryupcommand import JoinEntryUpCommand
+from worklog.gui.command.joinentrydowncommand import JoinEntryDownCommand
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -68,9 +70,9 @@ class DataObject( QObject ):
     def history(self) -> WorkLogData:
         return self.dataContainer.history
 
-#     @history.setter
-#     def history(self, history: Dict[str, str]):
-#         self.dataContainer.history = history
+    @history.setter
+    def history(self, history: WorkLogData):
+        self.dataContainer.history = history
 
     @property
     def notes(self) -> Dict[str, str]:
@@ -120,6 +122,18 @@ class DataObject( QObject ):
         if entry is None:
             return
         command = RemoveEntryCommand( self, entry )
+        self.pushUndo( command )
+
+    def joinEntryUp(self, entry):
+        if entry is None:
+            return
+        command = JoinEntryUpCommand( self, entry )
+        self.pushUndo( command )
+
+    def joinEntryDown(self, entry):
+        if entry is None:
+            return
+        command = JoinEntryDownCommand( self, entry )
         self.pushUndo( command )
 
     def readFromKernlog(self):

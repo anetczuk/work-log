@@ -119,6 +119,32 @@ class WorkLogData( persist.Versionable ):
     def removeEntry(self, entry):
         self.entries.remove( entry )
 
+    def joinEntryUp(self, entry):
+        try:
+            entryIndex = self.entries.index( entry )
+            if entryIndex < 1:
+                ## first element
+                return
+            prevEntry = self.entries[ entryIndex - 1 ]
+            prevEntry.endTime = entry.endTime
+            if entry.description:
+                prevEntry.description += "\n" + entry.description
+            self.entries.remove( entry )
+        except ValueError:
+            print("entry:", entry, self.entries)
+            raise
+
+    def joinEntryDown(self, entry):
+        entryIndex = self.entries.index( entry )
+        if entryIndex == len( self.entries ) - 1:
+            ## last element
+            return
+        nextEntry = self.entries[ entryIndex + 1 ]
+        nextEntry.startTime = entry.startTime
+        if entry.description:
+            nextEntry.description = entry.description + "\n" + nextEntry.description
+        self.entries.remove( entry )
+
     def addEntryTime(self, entryDate: date, startTime: time, endTime: time, desc: str = ""):
         dateTimeStart = datetime.combine( entryDate, startTime )
         dateTimeEnd   = datetime.combine( entryDate, endTime )
