@@ -24,7 +24,6 @@
 import logging
 from datetime import date
 
-from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QRect
 from PyQt5.QtCore import pyqtSignal
@@ -34,6 +33,7 @@ from PyQt5.QtGui import QPainter, QPainterPath, QPen, QColor
 
 from worklog.gui.datatypes import WorkLogEntry
 from worklog.gui.datatypes import WorkLogData
+from worklog.gui.dataobject import create_entry_contextmenu
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -385,34 +385,7 @@ class DayListWidget( QWidget ):
 
     def contextMenuEvent( self, _ ):
         entry = self.content.getCurrentEntry()
-#         create_entry_contextmenu( self, self.data, entry )
-
-        contextMenu      = QtWidgets.QMenu( self )
-        addAction        = contextMenu.addAction("Add Entry")
-        editAction       = contextMenu.addAction("Edit Entry")
-        removeAction     = contextMenu.addAction("Remove Entry")
-        joinUpAction     = contextMenu.addAction("Join up")
-        joinDownAction   = contextMenu.addAction("Join down")
-
-        if entry is None:
-            editAction.setEnabled( False )
-            removeAction.setEnabled( False )
-            joinUpAction.setEnabled( False )
-            joinDownAction.setEnabled( False )
-
-        globalPos = QtGui.QCursor.pos()
-        action = contextMenu.exec_( globalPos )
-
-        if action == addAction:
-            self.data.addEntry()
-        elif action == editAction:
-            self.data.editEntry( entry )
-        elif action == removeAction:
-            self.data.removeEntry( entry )
-        elif action == joinUpAction:
-            self.data.joinEntryUp( entry )
-        elif action == joinDownAction:
-            self.data.joinEntryDown( entry )
+        create_entry_contextmenu( self, self.data, entry )
 
     def entryDoubleClicked(self, index):
         entry = self.content.getEntry( index )
