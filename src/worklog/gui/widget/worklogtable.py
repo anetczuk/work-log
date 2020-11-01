@@ -24,7 +24,7 @@
 import logging
 from datetime import date, time, timedelta
 
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtGui
 from PyQt5.QtCore import Qt, QModelIndex
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import QAbstractTableModel
@@ -94,8 +94,6 @@ class WorkLogTableModel( QAbstractTableModel ):
                 return "-"
             if isinstance(rawData, time):
                 return rawData.strftime("%H:%M")
-#             if isinstance(rawData, timedelta):
-#                 return print_timedelta( rawData )
             strData = str(rawData)
             return strData
 
@@ -110,11 +108,13 @@ class WorkLogTableModel( QAbstractTableModel ):
             return rawData
 
         if role == Qt.TextAlignmentRole:
-            if index.column() == 6:
-                return Qt.AlignLeft | Qt.AlignVCenter
-            if index.column() == 7:
+            if index.column() == 4:
                 return Qt.AlignLeft | Qt.AlignVCenter
             return Qt.AlignHCenter | Qt.AlignVCenter
+
+        if role == Qt.ForegroundRole:
+            entry = self._rawData.getEntry( index.row() )
+            return get_entry_fgcolor( entry )
 
         if role == Qt.BackgroundRole:
             entry = self._rawData.getEntry( index.row() )
@@ -132,12 +132,14 @@ class WorkLogTableModel( QAbstractTableModel ):
         elif index == 2:
             return entry.getDuration()
         elif index == 3:
+            return entry.work
+        elif index == 4:
             return entry.description
         return None
 
     @staticmethod
     def attributeLabels():
-        return ( "start time", "end time", "duration", "description" )
+        return ( "Start time", "End time", "Duration", "Work", "Description" )
 
 
 ## ===========================================================
@@ -298,3 +300,11 @@ def print_timedelta( value: timedelta ):
 #     if micros:
 #         s = s + ".%06d" % micros
     return s
+
+
+def get_entry_fgcolor( entry: WorkLogEntry ) -> QtGui.QBrush:
+    if entry.work is False:
+        ## not work -- gray
+        return QtGui.QBrush( QColor( 160, 160, 160 ) )
+    ## normal
+    return QtGui.QBrush( QColor(0, 0, 0) )

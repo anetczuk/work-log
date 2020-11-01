@@ -33,20 +33,24 @@ _LOGGER = logging.getLogger(__name__)
 
 class WorkLogEntry( persist.Versionable ):
 
-    # 1: added "description" field
-    _class_version = 1
+    ## 1: added "description" field
+    ## 2: added "work" field
+    _class_version = 2
 
     def __init__(self):
         self.startTime: datetime = None
         self.endTime: datetime   = None
+        self.work                = True            ## is work time?
         self.description         = ""
 
     def _convertstate_(self, dict_, dictVersion_ ):
         _LOGGER.info( "converting object from version %s to %s", dictVersion_, self._class_version )
 
         if dictVersion_ < 1:
-            # pylint: disable=W0201
             dict_["description"] = ""
+
+        if dictVersion_ < 2:
+            dict_["work"] = True
 
         # pylint: disable=W0201
         self.__dict__ = dict_
@@ -60,7 +64,7 @@ class WorkLogEntry( persist.Versionable ):
         return calc_time_span( entryDate, startDate, endDate )
 
     def printData( self ):
-        return str( self.startTime ) + " " + str( self.getDuration() )
+        return str( self.startTime ) + " " + str( self.getDuration() ) + " " + self.work
 
 
 class WorkLogData( persist.Versionable ):
@@ -150,12 +154,13 @@ class WorkLogData( persist.Versionable ):
             nextEntry.description = entry.description + "\n" + nextEntry.description
         self.entries.remove( entry )
 
-    def addEntryTime(self, entryDate: date, startTime: time, endTime: time, desc: str = ""):
+    def addEntryTime(self, entryDate: date, startTime: time, endTime: time, desc: str = "", work: bool = True):
         dateTimeStart = datetime.combine( entryDate, startTime )
         dateTimeEnd   = datetime.combine( entryDate, endTime )
         entry = WorkLogEntry()
         entry.startTime   = dateTimeStart
         entry.endTime     = dateTimeEnd
+        entry.work        = work
         entry.description = desc
         self.addEntry( entry )
         return entry

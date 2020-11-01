@@ -52,4 +52,5 @@ class EntryDetailsWidget( QtBaseClass ):           # type: ignore
         self.ui.startTime.setText( str( self.entry.startTime ) )
         self.ui.endTime.setText( str( self.entry.endTime ) )
         self.ui.durationTime.setText( str( self.entry.getDuration() ) )
+        self.ui.workLabel.setText( str( self.entry.work ) )
         self.ui.description.setText( str( self.entry.description ) )

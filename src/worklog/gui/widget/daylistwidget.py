@@ -420,23 +420,9 @@ def get_entry_bgcolor( entry: WorkLogEntry, isSelected=False ) -> QColor:
     return bgColor
 
 
-def get_entry_base_bgcolor( _: WorkLogEntry ) -> QColor:
-# def get_entry_base_bgcolor( entry: WorkLogEntry ) -> QColor:
-#     if task.isCompleted():
-#         ## completed -- gray
-#         return QColor( 160, 160, 160 )
-#     if task.isTimedout():
-#         ## timed out -- red
-#         return QColor(220, 0, 0)
-#     if task.isReminded():
-#         ## already reminded -- orange
-#         return QColor(220, 135, 0)    ## orange
-# #     taskFirstDate = task.getFirstDateTime()
-# #     if taskFirstDate is not None:
-# #         diff = taskFirstDate - datetime.datetime.today()
-# #         if diff > datetime.timedelta( days=90 ):
-# #             ## far task -- light gray
-# #             return QColor( 160, 160, 160 )
-
+def get_entry_base_bgcolor( entry: WorkLogEntry ) -> QColor:
+    if entry.work is False:
+        ## not work -- gray
+        return QColor( 160, 160, 160 )
     ## normal
     return QColor(0, 220, 0)

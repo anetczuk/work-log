@@ -66,21 +66,11 @@ class EntryDialog( QtBaseClass ):           # type: ignore
             endDate = datetime.now()
         self.ui.endDTE.setDateTime( endDate )
 
+        self.ui.workCB.setChecked( entry.work )
+
         self.ui.descriptionTE.setText( entry.description )
 
         self.adjustSize()
-
-    def _disableDuration(self):
-        self.ui.fromTE.setEnabled( True )
-        self.ui.toTE.setEnabled( True )
-        self.ui.breakTE.setEnabled( True )
-        self.ui.durationTE.setEnabled( False )
-
-    def _disableRange(self):
-        self.ui.fromTE.setEnabled( False )
-        self.ui.toTE.setEnabled( False )
-        self.ui.breakTE.setEnabled( False )
-        self.ui.durationTE.setEnabled( True )
 
     def _done(self, newValue):
         newValue = self.ui.startDTE.dateTime()
@@ -90,5 +80,7 @@ class EntryDialog( QtBaseClass ):           # type: ignore
         newValue = self.ui.endDTE.dateTime()
         data     = newValue.toPyDateTime()
         self.entry.endTime = data.replace( second=0, microsecond=0 )
+
+        self.entry.work = self.ui.workCB.isChecked()
 
         self.entry.description = self.ui.descriptionTE.toPlainText()
