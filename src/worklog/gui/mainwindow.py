@@ -94,6 +94,8 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.worklogTable.selectedItem.connect( self.showDetails )
         self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
         self.ui.dayListWidget.connectData( self.data )
+        self.ui.dayListWidget.selectedEntry.connect( self.showDetails )
+        self.ui.dayListWidget.entryUnselected.connect( self.hideDetails )
 
         self.ui.notesWidget.dataChanged.connect( self._handleNotesChange )
 

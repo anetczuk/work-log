@@ -53,6 +53,7 @@ class DrawWidget( QWidget ):
 
 
 class DayTimeline( DrawWidget ):
+    """Timeline strip placed on left side of widget."""
 
     itemClicked = pyqtSignal()
 
@@ -105,6 +106,7 @@ class DayTimeline( DrawWidget ):
 
 
 class DayItem( DrawWidget ):
+    """Item widget."""
 
     selectedItem       = pyqtSignal( DrawWidget )
     itemDoubleClicked  = pyqtSignal( DrawWidget )
@@ -176,7 +178,7 @@ class DayItem( DrawWidget ):
 
 class DayListContentWidget( QWidget ):
 
-#     selectedTask       = pyqtSignal( int )
+    selectedEntry       = pyqtSignal( int )
     entryDoubleClicked  = pyqtSignal( int )
 
     def __init__(self, parentWidget=None):
@@ -194,7 +196,7 @@ class DayListContentWidget( QWidget ):
 
     def setCurrentIndex(self, index):
         self.currentIndex = index
-#         self.selectedTask.emit( index )
+        self.selectedEntry.emit( index )
         self.update()
 
     def getCurrentEntry(self) -> WorkLogEntry:
@@ -302,9 +304,9 @@ class DayListContentWidget( QWidget ):
 
 class DayListWidget( QWidget ):
 
-#     selectedTask    = pyqtSignal( Task )
-#     taskUnselected  = pyqtSignal()
-#     editTask        = pyqtSignal( Task )
+    selectedEntry    = pyqtSignal( WorkLogEntry )
+    entryUnselected  = pyqtSignal()
+    editEntry        = pyqtSignal( WorkLogEntry )
 
     def __init__(self, parentWidget=None):
         super().__init__( parentWidget )
@@ -325,17 +327,14 @@ class DayListWidget( QWidget ):
         self.content = DayListContentWidget( self )
         hlayout.addWidget( self.content )
 
-#         self.taskContextMenu = TaskContextMenu( self )
-
         self.timeline.itemClicked.connect( self.unselectItem )
-#         self.content.selectedTask.connect( self.handleSelectedTask )
-#         self.content.entryDoubleClicked.connect( self.entryDoubleClicked )
+        self.content.selectedEntry.connect( self.handleSelectedEntry )
+        self.content.entryDoubleClicked.connect( self.entryDoubleClicked )
 
     def connectData(self, dataObject):
         self.data = dataObject
         self.data.entryChanged.connect( self.updateView )
-#         self.taskContextMenu.connectData( dataObject )
-#         self.editTask.connect( dataObject.editTask )
+        self.editEntry.connect( dataObject.editEntry )
 
 #     def showCompletedTasks(self, show=True):
 #         self.content.showCompleted = show
@@ -369,24 +368,24 @@ class DayListWidget( QWidget ):
         entry = self.content.getCurrentEntry()
         create_entry_contextmenu( self, self.data, entry )
 
-#     def entryDoubleClicked(self, index):
-#         task = self.content.getTask( index )
-#         if task is None:
-#             return
-#         self.editTask.emit( task )
+    def entryDoubleClicked(self, index):
+        entry = self.content.getEntry( index )
+        if entry is None:
+            return
+        self.editEntry.emit( entry )
 
     def unselectItem(self):
         self.content.setCurrentIndex( -1 )
 
-#     def handleSelectedTask(self, index):
-#         task = self.content.getTask( index )
-#         self.emitSelectedTask( task )
+    def handleSelectedEntry(self, index):
+        entry = self.content.getEntry( index )
+        self.emitSelectedTask( entry )
 
-#     def emitSelectedTask( self, task=None ):
-#         if task is not None:
-#             self.selectedTask.emit( task )
-#         else:
-#             self.taskUnselected.emit()
+    def emitSelectedTask( self, entry=None ):
+        if entry is not None:
+            self.selectedEntry.emit( entry )
+        else:
+            self.entryUnselected.emit()
 
 
 ## =========================================================
