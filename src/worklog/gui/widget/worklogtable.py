@@ -22,7 +22,7 @@
 #
 
 import logging
-from datetime import date, time, timedelta
+from datetime import datetime, date, time, timedelta
 
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtCore import Qt, QModelIndex
@@ -94,6 +94,10 @@ class WorkLogTableModel( QAbstractTableModel ):
                 return "-"
             if isinstance(rawData, time):
                 return rawData.strftime("%H:%M")
+            if isinstance(rawData, timedelta):
+                return print_timedelta( rawData )
+            if isinstance(rawData, datetime):
+                return rawData.strftime("%Y-%m-%d %H:%M")
             strData = str(rawData)
             return strData
 

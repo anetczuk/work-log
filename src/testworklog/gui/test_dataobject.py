@@ -42,21 +42,21 @@ class KernLogParserTest(unittest.TestCase):
         logList = KernLogParser.parseKernLog( kernlogPath )
         self.assertEqual( len( logList ), 9 )
         item = logList[0]
-        self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=26, hour=0, minute=9, second=42 ) )
-        self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=26, hour=1, minute=22, second=57 ) )
+        self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=26, hour=0, minute=9 ) )
+        self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=26, hour=1, minute=22 ) )
 
     def test_parseKernLog_fail(self):
         kernlogPath = get_data_path( "kern.log_fail" )
         logList = KernLogParser.parseKernLog( kernlogPath )
         self.assertEqual( len( logList ), 1 )
         item = logList[0]
-        self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49, second=40 ) )
-        self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49, second=40 ) )
+        self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49 ) )
+        self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49 ) )
 
     def test_parseKernLog_suspend(self):
         kernlogPath = get_data_path( "kern.log_suspend" )
         logList = KernLogParser.parseKernLog( kernlogPath )
         self.assertEqual( len( logList ), 4 )
         item = logList[0]
-        self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=46, second=16 ) )
-        self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=53, second=30 ) )
+        self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=46 ) )
+        self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=53 ) )

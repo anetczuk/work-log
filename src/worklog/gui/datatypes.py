@@ -35,7 +35,8 @@ class WorkLogEntry( persist.Versionable ):
 
     ## 1: added "description" field
     ## 2: added "work" field
-    _class_version = 2
+    ## 3: reset seconds value to zero
+    _class_version = 3
 
     def __init__(self):
         self.startTime: datetime = None
@@ -51,6 +52,10 @@ class WorkLogEntry( persist.Versionable ):
 
         if dictVersion_ < 2:
             dict_["work"] = True
+
+        if dictVersion_ < 3:
+            dict_["startTime"] = dict_["startTime"].replace( second=0 )
+            dict_["endTime"]   = dict_["endTime"].replace( second=0 )
 
         # pylint: disable=W0201
         self.__dict__ = dict_

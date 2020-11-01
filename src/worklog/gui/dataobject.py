@@ -233,7 +233,7 @@ class KernLogParser():
                 logTimestamp     = logTimestamp.toPyDateTime()
     #             logTimestamp     = datetime.strptime( logTimestampStr, '%b %d %H:%M:%S' )
 
-                logTimestamp     = logTimestamp.replace( year=currentDate.year )
+                logTimestamp     = logTimestamp.replace( year=currentDate.year, second=0 )
                 kernTimestampStr = matched.group(3).strip()
                 kernTimestamp    = float( kernTimestampStr )
 
