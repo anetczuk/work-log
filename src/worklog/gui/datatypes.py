@@ -119,7 +119,6 @@ class WorkLogData( persist.Versionable ):
     def removeEntry(self, entry):
         self.entries.remove( entry )
 
-#     def addEntryTime(self, entryDate: date, startTime: time, endTime: time, project: str, task: str):
     def addEntryTime(self, entryDate: date, startTime: time, endTime: time, desc: str = ""):
         dateTimeStart = datetime.combine( entryDate, startTime )
         dateTimeEnd   = datetime.combine( entryDate, endTime )

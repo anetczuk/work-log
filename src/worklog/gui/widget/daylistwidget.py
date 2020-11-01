@@ -35,14 +35,6 @@ from worklog.gui.dataobject import create_entry_contextmenu
 
 from worklog.gui.datatypes import WorkLogData
 
-# from worklog.gui.taskcontextmenu import TaskContextMenu
-# from worklog.gui.widget.monthcalendar import get_task_bgcolor
-
-# from worklog.domainmodel.task import Task, TaskOccurrence
-
-
-# UiTargetClass, QtBaseClass = uiloader.loadUiFromClassName( __file__ )
-
 
 _LOGGER = logging.getLogger(__name__)
 

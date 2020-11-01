@@ -55,8 +55,8 @@ class NavCalendar( QCalendarWidget ):
 
         self.cellsTable = self.findChild( QTableView )
 
-        self.taskColor = QColor( self.palette().color( QPalette.Highlight) )
-        self.taskColor.setAlpha( 64 )
+        self.itemColor = QColor( self.palette().color( QPalette.Highlight) )
+        self.itemColor.setAlpha( 64 )
         self.occupiedColor = QColor( QColor(160, 160, 160) )
         self.occupiedColor.setAlpha( 64 )
 
@@ -67,7 +67,7 @@ class NavCalendar( QCalendarWidget ):
         QCalendarWidget.paintCell(self, painter, rect, date)
 
         if self.isHighlighted( date ) is True:
-            painter.fillRect( rect, self.taskColor )
+            painter.fillRect( rect, self.itemColor )
         elif self.isOccupied( date ) is True:
             painter.fillRect( rect, self.occupiedColor )
 
