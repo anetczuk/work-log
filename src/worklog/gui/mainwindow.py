@@ -170,6 +170,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         if timeDiff > timedelta( hours=2 ):
             return
         recentEntry.endTime = currTime
+        self.ui.dayListWidget.update()
 
     ## ====================================================================
 

@@ -366,6 +366,10 @@ class DayListWidget( QWidget ):
 #         self.content.showCompleted = show
 #         self.updateView()
 
+    def update(self):
+        self.content._resizeItems()
+        super().update()
+
     def updateView(self):
         if self.currentDate is None:
             return
