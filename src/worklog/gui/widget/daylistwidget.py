@@ -223,7 +223,7 @@ class DayListContentWidget( QWidget ):
             self.items.append( item )
             item.show()
 
-        self._resizeItems()
+        self.recalculateItemsSize()
         self.update()
 
     def paintEvent(self, event):
@@ -248,10 +248,10 @@ class DayListContentWidget( QWidget ):
         painter.drawLine( 0, hourHeight, width, hourHeight )
 
     def resizeEvent(self, event):
-        self._resizeItems()
+        self.recalculateItemsSize()
         return super().resizeEvent( event )
 
-    def _resizeItems(self):
+    def recalculateItemsSize(self):
         linesMap, linesNum = self._linesDict()
 
         for widget in self.items:
@@ -367,7 +367,7 @@ class DayListWidget( QWidget ):
 #         self.updateView()
 
     def update(self):
-        self.content._resizeItems()
+        self.content.recalculateItemsSize()
         super().update()
 
     def updateView(self):
