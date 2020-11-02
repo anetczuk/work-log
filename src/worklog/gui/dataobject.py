@@ -126,6 +126,16 @@ class DataObject( QObject ):
         command = RemoveEntryCommand( self, entry )
         self.pushUndo( command )
 
+    def addNewEntry(self, workLog):
+        entry = WorkLogEntry()
+        entryDate = datetime.datetime.today()
+        entryDate = entryDate.replace( second=0, microsecond=0 )
+        entry.startTime = entryDate
+        entry.endTime   = entryDate
+        entry.work      = workLog
+        self.history.addEntry( entry )
+        self.entryChanged.emit()
+
     def joinEntryUp(self, entry):
         if entry is None:
             return
@@ -258,7 +268,7 @@ class KernLogParser():
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
                 logTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
                 logTimestamp     = logTimestamp.toPyDateTime()
-                logTimestamp     = logTimestamp.replace( year=currentDate.year, second=0 )
+                logTimestamp     = logTimestamp.replace( year=currentDate.year, second=0, microsecond=0 )
 
                 kernTimestampStr = matched.group(3).strip()
                 kernTimestamp    = float( kernTimestampStr )

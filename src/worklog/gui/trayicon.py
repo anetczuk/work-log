@@ -24,6 +24,7 @@
 import logging
 from enum import Enum, unique
 
+from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QIcon, QPainter, QPainterPath, QBrush, QColor, QPen
 from PyQt5.QtWidgets import QApplication, qApp
 from PyQt5.QtWidgets import QSystemTrayIcon, QMenu, QAction
@@ -83,23 +84,28 @@ def load_icon( fileName: str ):
 
 class TrayIcon(QSystemTrayIcon):
 
+    workLoggingChanged = pyqtSignal( bool )
+
     def __init__(self, parent):
         super().__init__(parent)
 
         self.activated.connect( self._iconActivated )
 
-#         Define and add steps to work with the system tray icon
-#         show - show window
-#         hide - hide window
-#         exit - exit from application
-        self.toggle_window_action = QAction("Show", self)
-        quit_action = QAction("Exit", self)
-        self.toggle_window_action.triggered.connect( self._toggleParent )
-        quit_action.triggered.connect( qApp.quit )
-
         tray_menu = QMenu()
+
+        self.toggle_window_action = QAction("Show", self)
+        self.toggle_window_action.triggered.connect( self._toggleParent )
         tray_menu.addAction( self.toggle_window_action )
+
+        self.workLoggingAction = QAction("Work logging", self)
+        self.workLoggingAction.setCheckable( True )
+        self.workLoggingAction.triggered.connect( self._switchWorkLogging )
+        tray_menu.addAction( self.workLoggingAction )
+        
+        quit_action = QAction("Exit", self)
+        quit_action.triggered.connect( qApp.quit )
         tray_menu.addAction( quit_action )
+
         self.setContextMenu( tray_menu )
 
     def displayMessage(self, message):
@@ -145,6 +151,9 @@ class TrayIcon(QSystemTrayIcon):
 
         self.setIcon( QIcon( pixmap ) )
 
+    def setWorkLogging(self, value: bool):
+        self.workLoggingAction.setChecked( value )
+
     def _iconActivated(self, reason):
 #         print("tray clicked, reason:", reason)
         if reason == 3:
@@ -164,6 +173,10 @@ class TrayIcon(QSystemTrayIcon):
         else:
             parent.show()
         QApplication.setActiveWindow( parent )      ## fix for KDE
+
+    def _switchWorkLogging(self):
+        checked = self.workLoggingAction.isChecked()
+        self.workLoggingChanged.emit( checked )
 
     def updateLabel(self):
         parent = self.parent()

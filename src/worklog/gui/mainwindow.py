@@ -56,6 +56,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.data = DataObject( self )
         self.appSettings = AppSettings()
+        self.loggingWork = True
 
         self.tickTimer = QtCore.QTimer( self )
         self.tickTimer.timeout.connect( self.handleTimerTick )
@@ -81,7 +82,8 @@ class MainWindow( QtBaseClass ):           # type: ignore
         ## =============================================================
 
         self.trayIcon = trayicon.TrayIcon(self)
-        self._updateIconTheme( trayicon.TrayIconTheme.WHITE )
+        self.trayIcon.setWorkLogging( self.loggingWork )
+        self._setTrayIndicator( trayicon.TrayIconTheme.WHITE )
 
         self.ui.navcalendar.highlightModel = DataHighlightModel( self.data )
 
@@ -89,6 +91,8 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.data.entryChanged.connect( self.ui.navcalendar.updateCells )
         self.data.entryChanged.connect( self.hideDetails )
+        
+        self.trayIcon.workLoggingChanged.connect( self.switchWorkLogging )
 
         self.ui.navcalendar.currentPageChanged.connect( self.calendarPageChanged )
         self.ui.navcalendar.selectionChanged.connect( self.calendarSelectionChanged )
@@ -118,15 +122,18 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.setStatusMessage( "Ready", timeout=10000 )
 
-        ## for mainwindow example mostly
-        QtCore.QTimer.singleShot( 1000, self.handleTimerTick )
+        QtCore.QTimer.singleShot( 100, self._finishInit )
+
+    def _finishInit(self):
+        self.switchWorkLogging( self.loggingWork )
+        self.handleTimerTick()
+        self.refreshView()
 
     def loadData(self):
         """Load user related data (e.g. favs, notes)."""
         dataPath = self.getDataPath()
         self.data.load( dataPath )
         self.data.readFromKernlog()
-        self.handleTimerTick()
         self.refreshView()
 
     def triggerSaveTimer(self):
@@ -160,6 +167,20 @@ class MainWindow( QtBaseClass ):           # type: ignore
         settingsDir = settingsDir[0:-4]       ## remove extension
         settingsDir += "-data"
         return settingsDir
+
+    def switchWorkLogging(self, loggingWork: bool):
+        self.loggingWork = loggingWork
+        
+        history = self.data.history
+        recentEntry = history.recentEntry()
+        if recentEntry is None:
+            ## add new entry
+            self.data.addNewEntry( loggingWork )
+        elif recentEntry.work != loggingWork:
+            ## add new entry
+            self.data.addNewEntry( loggingWork )
+
+        self._refreshIconTheme()
 
     def handleTimerTick(self):
         history = self.data.history
@@ -249,11 +270,17 @@ class MainWindow( QtBaseClass ):           # type: ignore
         _LOGGER.debug("setting tray theme: %r", theme)
         self._setTrayIndicator( theme )
 
-    def _setTrayIndicator(self, theme: trayicon.TrayIconTheme):
-        self._updateIconTheme( theme )
+    def _refreshIconTheme(self):
+        theme = self.getIconTheme()
+        self._setTrayIndicator( theme )
 
-    def _updateIconTheme(self, theme: trayicon.TrayIconTheme):
-        appIcon = trayicon.load_icon( theme.normal )
+    def _setTrayIndicator(self, theme: trayicon.TrayIconTheme):
+        iconName = None
+        if self.loggingWork:
+            iconName = theme.working
+        else:
+            iconName = theme.normal
+        appIcon = trayicon.load_icon( iconName )
         self.setWindowIcon( appIcon )
         self.trayIcon.setIcon( appIcon )
 
