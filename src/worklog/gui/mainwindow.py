@@ -253,7 +253,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self._updateIconTheme( theme )
 
     def _updateIconTheme(self, theme: trayicon.TrayIconTheme):
-        appIcon = trayicon.load_main_icon( theme )
+        appIcon = trayicon.load_icon( theme.normal )
         self.setWindowIcon( appIcon )
         self.trayIcon.setIcon( appIcon )
 

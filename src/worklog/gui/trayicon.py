@@ -36,8 +36,20 @@ _LOGGER = logging.getLogger(__name__)
 
 @unique
 class TrayIconTheme(Enum):
-    WHITE         = ['worklog-white.png']
-    BLACK         = ['worklog-black.png']
+    WHITE         = ['worklog-white.png', 'worklog-white-red.png']
+    BLACK         = ['worklog-black.png', 'worklog-black-red.png']
+
+    def __init__(self, fileNamesList):
+        self._normal  = fileNamesList[0]
+        self._working = fileNamesList[1]
+
+    @property
+    def normal(self):
+        return self._normal
+
+    @property
+    def working(self):
+        return self._working
 
     @classmethod
     def findByName(cls, name):
@@ -59,13 +71,18 @@ class TrayIconTheme(Enum):
 
 
 def load_main_icon( theme: TrayIconTheme ):
-    fileName = theme.value[0]
+    fileName = theme.normal
+    return load_icon( fileName )
+
+
+def load_icon( fileName: str ):
     iconPath = resources.get_image_path( fileName )
     _LOGGER.debug("loading icon %s", iconPath)
     return QIcon( iconPath )
 
 
 class TrayIcon(QSystemTrayIcon):
+
     def __init__(self, parent):
         super().__init__(parent)
 
