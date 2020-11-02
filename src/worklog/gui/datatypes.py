@@ -36,13 +36,14 @@ class WorkLogEntry( persist.Versionable ):
     ## 1: added "description" field
     ## 2: added "work" field
     ## 3: reset seconds value to zero
-    _class_version = 3
+    ## 4: add properties
+    _class_version = 4
 
     def __init__(self):
-        self.startTime: datetime = None
-        self.endTime: datetime   = None
-        self.work                = True            ## is work time?
-        self.description         = ""
+        self._startTime: datetime = None
+        self._endTime: datetime   = None
+        self.work                 = True            ## is work time?
+        self.description          = ""
 
     def _convertstate_(self, dict_, dictVersion_ ):
         _LOGGER.info( "converting object from version %s to %s", dictVersion_, self._class_version )
@@ -54,11 +55,40 @@ class WorkLogEntry( persist.Versionable ):
             dict_["work"] = True
 
         if dictVersion_ < 3:
-            dict_["startTime"] = dict_["startTime"].replace( second=0 )
-            dict_["endTime"]   = dict_["endTime"].replace( second=0 )
+            pass
+
+        if dictVersion_ < 4:
+            dict_["_startTime"] = dict_["startTime"]
+            dict_["_endTime"]   = dict_["endTime"]
+            del dict_["startTime"]
+            del dict_["endTime"]
+
+        ## ensure no seconds
+        dict_["_startTime"] = dict_["_startTime"].replace( second=0, microsecond=0 )
+        dict_["_endTime"]   = dict_["_endTime"].replace( second=0, microsecond=0 )
 
         # pylint: disable=W0201
         self.__dict__ = dict_
+
+    @property
+    def startTime(self) -> datetime:
+        return self._startTime
+
+    @startTime.setter
+    def startTime(self, value: datetime):
+        if value is not None:
+            value = value.replace( second=0, microsecond=0 )
+        self._startTime = value
+
+    @property
+    def endTime(self) -> datetime:
+        return self._endTime
+
+    @endTime.setter
+    def endTime(self, value: datetime):
+        if value is not None:
+            value = value.replace( second=0, microsecond=0 )
+        self._endTime = value
 
     def getDuration(self):
         return self.endTime - self.startTime
