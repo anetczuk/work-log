@@ -279,7 +279,7 @@ class DayListContentWidget( QWidget ):
             for j in range(0, linesNum):
                 lineWidget = lineItem[ j ]
                 lineEntry  = lineWidget.entry
-                if lineEntry.endTime < currEntry.startTime:
+                if lineEntry.endTime <= currEntry.startTime:
                     found = True
                     lineItem[ j ] = currWidget
                     itemLine[ currWidget ] = j

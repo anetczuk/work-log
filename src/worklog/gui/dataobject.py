@@ -39,6 +39,8 @@ from worklog.gui.command.editentrycommand import EditEntryCommand
 from worklog.gui.command.removeentrycommand import RemoveEntryCommand
 from worklog.gui.command.joinentryupcommand import JoinEntryUpCommand
 from worklog.gui.command.joinentrydowncommand import JoinEntryDownCommand
+from worklog.gui.command.mergeentryupcommand import MergeEntryUpCommand
+from worklog.gui.command.mergeentrydowncommand import MergeEntryDownCommand
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -136,6 +138,18 @@ class DataObject( QObject ):
         command = JoinEntryDownCommand( self, entry )
         self.pushUndo( command )
 
+    def mergeEntryUp(self, entry):
+        if entry is None:
+            return
+        command = MergeEntryUpCommand( self, entry )
+        self.pushUndo( command )
+
+    def mergeEntryDown(self, entry):
+        if entry is None:
+            return
+        command = MergeEntryDownCommand( self, entry )
+        self.pushUndo( command )
+
     def readFromKernlog(self):
         self._readKeylogFile( "/var/log/kern.log.1" )
         self._readKeylogFile( "/var/log/kern.log" )
@@ -177,12 +191,16 @@ def create_entry_contextmenu( parent: QWidget, dataObject: DataObject, entry: Wo
     removeAction     = contextMenu.addAction("Remove Entry")
     joinUpAction     = contextMenu.addAction("Join up")
     joinDownAction   = contextMenu.addAction("Join down")
+    mergeUpAction    = contextMenu.addAction("Merge up")
+    mergeDownAction  = contextMenu.addAction("Merge down")
 
     if entry is None:
         editAction.setEnabled( False )
         removeAction.setEnabled( False )
         joinUpAction.setEnabled( False )
         joinDownAction.setEnabled( False )
+        mergeUpAction.setEnabled( False )
+        mergeDownAction.setEnabled( False )
 
     globalPos = QtGui.QCursor.pos()
     action = contextMenu.exec_( globalPos )
@@ -197,6 +215,10 @@ def create_entry_contextmenu( parent: QWidget, dataObject: DataObject, entry: Wo
         dataObject.joinEntryUp( entry )
     elif action == joinDownAction:
         dataObject.joinEntryDown( entry )
+    elif action == mergeUpAction:
+        dataObject.mergeEntryUp( entry )
+    elif action == mergeDownAction:
+        dataObject.mergeEntryDown( entry )
 
 
 ## ===================================================

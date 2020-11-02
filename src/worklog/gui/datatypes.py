@@ -140,6 +140,26 @@ class WorkLogData( persist.Versionable ):
                 ## first element
                 return
             prevEntry = self.entries[ entryIndex - 1 ]
+            entry.startTime = prevEntry.endTime
+        except ValueError:
+            print("entry:", entry, self.entries)
+            raise
+
+    def joinEntryDown(self, entry):
+        entryIndex = self.entries.index( entry )
+        if entryIndex == len( self.entries ) - 1:
+            ## last element
+            return
+        nextEntry = self.entries[ entryIndex + 1 ]
+        entry.endTime = nextEntry.startTime
+
+    def mergeEntryUp(self, entry):
+        try:
+            entryIndex = self.entries.index( entry )
+            if entryIndex < 1:
+                ## first element
+                return
+            prevEntry = self.entries[ entryIndex - 1 ]
             prevEntry.endTime = entry.endTime
             if entry.description:
                 prevEntry.description += "\n" + entry.description
@@ -148,7 +168,7 @@ class WorkLogData( persist.Versionable ):
             print("entry:", entry, self.entries)
             raise
 
-    def joinEntryDown(self, entry):
+    def mergeEntryDown(self, entry):
         entryIndex = self.entries.index( entry )
         if entryIndex == len( self.entries ) - 1:
             ## last element
