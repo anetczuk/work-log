@@ -96,6 +96,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.ui.worklogTable.connectData( self.data )
         self.ui.worklogTable.selectedItem.connect( self.showDetails )
+        self.ui.worklogTable.selectedItem.connect( self.setCalendarDate )
         self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
         self.ui.dayListWidget.connectData( self.data )
         self.ui.dayListWidget.selectedEntry.connect( self.showDetails )
@@ -207,13 +208,17 @@ class MainWindow( QtBaseClass ):           # type: ignore
         if entity is None:
             self.hideDetails()
             return
-        entryDate = entity.startTime
-        if entryDate is not None:
-            entryDate = entryDate.date()
-            self.ui.navcalendar.setSelectedDate( entryDate )
         self.ui.entrydetails.setObject( entity )
         self.ui.itemSW.setCurrentIndex( 1 )
-        return
+
+    def setCalendarDate(self, entity):
+        if entity is None:
+            return
+        entryDate = entity.startTime
+        if entryDate is None:
+            return
+        entryDate = entryDate.date()
+        self.ui.navcalendar.setSelectedDate( entryDate )
 
     def hideDetails(self):
         self.ui.itemSW.setCurrentIndex( 0 )
