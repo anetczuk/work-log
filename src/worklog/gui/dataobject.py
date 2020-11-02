@@ -235,7 +235,6 @@ class KernLogParser():
 
     def parse(self, filePath: str):
         self.datesList.clear()
-
         suspendDetected = False
         timestampList: List[ KernLogPair ] = []
         currentDate = datetime.datetime.today()
@@ -249,13 +248,18 @@ class KernLogParser():
                     continue
                 logTimestampStr  = matched.group(1)
 
+                logTimestampStr  = logTimestampStr.strip()
                 logTimestampStr  = logTimestampStr.replace("  ", " ")
+
+                ## can happen that there is some trashy \0 signs in front of string
+                logTimestampStr  = logTimestampStr.strip('\0')
+                ## print( "timestamp:", ".join([ str(ord(c)) for c in logTimestampStr]) )
+
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
                 logTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
                 logTimestamp     = logTimestamp.toPyDateTime()
-    #             logTimestamp     = datetime.strptime( logTimestampStr, '%b %d %H:%M:%S' )
-
                 logTimestamp     = logTimestamp.replace( year=currentDate.year, second=0 )
+
                 kernTimestampStr = matched.group(3).strip()
                 kernTimestamp    = float( kernTimestampStr )
 
