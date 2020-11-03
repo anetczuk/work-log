@@ -128,6 +128,25 @@ class WorkLogTableModel( QAbstractTableModel ):
 
         return None
 
+    def getIndex(self, item, parentIndex: QModelIndex=None, column: int = 0):
+        if parentIndex is None:
+            parentIndex = QModelIndex()
+        if parentIndex.isValid():
+            # dataTask = parentIndex.data( Qt.UserRole )
+            dataTask = parentIndex.internalPointer()
+            if dataTask == item:
+                return parentIndex
+        elems = self.rowCount( parentIndex )
+        for i in range(elems):
+            index = self.index( i, column, parentIndex )
+            if index.isValid() is False:
+                continue
+            # dataTask = parentIndex.data( Qt.UserRole )
+            dataTask = index.internalPointer()
+            if dataTask == item:
+                return index
+        return None
+
     def attribute(self, entry: WorkLogEntry, index):
         if index == 0:
             return entry.startTime
@@ -241,6 +260,30 @@ class WorkLogTable( QTableView ):
         self.dataModel.setContent( history )
         self.clearSelection()
 #         _LOGGER.debug( "entries: %s\n%s", type(history), history.printData() )
+
+    def refreshEntry(self, entry: WorkLogEntry=None):
+        if entry is None:
+            ## unable to refresh entry row -- refresh whole model
+            self.refreshData()
+            return
+        taskIndex = self.getIndex( entry )
+        if taskIndex is None:
+            ## unable to refresh entry row -- refresh whole model
+            self.refreshData()
+            return
+        lastColIndex = taskIndex.sibling( taskIndex.row(), 4 )
+        if lastColIndex is None:
+            ## unable to refresh entry row -- refresh whole model
+            self.refreshData()
+            return
+        self.proxyModel.dataChanged.emit( taskIndex, lastColIndex )
+
+    def getIndex(self, entry: WorkLogEntry, column: int = 0):
+        modelIndex = self.dataModel.getIndex( entry, column=column )
+        if modelIndex is None:
+            return None
+        proxyIndex = self.proxyModel.mapFromSource( modelIndex )
+        return proxyIndex
 
     def getItem(self, itemIndex: QModelIndex ) -> WorkLogEntry:
         sourceIndex = self.proxyModel.mapToSource( itemIndex )

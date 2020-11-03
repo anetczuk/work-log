@@ -194,7 +194,13 @@ class MainWindow( QtBaseClass ):           # type: ignore
         if timeDiff > timedelta( hours=2 ):
             return
         recentEntry.endTime = currTime
+        self.refreshEntryView( recentEntry )
+
+    def refreshEntryView(self, entity):
+        self.ui.worklogTable.refreshEntry( entity )
         self.ui.dayListWidget.update()
+        if self.isShowDetails( entity ):
+            self.showDetails( entity )
 
     ## ====================================================================
 
@@ -234,6 +240,16 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.entrydetails.setObject( entity )
         self.ui.itemSW.setCurrentIndex( 1 )
 
+    def hideDetails(self):
+        self.ui.itemSW.setCurrentIndex( 0 )
+
+    def isShowDetails(self, entity):
+        if self.ui.itemSW.currentIndex() == 0:
+            return False
+        if self.ui.entrydetails.entry is not entity:
+            return False
+        return True
+
     def setCalendarDate(self, entity):
         if entity is None:
             return
@@ -242,9 +258,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
             return
         entryDate = entryDate.date()
         self.ui.navcalendar.setSelectedDate( entryDate )
-
-    def hideDetails(self):
-        self.ui.itemSW.setCurrentIndex( 0 )
 
     ## ====================================================================
 
