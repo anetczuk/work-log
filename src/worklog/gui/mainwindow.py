@@ -297,6 +297,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         _LOGGER.info("received close event, saving session: %s", qApp.isSavingSession() )
         if qApp.isSavingSession():
             ## closing application due to system shutdown
+            self.handleTimerTick()
             self.saveAll()
             return
         ## windows close requested by user -- hide the window
