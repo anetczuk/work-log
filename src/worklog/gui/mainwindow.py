@@ -91,7 +91,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.data.entryChanged.connect( self.ui.navcalendar.updateCells )
         self.data.entryChanged.connect( self.hideDetails )
-        
+
         self.trayIcon.workLoggingChanged.connect( self.switchWorkLogging )
 
         self.ui.navcalendar.currentPageChanged.connect( self.calendarPageChanged )
@@ -170,7 +170,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
     def switchWorkLogging(self, loggingWork: bool):
         self.loggingWork = loggingWork
-        
+
         history = self.data.history
         recentEntry = history.recentEntry()
         if recentEntry is None:

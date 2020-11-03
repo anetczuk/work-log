@@ -101,7 +101,7 @@ class TrayIcon(QSystemTrayIcon):
         self.workLoggingAction.setCheckable( True )
         self.workLoggingAction.triggered.connect( self._switchWorkLogging )
         tray_menu.addAction( self.workLoggingAction )
-        
+
         quit_action = QAction("Exit", self)
         quit_action.triggered.connect( qApp.quit )
         tray_menu.addAction( quit_action )
