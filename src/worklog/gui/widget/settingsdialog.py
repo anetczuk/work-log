@@ -34,22 +34,27 @@ class AppSettings():
 
     def __init__(self):
         self.trayIcon = trayicon.TrayIconTheme.WHITE
+        self.workMode = True
 
     def loadSettings(self, settings):
         settings.beginGroup( "app_settings" )
 
         trayName = settings.value("trayIcon", None, type=str)
         self.trayIcon = trayicon.TrayIconTheme.findByName( trayName )
-
         if self.trayIcon is None:
             self.trayIcon = trayicon.TrayIconTheme.WHITE
+
+        self.workMode = settings.value("workMode", None, type=bool)
+        if self.workMode is None:
+            self.workMode = True
 
         settings.endGroup()
 
     def saveSettings(self, settings):
         settings.beginGroup( "app_settings" )
 
-        settings.setValue("trayIcon", self.trayIcon.name)
+        settings.setValue( "trayIcon", self.trayIcon.name )
+        settings.setValue( "workMode", self.workMode )
 
         settings.endGroup()
 
@@ -81,8 +86,10 @@ class SettingsDialog(QtBaseClass):           # type: ignore
 
         index = trayicon.TrayIconTheme.indexOf( self.appSettings.trayIcon )
         self.ui.trayThemeCB.setCurrentIndex( index )
-
         self.ui.trayThemeCB.currentIndexChanged.connect( self._trayThemeChanged )
+
+        self.ui.workingOnStartupCB.setChecked( self.appSettings.workMode )
+        self.ui.workingOnStartupCB.stateChanged.connect( self._workModeChanged )
 
     ## =====================================================
 
@@ -90,6 +97,10 @@ class SettingsDialog(QtBaseClass):           # type: ignore
         selectedTheme = self.ui.trayThemeCB.currentData()
         self.appSettings.trayIcon = selectedTheme
         self.iconThemeChanged.emit( selectedTheme )
+
+    def _workModeChanged(self):
+        workMode = self.ui.workingOnStartupCB.isChecked()
+        self.appSettings.workMode = workMode
 
     ## =====================================================
 

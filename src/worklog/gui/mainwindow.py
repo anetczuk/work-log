@@ -56,7 +56,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.data = DataObject( self )
         self.appSettings = AppSettings()
-        self.loggingWork = True
 
         self.tickTimer = QtCore.QTimer( self )
         self.tickTimer.timeout.connect( self.updateRecentEntry )
@@ -82,7 +81,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         ## =============================================================
 
         self.trayIcon = trayicon.TrayIcon(self)
-        self.trayIcon.setWorkLogging( self.loggingWork )
+        self.trayIcon.setWorkLogging( True )
         self._setTrayIndicator( trayicon.TrayIconTheme.WHITE )
 
         self.ui.navcalendar.highlightModel = DataHighlightModel( self.data )
@@ -125,7 +124,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
         QtCore.QTimer.singleShot( 100, self._finishInit )
 
     def _finishInit(self):
-        self.switchWorkLogging( self.loggingWork )
         self.updateRecentEntry()
         self.refreshView()
 
@@ -170,8 +168,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
         return settingsDir
 
     def switchWorkLogging(self, loggingWork: bool):
-        self.loggingWork = loggingWork
-
         history = self.data.history
         recentEntry = history.recentEntry()
         if recentEntry is None:
@@ -291,7 +287,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
     def _setTrayIndicator(self, theme: trayicon.TrayIconTheme):
         iconName = None
-        if self.loggingWork:
+        if self.trayIcon.isWorkLogging():
             iconName = theme.working
         else:
             iconName = theme.normal
@@ -361,6 +357,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
     def applySettings(self):
         self.setIconTheme( self.appSettings.trayIcon )
+        workMode = self.appSettings.workMode
+        self.trayIcon.setWorkLogging( workMode )
+        self.switchWorkLogging( workMode )
 
     def loadSettings(self):
         """Load Qt related settings (e.g. layouts, sizes)."""

@@ -151,6 +151,9 @@ class TrayIcon(QSystemTrayIcon):
 
         self.setIcon( QIcon( pixmap ) )
 
+    def isWorkLogging(self):
+        return self.workLoggingAction.isChecked()
+
     def setWorkLogging(self, value: bool):
         self.workLoggingAction.setChecked( value )
 
