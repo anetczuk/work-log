@@ -59,7 +59,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.loggingWork = True
 
         self.tickTimer = QtCore.QTimer( self )
-        self.tickTimer.timeout.connect( self.handleTimerTick )
+        self.tickTimer.timeout.connect( self.updateRecentEntry )
         self.tickTimer.start( 60 * 1000 )                           ## every minute
 
         ## =============================================================
@@ -126,7 +126,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
     def _finishInit(self):
         self.switchWorkLogging( self.loggingWork )
-        self.handleTimerTick()
+        self.updateRecentEntry()
         self.refreshView()
 
     def loadData(self):
@@ -142,6 +142,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         QtCore.QTimer.singleShot( timeout, self.saveData )
 
     def saveData(self):
+        self.updateRecentEntry()
         if self._saveData():
             self.setStatusMessage( "Data saved" )
         else:
@@ -181,8 +182,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
             self.data.addNewEntry( loggingWork )
 
         self._refreshIconTheme()
+        self.updateRecentEntry()
 
-    def handleTimerTick(self):
+    def updateRecentEntry(self):
         history = self.data.history
         recentEntry = history.recentEntry()
         if recentEntry is None:
@@ -297,7 +299,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         _LOGGER.info("received close event, saving session: %s", qApp.isSavingSession() )
         if qApp.isSavingSession():
             ## closing application due to system shutdown
-            self.handleTimerTick()
+            self.updateRecentEntry()
             self.saveAll()
             return
         ## windows close requested by user -- hide the window
@@ -322,6 +324,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
     # pylint: disable=R0201
     def closeApplication(self):
         _LOGGER.info("received close request")
+        self.updateRecentEntry()
         ##self.close()
         qApp.quit()
 
