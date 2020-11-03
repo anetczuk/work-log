@@ -97,7 +97,7 @@ class TrayIcon(QSystemTrayIcon):
         self.toggle_window_action.triggered.connect( self._toggleParent )
         tray_menu.addAction( self.toggle_window_action )
 
-        self.workLoggingAction = QAction("Work logging", self)
+        self.workLoggingAction = QAction("Working", self)
         self.workLoggingAction.setCheckable( True )
         self.workLoggingAction.triggered.connect( self._switchWorkLogging )
         tray_menu.addAction( self.workLoggingAction )
