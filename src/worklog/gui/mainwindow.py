@@ -196,7 +196,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.dayEntriesWidget.update()
         if self.isShowDetails( entity ):
             self.showDetails( entity )
-        self.ui.dayEntriesWidget.updateDayWorkTime( entity )
+        self.ui.dayEntriesWidget.updateDayWorkTime()
 
     ## ====================================================================
 
@@ -220,11 +220,11 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.dayEntriesWidget.updateView()
         self.showDetails( None )
 
-    def updateView(self, entry: WorkLogData=None):
+    def updateView(self):
         self.ui.navcalendar.updateCells()
         self.hideDetails()
         self.ui.dayEntriesWidget.updateDayWorkTime()
-    
+
     def calendarPageChanged(self, year: int, month: int):
         self.ui.worklogTable.setMonth( year, month )
 

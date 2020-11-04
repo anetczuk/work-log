@@ -22,12 +22,11 @@
 #
 
 import logging
-from datetime import datetime, timedelta, date
-import copy
+from datetime import timedelta, date
 
 from PyQt5.QtCore import pyqtSignal
 
-from worklog.gui.datatypes import WorkLogEntry, WorkLogData
+from worklog.gui.datatypes import WorkLogEntry
 
 from .. import uiloader
 
@@ -64,45 +63,10 @@ class DayEntriesWidget( QtBaseClass ):           # type: ignore
     def updateView(self):
         self.ui.dayListWidget.updateView()
 
-    def updateDayWorkTime(self, entry: WorkLogData=None):
+    def updateDayWorkTime(self):
         workTime = timedelta()
         entries = self.ui.dayListWidget.getEntries()
         for item in entries:
             if item.work:
                 workTime += item.getDuration()
         self.ui.dayWorkDurationLabel.setText( str(workTime) )
-
-#     def setObject(self, entry: WorkLogEntry):
-#         if entry is not None:
-#             self.entry = copy.deepcopy( entry )
-#         else:
-#             self.entry = WorkLogEntry()
-# 
-#         startDate = entry.startTime
-#         if startDate is None:
-#             startDate = datetime.now()
-#         self.ui.startDTE.setDateTime( startDate )
-# 
-#         endDate = entry.endTime
-#         if endDate is None:
-#             endDate = datetime.now()
-#         self.ui.endDTE.setDateTime( endDate )
-# 
-#         self.ui.workCB.setChecked( entry.work )
-# 
-#         self.ui.descriptionTE.setText( entry.description )
-# 
-#         self.adjustSize()
-# 
-#     def _done(self, newValue):
-#         newValue = self.ui.startDTE.dateTime()
-#         data     = newValue.toPyDateTime()
-#         self.entry.startTime = data
-# 
-#         newValue = self.ui.endDTE.dateTime()
-#         data     = newValue.toPyDateTime()
-#         self.entry.endTime = data.replace( second=0, microsecond=0 )
-# 
-#         self.entry.work = self.ui.workCB.isChecked()
-# 
-#         self.entry.description = self.ui.descriptionTE.toPlainText()
