@@ -99,7 +99,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.ui.worklogTable.connectData( self.data )
         self.ui.worklogTable.selectedItem.connect( self.showDetails )
-        self.ui.worklogTable.selectedItem.connect( self.setCalendarDate )
+        self.ui.worklogTable.selectedItem.connect( self.setCalendarDateFromTable )
         self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
         self.ui.dayListWidget.connectData( self.data )
         self.ui.dayListWidget.selectedEntry.connect( self.showDetails )
@@ -246,13 +246,17 @@ class MainWindow( QtBaseClass ):           # type: ignore
             return False
         return True
 
-    def setCalendarDate(self, entity):
+    def setCalendarDateFromTable(self, entity):
         if entity is None:
             return
         entryDate = entity.startTime
         if entryDate is None:
             return
         entryDate = entryDate.date()
+        tableMonth = self.ui.worklogTable.getMonth()
+        if tableMonth is not None and entryDate < tableMonth:
+            self.ui.navcalendar.setSelectedDate( tableMonth )
+            return
         self.ui.navcalendar.setSelectedDate( entryDate )
 
     ## ====================================================================

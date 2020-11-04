@@ -174,9 +174,17 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
         super().__init__(parentObject)
         self._monthDate = None
 
-    def setMonth(self, year: int, month: int):
-        self._monthDate = date( year=year, month=month, day=1 )
+    @property
+    def monthDate(self) -> date:
+        return self._monthDate
+
+    @monthDate.setter
+    def monthDate(self, newValue: date):
+        self._monthDate = date( year=newValue.year, month=newValue.month, day=1 )
         self.invalidateFilter()
+
+    def setMonth(self, year: int, month: int):
+        self.monthDate = date( year=year, month=month, day=1 )
 
     def filterAcceptsRow(self, sourceRow, sourceParent: QModelIndex):
         startIndex = self.sourceModel().index( sourceRow, 0, sourceParent )
@@ -231,6 +239,9 @@ class WorkLogTable( QTableView ):
         self.proxyModel = WorkLogSortFilterProxyModel(self)
         self.proxyModel.setSourceModel( self.dataModel )
         self.setModel( self.proxyModel )
+
+    def getMonth(self):
+        return self.proxyModel.monthDate
 
     def setMonth(self, year: int, month: int):
         self.proxyModel.setMonth( year, month )
