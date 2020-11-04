@@ -195,8 +195,9 @@ class DayListContentWidget( QWidget ):
         self.items.clear()
 
     def setCurrentIndex(self, index):
+        if self.currentIndex != -1 or index != -1:
+            self.selectedEntry.emit( index )
         self.currentIndex = index
-        self.selectedEntry.emit( index )
         self.update()
 
     def getCurrentEntry(self) -> WorkLogEntry:
