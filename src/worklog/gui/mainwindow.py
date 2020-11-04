@@ -362,8 +362,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
     def applySettings(self):
         self.setIconTheme( self.appSettings.trayIcon )
         workMode = self.appSettings.workMode
-        self.trayIcon.setWorkLogging( workMode )
-        self.switchWorkLogging( workMode )
+        if self.trayIcon.isWorkLogging() is not workMode:
+            self.trayIcon.setWorkLogging( workMode )
+            self.switchWorkLogging( workMode )
 
     def loadSettings(self):
         """Load Qt related settings (e.g. layouts, sizes)."""
