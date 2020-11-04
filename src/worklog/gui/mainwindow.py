@@ -106,7 +106,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.ui.notesWidget.dataChanged.connect( self._handleNotesChange )
 
-        self.applySettings()
         self.trayIcon.show()
 
         self.setWindowTitle()
@@ -123,6 +122,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         QtCore.QTimer.singleShot( 100, self._finishInit )
 
     def _finishInit(self):
+        self.applySettings( True )
         self.updateRecentEntry()
         self.refreshView()
 
@@ -364,10 +364,10 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.appSettings = dialog.appSettings
         self.applySettings()
 
-    def applySettings(self):
+    def applySettings(self, force=False):
         self.setIconTheme( self.appSettings.trayIcon )
         workMode = self.appSettings.workMode
-        if self.trayIcon.isWorkLogging() is not workMode:
+        if self.trayIcon.isWorkLogging() is not workMode or force is True:
             self.trayIcon.setWorkLogging( workMode )
             self.switchWorkLogging( workMode )
 
@@ -377,8 +377,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
         _LOGGER.debug( "loading app state from %s", settings.fileName() )
 
         self.appSettings.loadSettings( settings )
-
-        self.applySettings()
 
         ## restore widget state and geometry
         guistate.load_state( self, settings )

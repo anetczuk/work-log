@@ -72,6 +72,7 @@ app.setQuitOnLastWindowClosed( False )
 setup_interrupt_handling()
 
 window = MainWindow()
+window.loadSettings()
 
 window.data.history.addEntryTime( date(year=2020, month=3, day=18),
                                   time(hour=9, minute=15), time(hour=12, minute=0), "Task 1" )
@@ -88,8 +89,6 @@ if args.loadUserData:
 else:
 #     window.data.readFromKernlog()
     window.ui.navcalendar.setSelectedDate( window.data.history[-1].startTime )
-window.refreshView()
-window.loadSettings()
 window.show()
 
 exitCode = app.exec_()

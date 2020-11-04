@@ -53,8 +53,8 @@ def run_app():
 
     try:
         window = MainWindow()
-        window.loadData()
         window.loadSettings()
+        window.loadData()
 
         window.show()
 
