@@ -385,6 +385,12 @@ class DayListWidget( QWidget ):
         self.currentDate = currDate
         self.updateView()
 
+    def getEntries(self):
+        if self.currentDate is None:
+            return []
+        history: WorkLogData = self.data.history
+        return history.getEntriesForDate( self.currentDate )
+
     def setEntries(self, entriesList, day: date ):
         self.content.setEntries( entriesList, day )
 

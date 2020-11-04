@@ -88,8 +88,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         ## ================== connecting signals ==================
 
-        self.data.entryChanged.connect( self.ui.navcalendar.updateCells )
-        self.data.entryChanged.connect( self.hideDetails )
+        self.data.entryChanged.connect( self.updateView )
 
         self.trayIcon.workLoggingChanged.connect( self.switchWorkLogging )
 
@@ -101,9 +100,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.worklogTable.selectedItem.connect( self.showDetails )
         self.ui.worklogTable.selectedItem.connect( self.setCalendarDateFromTable )
         self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
-        self.ui.dayListWidget.connectData( self.data )
-        self.ui.dayListWidget.selectedEntry.connect( self.showDetails )
-        self.ui.dayListWidget.entryUnselected.connect( self.hideDetails )
+        self.ui.dayEntriesWidget.connectData( self.data )
+        self.ui.dayEntriesWidget.selectedEntry.connect( self.showDetails )
+        self.ui.dayEntriesWidget.entryUnselected.connect( self.hideDetails )
 
         self.ui.notesWidget.dataChanged.connect( self._handleNotesChange )
 
@@ -194,9 +193,10 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
     def refreshEntryView(self, entity):
         self.ui.worklogTable.refreshEntry( entity )
-        self.ui.dayListWidget.update()
+        self.ui.dayEntriesWidget.update()
         if self.isShowDetails( entity ):
             self.showDetails( entity )
+        self.ui.dayEntriesWidget.updateDayWorkTime( entity )
 
     ## ====================================================================
 
@@ -217,9 +217,14 @@ class MainWindow( QtBaseClass ):           # type: ignore
     def refreshView(self):
         self.ui.worklogTable.refreshData()
         self.ui.notesWidget.setNotes( self.data.notes )
-        self.ui.dayListWidget.updateView()
+        self.ui.dayEntriesWidget.updateView()
         self.showDetails( None )
 
+    def updateView(self, entry: WorkLogData=None):
+        self.ui.navcalendar.updateCells()
+        self.hideDetails()
+        self.ui.dayEntriesWidget.updateDayWorkTime()
+    
     def calendarPageChanged(self, year: int, month: int):
         self.ui.worklogTable.setMonth( year, month )
 
@@ -227,7 +232,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.worklogTable.clearSelection()
         selectedDate = self.ui.navcalendar.selectedDate()
         dateValue = selectedDate.toPyDate()
-        self.ui.dayListWidget.setCurrentDate( dateValue )
+        self.ui.dayEntriesWidget.setCurrentDate( dateValue )
 
     def showDetails(self, entity):
         if entity is None:

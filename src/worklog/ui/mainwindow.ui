@@ -73,7 +73,7 @@
       </widget>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="monthTab">
         <attribute name="title">
@@ -89,9 +89,9 @@
         <attribute name="title">
          <string>Day</string>
         </attribute>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0">
          <item>
-          <widget class="DayListWidget" name="dayListWidget" native="true"/>
+          <widget class="DayEntriesWidget" name="dayEntriesWidget" native="true"/>
          </item>
         </layout>
        </widget>
@@ -193,12 +193,6 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>DayListWidget</class>
-   <extends>QWidget</extends>
-   <header>worklog.gui.widget.daylistwidget</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>EntryDetailsWidget</class>
    <extends>QWidget</extends>
    <header>worklog.gui.widget.entrydetailswidget</header>
@@ -208,6 +202,12 @@
    <class>WorkLogTable</class>
    <extends>QTableView</extends>
    <header>worklog.gui.widget.worklogtable</header>
+  </customwidget>
+  <customwidget>
+   <class>DayEntriesWidget</class>
+   <extends>QWidget</extends>
+   <header>worklog.gui.widget.dayentrieswidget</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
