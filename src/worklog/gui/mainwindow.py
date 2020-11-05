@@ -82,6 +82,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.trayIcon = trayicon.TrayIcon(self)
         self.trayIcon.setWorkLogging( True )
+        self.updateTrayToolTip()
         self._setTrayIndicator( trayicon.TrayIconTheme.WHITE )
 
         self.ui.navcalendar.highlightModel = DataHighlightModel( self.data )
@@ -197,6 +198,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         if self.isShowDetails( entity ):
             self.showDetails( entity )
         self.ui.dayEntriesWidget.updateDayWorkTime()
+        self.updateTrayToolTip()
 
     ## ====================================================================
 
@@ -211,8 +213,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         if len(newTitle) < 1:
             newTitle = AppWindow.appTitle
         super().setWindowTitle( newTitle )
-        if hasattr(self, 'trayIcon'):
-            self.trayIcon.setToolTip( newTitle )
+        self.updateTrayToolTip()
 
     def refreshView(self):
         self.ui.worklogTable.refreshData()
@@ -224,6 +225,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.navcalendar.updateCells()
         self.hideDetails()
         self.ui.dayEntriesWidget.updateDayWorkTime()
+        self.updateTrayToolTip()
 
     def calendarPageChanged(self, year: int, month: int):
         self.ui.worklogTable.setMonth( year, month )
@@ -285,6 +287,23 @@ class MainWindow( QtBaseClass ):           # type: ignore
             statusBar.showMessage( changeStatus[nextIndex], timeout )
         except ValueError:
             statusBar.showMessage( firstStatus, timeout )
+
+    def updateTrayToolTip(self):
+        if hasattr(self, 'trayIcon') is False:
+            return
+        toolTip = self.windowTitle()
+        if hasattr(self, 'data') is False:
+            self.trayIcon.setToolTip( toolTip )
+            return
+        recentEntry = self.data.history.recentEntry()
+        if recentEntry is not None:
+            recentDuration = recentEntry.getDuration()
+            toolTip += "\n\n" + "Current duration: " + str( recentDuration )
+
+        currDate = datetime.today().date()
+        workTime = self.data.calculateWorkDuration( currDate )
+        toolTip += "\n" + "Work duration: " + str( workTime )
+        self.trayIcon.setToolTip( toolTip )
 
     def setIconTheme(self, theme: trayicon.TrayIconTheme):
         _LOGGER.debug("setting tray theme: %r", theme)

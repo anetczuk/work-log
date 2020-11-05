@@ -22,7 +22,7 @@
 #
 
 import logging
-from datetime import timedelta, date
+from datetime import date
 
 from PyQt5.QtCore import pyqtSignal
 
@@ -64,9 +64,7 @@ class DayEntriesWidget( QtBaseClass ):           # type: ignore
         self.ui.dayListWidget.updateView()
 
     def updateDayWorkTime(self):
-        workTime = timedelta()
-        entries = self.ui.dayListWidget.getEntries()
-        for item in entries:
-            if item.work:
-                workTime += item.getDuration()
+        dayWidget = self.ui.dayListWidget
+        currDate = dayWidget.currentDate
+        workTime = dayWidget.data.calculateWorkDuration( currDate )
         self.ui.dayWorkDurationLabel.setText( str(workTime) )

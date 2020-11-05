@@ -172,6 +172,14 @@ class DataObject( QObject ):
         command = MergeEntryDownCommand( self, entry )
         self.pushUndo( command )
 
+    def calculateWorkDuration(self, day: datetime.date):
+        entries = self.history.getEntriesForDate( day )
+        workTime = timedelta()
+        for item in entries:
+            if item.work:
+                workTime += item.getDuration()
+        return workTime
+
     def readFromKernlog(self):
         self._readKeylogFile( "/var/log/kern.log.1" )
         self._readKeylogFile( "/var/log/kern.log" )
