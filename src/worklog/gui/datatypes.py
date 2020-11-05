@@ -99,7 +99,7 @@ class WorkLogEntry( persist.Versionable ):
         return calc_time_span( entryDate, startDate, endDate )
 
     def printData( self ):
-        return str( self.startTime ) + " " + str( self.getDuration() ) + " " + self.work
+        return str( self.startTime ) + " " + str( self.getDuration() ) + " " + str( self.work )
 
 
 class WorkLogData( persist.Versionable ):
