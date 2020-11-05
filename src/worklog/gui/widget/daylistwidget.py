@@ -22,7 +22,7 @@
 #
 
 import logging
-from datetime import date
+from datetime import date, datetime, timedelta
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QRect
@@ -394,9 +394,20 @@ class DayListWidget( QWidget ):
     def setEntries(self, entriesList, day: date ):
         self.content.setEntries( entriesList, day )
 
-    def contextMenuEvent( self, _ ):
-        entry = self.content.getCurrentEntry()
-        create_entry_contextmenu( self, self.data, entry )
+    def contextMenuEvent( self, event ):
+        editEntry = self.content.getCurrentEntry()
+
+        midnight   = datetime.combine( self.currentDate, datetime.min.time() )
+        daySecs    = timedelta( days=1 ).total_seconds()
+        hourFactor = event.pos().y() / self.height()
+        daySecond  = int( hourFactor * daySecs )
+        startTime  = midnight + timedelta( seconds=daySecond )
+
+        addEntry = WorkLogEntry()
+        addEntry.startTime = startTime
+        addEntry.endTime   = startTime + timedelta( hours=1 )
+
+        create_entry_contextmenu( self, self.data, editEntry, addEntry )
 
     def entryDoubleClicked(self, index):
         entry = self.content.getEntry( index )

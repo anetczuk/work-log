@@ -25,6 +25,7 @@ import logging
 import re
 from typing import Dict, List, Tuple
 import datetime
+from datetime import timedelta
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtCore import QObject
@@ -97,7 +98,18 @@ class DataObject( QObject ):
             entryDate = datetime.datetime.today().date()
         entry.startTime = datetime.datetime.combine( entryDate, datetime.time( hour=9 ) )
         entry.endTime   = datetime.datetime.combine( entryDate, datetime.time( hour=17 ) )
+        self.addEntryNew( entry )
 
+    def addEntry2(self, startTime: datetime.datetime):
+        entry = WorkLogEntry()
+        entry.startTime = startTime
+        entry.endTime   = startTime + timedelta( hours=1 )
+        self.addEntryNew( entry )
+
+    def addEntryNew(self, entry: WorkLogEntry):
+        if entry is None:
+            self.addEntry()
+            return
         parentWidget = self.parent()
         entryDialog = EntryDialog( self.history, entry, parentWidget )
         entryDialog.setModal( True )
@@ -194,7 +206,8 @@ class DataObject( QObject ):
 ## ===================================================
 
 
-def create_entry_contextmenu( parent: QWidget, dataObject: DataObject, entry: WorkLogEntry ):
+def create_entry_contextmenu( parent: QWidget, dataObject: DataObject,
+                              editEntry: WorkLogEntry, addEntry: WorkLogEntry=None ):
     contextMenu      = QtWidgets.QMenu( parent )
     addAction        = contextMenu.addAction("Add Entry")
     editAction       = contextMenu.addAction("Edit Entry")
@@ -204,7 +217,7 @@ def create_entry_contextmenu( parent: QWidget, dataObject: DataObject, entry: Wo
     mergeUpAction    = contextMenu.addAction("Merge up")
     mergeDownAction  = contextMenu.addAction("Merge down")
 
-    if entry is None:
+    if editEntry is None:
         editAction.setEnabled( False )
         removeAction.setEnabled( False )
         joinUpAction.setEnabled( False )
@@ -216,19 +229,19 @@ def create_entry_contextmenu( parent: QWidget, dataObject: DataObject, entry: Wo
     action = contextMenu.exec_( globalPos )
 
     if action == addAction:
-        dataObject.addEntry()
+        dataObject.addEntryNew( addEntry )
     elif action == editAction:
-        dataObject.editEntry( entry )
+        dataObject.editEntry( editEntry )
     elif action == removeAction:
-        dataObject.removeEntry( entry )
+        dataObject.removeEntry( editEntry )
     elif action == joinUpAction:
-        dataObject.joinEntryUp( entry )
+        dataObject.joinEntryUp( editEntry )
     elif action == joinDownAction:
-        dataObject.joinEntryDown( entry )
+        dataObject.joinEntryDown( editEntry )
     elif action == mergeUpAction:
-        dataObject.mergeEntryUp( entry )
+        dataObject.mergeEntryUp( editEntry )
     elif action == mergeDownAction:
-        dataObject.mergeEntryDown( entry )
+        dataObject.mergeEntryDown( editEntry )
 
 
 ## ===================================================
