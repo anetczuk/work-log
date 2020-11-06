@@ -68,3 +68,7 @@ class DayEntriesWidget( QtBaseClass ):           # type: ignore
         currDate = dayWidget.currentDate
         workTime = dayWidget.data.calculateWorkDuration( currDate )
         self.ui.dayWorkDurationLabel.setText( str(workTime) )
+
+    def update(self):
+        self.ui.dayListWidget.update()
+        super().update()
