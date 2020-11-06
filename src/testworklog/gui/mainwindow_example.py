@@ -88,9 +88,9 @@ window.setWindowTitle( window.windowTitle() )
 if args.loadUserData:
     window.loadData()
 else:
-#     window.data.readFromKernlog()
+    window.readFromKernlog()
     window.ui.navcalendar.setSelectedDate( window.data.history[-1].startTime )
-    
+
 if args.minimized is True or window.appSettings.startMinimized is True:
     ## starting minimized
     pass

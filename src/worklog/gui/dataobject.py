@@ -180,9 +180,16 @@ class DataObject( QObject ):
                 workTime += item.getDuration()
         return workTime
 
-    def readFromKernlog(self):
+    def readFromKernlog(self, recentWorking=True):
+        oldEntry = self.history.recentEntry()
+
         self._readKeylogFile( "/var/log/kern.log.1" )
         self._readKeylogFile( "/var/log/kern.log" )
+
+        newEntry = self.history.recentEntry()
+        if newEntry is not None:
+            if newEntry != oldEntry:
+                newEntry.work = recentWorking
 
     def _readKeylogFile(self, filePath: str):
         recentEntry = self.history.recentEntry()
