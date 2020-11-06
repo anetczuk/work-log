@@ -87,6 +87,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.ui.navcalendar.highlightModel = DataHighlightModel( self.data )
 
+        self.ui.worklogTable.connectData( self.data )
+        self.ui.dayEntriesWidget.connectData( self.data )
+
         ## ================== connecting signals ==================
 
         self.data.entryChanged.connect( self.updateView )
@@ -97,11 +100,11 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.navcalendar.selectionChanged.connect( self.calendarSelectionChanged )
         self.ui.navcalendar.addEntry.connect( self.data.addEntry )
 
-        self.ui.worklogTable.connectData( self.data )
+        self.ui.showWorkOnlyCB.stateChanged.connect( self._filterWorkEntries )
+
         self.ui.worklogTable.selectedItem.connect( self.showDetails )
         self.ui.worklogTable.selectedItem.connect( self.setCalendarDateFromTable )
         self.ui.worklogTable.itemUnselected.connect( self.hideDetails )
-        self.ui.dayEntriesWidget.connectData( self.data )
         self.ui.dayEntriesWidget.selectedEntry.connect( self.showDetails )
         self.ui.dayEntriesWidget.entryUnselected.connect( self.hideDetails )
 
@@ -269,6 +272,10 @@ class MainWindow( QtBaseClass ):           # type: ignore
             self.ui.navcalendar.setSelectedDate( tableMonth )
             return
         self.ui.navcalendar.setSelectedDate( entryDate )
+
+    def _filterWorkEntries(self):
+        checked = self.ui.showWorkOnlyCB.isChecked()
+        self.ui.worklogTable.filterWorkEntries( checked )
 
     ## ====================================================================
 

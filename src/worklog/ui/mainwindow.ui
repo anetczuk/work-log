@@ -73,13 +73,20 @@
       </widget>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="monthTab">
         <attribute name="title">
          <string>Month</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QCheckBox" name="showWorkOnlyCB">
+           <property name="text">
+            <string>Show work entries only</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="WorkLogTable" name="worklogTable"/>
          </item>

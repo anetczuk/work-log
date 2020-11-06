@@ -173,6 +173,7 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
     def __init__(self, parentObject=None):
         super().__init__(parentObject)
         self._monthDate = None
+        self._workOnly  = False
 
     @property
     def monthDate(self) -> date:
@@ -183,10 +184,25 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
         self._monthDate = date( year=newValue.year, month=newValue.month, day=1 )
         self.invalidateFilter()
 
+    @property
+    def workOnly(self):
+        return self._workOnly
+
+    @workOnly.setter
+    def workOnly(self, newValue):
+        self._workOnly = newValue
+        self.invalidateFilter()
+
     def setMonth(self, year: int, month: int):
         self.monthDate = date( year=year, month=month, day=1 )
 
     def filterAcceptsRow(self, sourceRow, sourceParent: QModelIndex):
+        if self._workOnly:
+            workIndex = self.sourceModel().index( sourceRow, 3, sourceParent )
+            workState = self.sourceModel().data(workIndex, QtCore.Qt.EditRole)
+            if workState is False:
+                return False
+
         startIndex = self.sourceModel().index( sourceRow, 0, sourceParent )
         endIndex   = self.sourceModel().index( sourceRow, 1, sourceParent )
         startData = self.sourceModel().data(startIndex, QtCore.Qt.EditRole)
@@ -245,6 +261,9 @@ class WorkLogTable( QTableView ):
 
     def setMonth(self, year: int, month: int):
         self.proxyModel.setMonth( year, month )
+
+    def filterWorkEntries(self, showWorkOnly):
+        self.proxyModel.workOnly = showWorkOnly
 
     def loadSettings(self, settings):
         wkey = guistate.get_widget_key(self, "tablesettings")
