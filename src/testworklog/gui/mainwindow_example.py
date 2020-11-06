@@ -38,11 +38,14 @@ import logging
 import argparse
 from datetime import date, time
 
+# from PyQt5 import QtCore
 from PyQt5.QtWidgets import QApplication
 
 import worklog.logger as logger
 from worklog.gui.sigint import setup_interrupt_handling
 from worklog.gui.mainwindow import MainWindow
+# from worklog.gui.resources import get_root_path
+# from worklog.gui.utils import render_to_pixmap
 
 
 ## ============================= main section ===================================
@@ -96,6 +99,14 @@ if args.minimized is True or window.appSettings.startMinimized is True:
     pass
 else:
     window.show()
+
+# def make_screen():
+#     _LOGGER.info("making screenshot")
+#     root_path = get_root_path()
+#     render_to_pixmap( window, root_path + "/tmp/mainwindow-big.png" )
+#
+#
+# QtCore.QTimer.singleShot(3000, make_screen)
 
 exitCode = app.exec_()
 
