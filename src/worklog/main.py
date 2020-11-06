@@ -41,7 +41,7 @@ logger.configure()
 _LOGGER = logging.getLogger(__name__)
 
 
-def run_app():
+def run_app( args ):
     ## GUI
     app = QApplication( sys.argv )
     app.setApplicationName("WorkLog")
@@ -56,7 +56,11 @@ def run_app():
         window.loadSettings()
         window.loadData()
 
-        window.show()
+        if args.minimized is True or window.appSettings.startMinimized is True:
+            ## starting minimized
+            pass
+        else:
+            window.show()
 
         exitCode = app.exec_()
 
@@ -87,7 +91,7 @@ def main( args=None ):
     exitCode = 1
 
     try:
-        exitCode = run_app()
+        exitCode = run_app( args )
 
     except BaseException:
         _LOGGER.exception("Exception occurred")

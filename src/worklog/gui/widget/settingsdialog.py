@@ -34,6 +34,7 @@ class AppSettings():
 
     def __init__(self):
         self.trayIcon = trayicon.TrayIconTheme.WHITE
+        self.startMinimized = False
         self.workMode = True
 
     def loadSettings(self, settings):
@@ -43,6 +44,10 @@ class AppSettings():
         self.trayIcon = trayicon.TrayIconTheme.findByName( trayName )
         if self.trayIcon is None:
             self.trayIcon = trayicon.TrayIconTheme.WHITE
+
+        self.startMinimized = settings.value("startMinimized", None, type=bool)
+        if self.startMinimized is None:
+            self.startMinimized = False
 
         self.workMode = settings.value("workMode", None, type=bool)
         if self.workMode is None:
@@ -54,6 +59,7 @@ class AppSettings():
         settings.beginGroup( "app_settings" )
 
         settings.setValue( "trayIcon", self.trayIcon.name )
+        settings.setValue( "startMinimized", self.startMinimized )
         settings.setValue( "workMode", self.workMode )
 
         settings.endGroup()
@@ -88,6 +94,9 @@ class SettingsDialog(QtBaseClass):           # type: ignore
         self.ui.trayThemeCB.setCurrentIndex( index )
         self.ui.trayThemeCB.currentIndexChanged.connect( self._trayThemeChanged )
 
+        self.ui.startMinimizedCB.setChecked( self.appSettings.startMinimized )
+        self.ui.startMinimizedCB.stateChanged.connect( self._startMinimizedChanged )
+
         self.ui.workingOnStartupCB.setChecked( self.appSettings.workMode )
         self.ui.workingOnStartupCB.stateChanged.connect( self._workModeChanged )
 
@@ -98,9 +107,13 @@ class SettingsDialog(QtBaseClass):           # type: ignore
         self.appSettings.trayIcon = selectedTheme
         self.iconThemeChanged.emit( selectedTheme )
 
+    def _startMinimizedChanged(self):
+        value = self.ui.startMinimizedCB.isChecked()
+        self.appSettings.startMinimized = value
+
     def _workModeChanged(self):
-        workMode = self.ui.workingOnStartupCB.isChecked()
-        self.appSettings.workMode = workMode
+        value = self.ui.workingOnStartupCB.isChecked()
+        self.appSettings.workMode = value
 
     ## =====================================================
 
