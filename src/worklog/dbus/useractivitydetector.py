@@ -24,6 +24,8 @@
 import os
 import logging
 import dbus
+# import threading
+# from gi.repository import GObject
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -182,3 +184,13 @@ class SessionDetector():
 
     def _getObject(self, object_path):
         return self.bus.get_object('org.freedesktop.login1', object_path)
+
+
+# class DBusThread( threading.Thread ):
+#
+#     def __init__(self):
+#         super().__init__()
+#
+#     def run(self):
+#         _LOGGER.info("starting dbus main loop")
+#         GObject.MainLoop().run()

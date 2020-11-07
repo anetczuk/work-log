@@ -28,6 +28,8 @@ import sys
 import argparse
 import logging
 
+from dbus.mainloop.glib import DBusGMainLoop
+
 from PyQt5.QtWidgets import QApplication, QMessageBox
 
 import worklog.logger as logger
@@ -42,6 +44,9 @@ _LOGGER = logging.getLogger(__name__)
 
 
 def run_app( args ):
+    ## start dbus loop
+    DBusGMainLoop(set_as_default=True)
+
     ## GUI
     app = QApplication( sys.argv )
     app.setApplicationName("WorkLog")

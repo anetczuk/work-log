@@ -31,7 +31,8 @@ from PyQt5.QtWidgets import qApp
 from worklog.gui import trayicon
 from worklog.gui.appwindow import AppWindow
 from worklog.gui.dataobject import DataObject
-from worklog.gui.datatypes import WorkLogData
+from worklog.gui.datatypes import WorkLogData, WorkLogEntry
+from worklog.gui.useractivity import UserActivity
 from worklog.gui.widget.settingsdialog import SettingsDialog, AppSettings
 from worklog.gui.widget.navcalendar import NavCalendarHighlightModel
 
@@ -56,6 +57,8 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.data = DataObject( self )
         self.appSettings = AppSettings()
+
+        self.activity = UserActivity( self )
 
         self.tickTimer = QtCore.QTimer( self )
         self.tickTimer.timeout.connect( self.updateRecentEntry )
@@ -93,6 +96,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
         ## ================== connecting signals ==================
 
         self.data.entryChanged.connect( self.updateView )
+
+        self.activity.sessionChanged.connect( self._sessionChanged )
+        self.activity.ssaverChanged.connect( self._screenSaverChanged )
 
         self.trayIcon.workLoggingChanged.connect( self.switchWorkLogging )
 
@@ -183,7 +189,6 @@ class MainWindow( QtBaseClass ):           # type: ignore
         elif recentEntry.work != loggingWork:
             ## add new entry
             self.data.addNewEntry( loggingWork )
-
         self._refreshIconTheme()
         self.updateRecentEntry()
 
@@ -198,6 +203,10 @@ class MainWindow( QtBaseClass ):           # type: ignore
             return
         recentEntry.endTime = currTime
         self.refreshEntryView( recentEntry )
+        working = self.trayIcon.isWorkLogging()
+        if working != recentEntry.work:
+            newEntry = self.data.addNewEntry( working )
+            self.refreshEntryView( newEntry )
 
     def refreshEntryView(self, entity):
         self.ui.worklogTable.refreshEntry( entity )
@@ -206,6 +215,40 @@ class MainWindow( QtBaseClass ):           # type: ignore
             self.showDetails( entity )
         self.ui.dayEntriesWidget.updateDayWorkTime()
         self.updateTrayToolTip()
+
+    def _screenSaverChanged(self, state):
+        ### state:
+        ###    True  -- screen saver started
+        ###    False -- screen saver stopped
+        self.awayFromKeyboardChanged( state, "screen saver started" )
+
+    def _sessionChanged(self, state):
+        ### state:
+        ###    True  -- session unlocked
+        ###    False -- session locked
+        if state is True:
+            self.awayFromKeyboardChanged( False, "session locked" )
+        else:
+            self.awayFromKeyboardChanged( True, "session locked" )
+
+    def awayFromKeyboardChanged(self, state, description="") -> WorkLogEntry:
+        ### state:
+        ###    True  -- away from keyboard
+        ###    False -- returned
+        history = self.data.history
+        recentEntry = history.recentEntry()
+        if state is True:
+            if recentEntry.work is False:
+                return None
+            newEntry = self.data.addNewEntry( False )
+            newEntry.description = description
+            return newEntry
+        else:
+            if self.trayIcon.isWorkLogging() is False:
+                return None
+            newEntry = self.data.addNewEntry( True )
+            return newEntry
+        self.refreshView()
 
     ## ====================================================================
 

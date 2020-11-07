@@ -147,6 +147,7 @@ class DataObject( QObject ):
         entry.work      = workLog
         self.history.addEntry( entry )
         self.entryChanged.emit()
+        return entry
 
     def joinEntryUp(self, entry):
         if entry is None:
