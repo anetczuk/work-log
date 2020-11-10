@@ -193,6 +193,7 @@ class WorkLogData( persist.Versionable ):
             prevEntry.endTime = entry.endTime
             if entry.description:
                 prevEntry.description += "\n" + entry.description
+                prevEntry.description = prevEntry.description.strip()
             self.entries.remove( entry )
         except ValueError:
             print("entry:", entry, self.entries)
@@ -207,6 +208,7 @@ class WorkLogData( persist.Versionable ):
         nextEntry.startTime = entry.startTime
         if entry.description:
             nextEntry.description = entry.description + "\n" + nextEntry.description
+            nextEntry.description = nextEntry.description.strip()
         self.entries.remove( entry )
 
     def addEntryTime(self, entryDate: date, startTime: time, endTime: time, desc: str = "", work: bool = True):
