@@ -228,18 +228,20 @@ def create_entry_contextmenu( parent: QWidget, dataObject: DataObject,
     addAction        = contextMenu.addAction("Add Entry")
     editAction       = contextMenu.addAction("Edit Entry")
     removeAction     = contextMenu.addAction("Remove Entry")
-    joinUpAction     = contextMenu.addAction("Join up")
-    joinDownAction   = contextMenu.addAction("Join down")
-    mergeUpAction    = contextMenu.addAction("Merge up")
-    mergeDownAction  = contextMenu.addAction("Merge down")
+
+    joinSubMenu      = contextMenu.addMenu("Join")
+    joinUpAction     = joinSubMenu.addAction("Up")
+    joinDownAction   = joinSubMenu.addAction("Down")
+
+    mergeSubMenu     = contextMenu.addMenu("Merge")
+    mergeUpAction    = mergeSubMenu.addAction("Up")
+    mergeDownAction  = mergeSubMenu.addAction("Down")
 
     if editEntry is None:
         editAction.setEnabled( False )
         removeAction.setEnabled( False )
-        joinUpAction.setEnabled( False )
-        joinDownAction.setEnabled( False )
-        mergeUpAction.setEnabled( False )
-        mergeDownAction.setEnabled( False )
+        joinSubMenu.setEnabled( False )
+        mergeSubMenu.setEnabled( False )
 
     globalPos = QtGui.QCursor.pos()
     action = contextMenu.exec_( globalPos )
