@@ -246,6 +246,11 @@ class MainWindow( QtBaseClass ):           # type: ignore
         else:
             if self.trayIcon.isWorkLogging() is False:
                 return None
+            ## if user went away for short period, then do not count break
+            if recentEntry.getDuration() < timedelta( minutes=3 ):
+                recentEntry.description = ""
+                history.mergeEntryUp( recentEntry )
+                return None
             newEntry = self.data.addNewEntry( True )
             return newEntry
         self.refreshView()
