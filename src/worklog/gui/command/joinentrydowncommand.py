@@ -35,19 +35,19 @@ class JoinEntryDownCommand( QUndoCommand ):
     def __init__(self, dataObject, entry, parentCommand=None):
         super().__init__(parentCommand)
 
-        self.data = dataObject
-        self.newState = self.data.history
-        self.oldState = copy.deepcopy( self.newState )
-
-        self.newState.joinEntryDown( entry )
-        self.data.history = self.oldState
+        self.data     = dataObject
+        self.entry    = entry
+        self.oldEntry = None
 
         self.setText( "Join Entry Down: " + str(entry.startTime) )
 
     def redo(self):
-        self.data.history = self.newState
+        self.oldEntry = copy.deepcopy( self.entry )
+        history = self.data.history
+        nextEntry = history.nextEntry( self.entry )
+        history.joinDown( self.entry, nextEntry )
         self.data.entryChanged.emit()
 
     def undo(self):
-        self.data.history = self.oldState
+        self.entry.__dict__ = self.oldEntry.__dict__
         self.data.entryChanged.emit()

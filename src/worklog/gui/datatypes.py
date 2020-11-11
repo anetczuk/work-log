@@ -136,6 +136,20 @@ class WorkLogData( persist.Versionable ):
             return self.entries[-1]
         return None
 
+    def nextEntry(self, referenceEntry) -> WorkLogEntry:
+        entryIndex = self.entries.index( referenceEntry )
+        if entryIndex == len( self.entries ) - 1:
+            ## last element
+            return None
+        return self.entries[ entryIndex + 1 ]
+
+    def prevEntry(self, referenceEntry) -> WorkLogEntry:
+        entryIndex = self.entries.index( referenceEntry )
+        if entryIndex < 1:
+            ## first element
+            return None
+        return self.entries[ entryIndex - 1 ]
+
     def getEntriesForDate(self, dateValue: date) -> List[ WorkLogEntry ]:
         retList = []
         for entry in self.entries:
@@ -159,57 +173,6 @@ class WorkLogData( persist.Versionable ):
     def addEntry(self, entry):
         self.entries.append( entry )
         self.sort()
-
-    def removeEntry(self, entry):
-        self.entries.remove( entry )
-
-    def joinEntryUp(self, entry):
-        try:
-            entryIndex = self.entries.index( entry )
-            if entryIndex < 1:
-                ## first element
-                return
-            prevEntry = self.entries[ entryIndex - 1 ]
-            entry.startTime = prevEntry.endTime
-        except ValueError:
-            print("entry:", entry, self.entries)
-            raise
-
-    def joinEntryDown(self, entry):
-        entryIndex = self.entries.index( entry )
-        if entryIndex == len( self.entries ) - 1:
-            ## last element
-            return
-        nextEntry = self.entries[ entryIndex + 1 ]
-        entry.endTime = nextEntry.startTime
-
-    def mergeEntryUp(self, entry):
-        try:
-            entryIndex = self.entries.index( entry )
-            if entryIndex < 1:
-                ## first element
-                return
-            prevEntry = self.entries[ entryIndex - 1 ]
-            prevEntry.endTime = entry.endTime
-            if entry.description:
-                prevEntry.description += "\n" + entry.description
-                prevEntry.description = prevEntry.description.strip()
-            self.entries.remove( entry )
-        except ValueError:
-            print("entry:", entry, self.entries)
-            raise
-
-    def mergeEntryDown(self, entry):
-        entryIndex = self.entries.index( entry )
-        if entryIndex == len( self.entries ) - 1:
-            ## last element
-            return
-        nextEntry = self.entries[ entryIndex + 1 ]
-        nextEntry.startTime = entry.startTime
-        if entry.description:
-            nextEntry.description = entry.description + "\n" + nextEntry.description
-            nextEntry.description = nextEntry.description.strip()
-        self.entries.remove( entry )
 
     def addEntryTime(self, entryDate: date, startTime: time, endTime: time, desc: str = "", work: bool = True):
         dateTimeStart = datetime.combine( entryDate, startTime )
@@ -239,6 +202,62 @@ class WorkLogData( persist.Versionable ):
                 return True
         _LOGGER.debug( "replacing failed" )
         return False
+
+    def removeEntry(self, entry):
+        self.entries.remove( entry )
+
+    def joinEntryUp(self, entry):
+        try:
+            prevEntry = self.prevEntry( entry )
+            if prevEntry is None:
+                return
+            self.joinUp( entry, prevEntry )
+        except ValueError:
+            print("entry:", entry, self.entries)
+            raise
+
+    def joinUp(self, entry, prevEntry):
+        if prevEntry is None:
+            return
+        entry.startTime = prevEntry.endTime
+
+    def joinEntryDown(self, entry):
+        nextEntry = self.nextEntry( entry )
+        if nextEntry is None:
+            return
+        entry.endTime = nextEntry.startTime
+        self.joinDown( entry, nextEntry )
+
+    def joinDown(self, entry, nextEntry):
+        if nextEntry is None:
+            return
+        entry.endTime = nextEntry.startTime
+
+    def mergeEntryUp(self, entry):
+        prevEntry = self.prevEntry( entry )
+        if prevEntry is None:
+            return
+        self.mergeUp( entry, prevEntry )
+
+    def mergeUp(self, sourceEntry, targetEntry):
+        targetEntry.endTime = sourceEntry.endTime
+        if sourceEntry.description:
+            targetEntry.description = sourceEntry.description + "\n" + targetEntry.description
+            targetEntry.description = targetEntry.description.strip()
+        self.entries.remove( sourceEntry )
+
+    def mergeEntryDown(self, entry):
+        nextEntry = self.nextEntry( entry )
+        if nextEntry is None:
+            return
+        self.mergeDown( entry, nextEntry )
+
+    def mergeDown(self, sourceEntry, targetEntry):
+        targetEntry.startTime = sourceEntry.startTime
+        if sourceEntry.description:
+            targetEntry.description = sourceEntry.description + "\n" + targetEntry.description
+            targetEntry.description = targetEntry.description.strip()
+        self.entries.remove( sourceEntry )
 
     def sort(self):
         self.entries.sort( key=self._sortKey, reverse=False )

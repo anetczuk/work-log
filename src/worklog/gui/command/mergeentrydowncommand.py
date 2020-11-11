@@ -35,19 +35,22 @@ class MergeEntryDownCommand( QUndoCommand ):
     def __init__(self, dataObject, entry, parentCommand=None):
         super().__init__(parentCommand)
 
-        self.data = dataObject
-        self.newState = self.data.history
-        self.oldState = copy.deepcopy( self.newState )
-
-        self.newState.mergeEntryDown( entry )
-        self.data.history = self.oldState
+        self.data      = dataObject
+        self.entry     = entry
+        self.oldEntry  = None
+        self.nextEntry = None
 
         self.setText( "Merge Entry Down: " + str(entry.startTime) )
 
     def redo(self):
-        self.data.history = self.newState
+        history = self.data.history
+        self.nextEntry = history.nextEntry( self.entry )
+        self.oldEntry = copy.deepcopy( self.nextEntry )
+        history.mergeDown( self.entry, self.nextEntry )
         self.data.entryChanged.emit()
 
     def undo(self):
-        self.data.history = self.oldState
+        history = self.data.history
+        self.nextEntry.__dict__ = self.oldEntry.__dict__
+        history.addEntry( self.entry )
         self.data.entryChanged.emit()
