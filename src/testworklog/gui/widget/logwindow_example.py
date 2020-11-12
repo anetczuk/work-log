@@ -36,16 +36,13 @@ except ImportError as error:
 import sys
 import logging
 import argparse
-from datetime import date, time
-
-from dbus.mainloop.glib import DBusGMainLoop
 
 # from PyQt5 import QtCore
 from PyQt5.QtWidgets import QApplication
 
 import worklog.logger as logger
 from worklog.gui.sigint import setup_interrupt_handling
-from worklog.gui.mainwindow import MainWindow
+from worklog.gui.widget.logwidget import create_window
 # from worklog.gui.resources import get_root_path
 # from worklog.gui.utils import render_to_pixmap
 
@@ -58,8 +55,8 @@ if __name__ != '__main__':
 
 
 parser = argparse.ArgumentParser(description='Work Log Example')
-parser.add_argument('-lud', '--loadUserData', action='store_const', const=True, default=False, help='Load user data' )
-parser.add_argument('--minimized', action='store_const', const=True, default=False, help='Start minimized' )
+# parser.add_argument('-lud', '--loadUserData', action='store_const', const=True, default=False, help='Load user data' )
+# parser.add_argument('--minimized', action='store_const', const=True, default=False, help='Start minimized' )
 
 args = parser.parse_args()
 
@@ -73,52 +70,17 @@ _LOGGER = logging.getLogger(__name__)
 _LOGGER.debug( "Starting the application" )
 
 
-## start dbus loop
-DBusGMainLoop(set_as_default=True)
-
 app = QApplication(sys.argv)
 app.setApplicationName("WorkLog")
 app.setOrganizationName("arnet")
-app.setQuitOnLastWindowClosed( False )
+app.setQuitOnLastWindowClosed( True )
 
 setup_interrupt_handling()
 
-window = MainWindow()
-window.loadSettings()
+window = create_window()
 
-window.data.history.addEntryTime( date(year=2020, month=3, day=18),
-                                  time(hour=9, minute=15), time(hour=12, minute=0), "Task 1" )
-window.data.history.addEntryTime( date(year=2020, month=3, day=22),
-                                  time(hour=8, minute=0), time(hour=15, minute=0), "Task 2" )
-window.data.history.addEntryTime( date(year=2020, month=3, day=22),
-                                  time(hour=18, minute=0), time(hour=20, minute=0), "Task 3", False )
-
-window.setWindowTitleSuffix( "Preview" )
-window.disableSaving()
-window.setWindowTitle( window.windowTitle() )
-if args.loadUserData:
-    window.loadData()
-else:
-    window.readFromKernlog()
-    window.ui.navcalendar.setSelectedDate( window.data.history[-1].startTime )
-
-if args.minimized is True or window.appSettings.startMinimized is True:
-    ## starting minimized
-    pass
-else:
-    window.show()
-
-# def make_screen():
-#     _LOGGER.info("making screenshot")
-#     root_path = get_root_path()
-#     render_to_pixmap( window, root_path + "/tmp/mainwindow-big.png" )
-#
-#
-# QtCore.QTimer.singleShot(3000, make_screen)
+# window.setWindowTitleSuffix( "Preview" )
+# window.setWindowTitle( window.windowTitle() )
 
 exitCode = app.exec_()
-
-if exitCode == 0:
-    window.saveSettings()
-
 sys.exit( exitCode )

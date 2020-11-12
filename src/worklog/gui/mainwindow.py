@@ -35,6 +35,7 @@ from worklog.gui.datatypes import WorkLogData, WorkLogEntry
 from worklog.gui.useractivity import UserActivity
 from worklog.gui.widget.settingsdialog import SettingsDialog, AppSettings
 from worklog.gui.widget.navcalendar import NavCalendarHighlightModel
+from worklog.gui.widget import logwidget
 
 from . import uiloader
 from . import guistate
@@ -79,6 +80,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.ui.menuEdit.removeAction( self.ui.actionRedo )
 
         self.ui.actionSave_data.triggered.connect( self.saveData )
+        self.ui.actionLogs.triggered.connect( self.openLogsWindow )
         self.ui.actionOptions.triggered.connect( self.openSettingsDialog )
 
         ## =============================================================
@@ -430,6 +432,9 @@ class MainWindow( QtBaseClass ):           # type: ignore
         self.saveData()
 
     ## ====================================================================
+
+    def openLogsWindow(self):
+        logwidget.create_window( self )
 
     def openSettingsDialog(self):
         dialog = SettingsDialog( self.appSettings, self )

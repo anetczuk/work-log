@@ -143,6 +143,7 @@
      <string>&amp;File</string>
     </property>
     <addaction name="actionSave_data"/>
+    <addaction name="actionLogs"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
@@ -184,6 +185,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionLogs">
+   <property name="text">
+    <string>Logs</string>
    </property>
   </action>
  </widget>
