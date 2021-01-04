@@ -34,7 +34,13 @@ _LOGGER = logging.getLogger(__name__)
 
 class UserActivity( QObject ):
 
+    ### state:
+    ###    True  -- screen saver started
+    ###    False -- screen saver stopped
     ssaverChanged  = pyqtSignal( bool )
+    ### state:
+    ###    True  -- session locked
+    ###    False -- session unlocked
     sessionChanged = pyqtSignal( bool )
 
     def __init__(self, parentWidget=None):
@@ -46,16 +52,27 @@ class UserActivity( QObject ):
         self.sessionDetector = SessionDetector()
         self.sessionDetector.setCallback( self._sessionActivityCallback )
 
+    def isAwayFromKeyboard(self):
+        if self.screenSaverDetector.isActivated():
+            _LOGGER.info( "screen saver active" )
+            return True
+        if self.sessionDetector.isLocked():
+            _LOGGER.info( "session locked" )
+            return True
+        return False
+
     def _screenSaverActivationCallback(self, activated):
-        _LOGGER.info( "screen saver active: %s", activated )
-        if activated == 0:
-            self.ssaverChanged.emit( False )
-        else:
+        if activated != 0:
+            _LOGGER.info( "screen saver started" )
             self.ssaverChanged.emit( True )
+        else:
+            _LOGGER.info( "screen saver stopped" )
+            self.ssaverChanged.emit( False )
 
     def _sessionActivityCallback(self, activated):
-        _LOGGER.info( "session active: %s", activated )
-        if activated == 0:
-            self.sessionChanged.emit( False )
-        else:
+        if activated != 0:
+            _LOGGER.info( "session locked" )
             self.sessionChanged.emit( True )
+        else:
+            _LOGGER.info( "session unlocked" )
+            self.sessionChanged.emit( False )

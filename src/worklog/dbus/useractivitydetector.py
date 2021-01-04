@@ -45,12 +45,12 @@ class ScreenSaverDetector():
             self.bus = dbus.SessionBus( mainloop=dbus_loop )
         else:
             self.bus = dbus.SessionBus()
-
+        
         interfaces = ('org.freedesktop.ScreenSaver', 'org.kde.screensaver', 'org.gnome.ScreenSaver')
         for iface in interfaces:
             try:
                 saver = self.bus.get_object(iface, '/ScreenSaver')
-                _LOGGER.debug("Using object: %s", iface)
+                ## _LOGGER.debug("Using object: %s", iface)
                 self.saver_interface = dbus.Interface(saver, dbus_interface=iface)
                 ## print("methods:\n", saver.Introspect())
 
@@ -60,12 +60,13 @@ class ScreenSaverDetector():
                                               iface,
                                               path='/ScreenSaver' )
                 self.dbus_interface = iface
+                _LOGGER.debug( "screensaver interface detected: %s", iface )
                 break
             except dbus.exceptions.DBusException:
                 ## do nothing
                 pass
         if self.saver_interface is None:
-            _LOGGER.warning("could not screensaver interface")
+            _LOGGER.warning("could not detect screensaver interface")
 
     def __del__(self):
         ## body of destructor
@@ -97,16 +98,21 @@ class ScreenSaverDetector():
                                           self.dbus_interface,
                                           path='/ScreenSaver' )
 
+    ## newState values:
+    ##      1 -- screensaver activated
+    ##      0 -- screensaver deactivated
     def _screenSaverChangedCallback(self, newState):
+        _LOGGER.debug( "screensaver activation changed: %s", newState )
         if self.enabledCallback is False:
-            _LOGGER.debug( "screen saver activation changed: %s", newState )
             return
         if self.saverStateCallback is None:
-            _LOGGER.debug( "screen saver activation changed: %s", newState )
             return
         self.saverStateCallback( newState )
 
 
+##
+## it seems that under KDE the signals aren't received
+##
 class SessionDetector():
 
     def __init__(self, dbus_loop=None):
@@ -114,6 +120,7 @@ class SessionDetector():
         self.saver_interface = None
         self.dbus_interface = None
 
+        self.lockState = 0
         self.enabledCallback = True
         self.activityCallback = None
 
@@ -149,20 +156,22 @@ class SessionDetector():
         Callback receives one parameter: bool
         """
         self.activityCallback = callback
+        
+    def isLocked(self):
+        if self.lockState != 0:
+            return True
+        return False
 
     def _sessionLockCallback(self):
         _LOGGER.debug( "session locked" )
+        self._stateChanged( 1 )
 
     def _sessionUnlockCallback(self):
         _LOGGER.debug( "session unlocked" )
+        self._stateChanged( 0 )
 
     def _sessionPropertiesChangedCallback(self, *args):
-        if self.enabledCallback is False:
-            _LOGGER.debug( "session props change: %s", args )
-            return
-        if self.activityCallback is None:
-            _LOGGER.debug( "session props change: %s", args )
-            return
+        _LOGGER.debug( "session props change: %s", args )
 
         ##activeSession = self.currentSeatProps.Get( 'org.freedesktop.login1.Seat', 'ActiveSession')[0]
         ##sessionState = self.currentSessionProps.Get( 'org.freedesktop.login1.Session', 'State')
@@ -171,9 +180,19 @@ class SessionDetector():
         propDict = args[1]
         activeValue = propDict["Active"]
         if activeValue is None:
-            _LOGGER.debug( "session props change: %s", args )
             return
-        self.activityCallback( activeValue )
+        if activeValue is True:
+            self._stateChanged( False )
+        else:
+            self._stateChanged( True )
+
+    def _stateChanged(self, newState):
+        self.lockState = newState
+        if self.enabledCallback is False:
+            return
+        if self.activityCallback is None:
+            return
+        self.activityCallback( newState )
 
     def _getPropertiesInterface(self, object_path):
         return self._getInterface(object_path, 'org.freedesktop.DBus.Properties')

@@ -63,7 +63,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
         self.tickTimer = QtCore.QTimer( self )
         self.tickTimer.timeout.connect( self.updateRecentEntry )
-        self.tickTimer.start( 60 * 1000 )                           ## every minute
+        self.tickTimer.start( 45 * 1000 )                           ## every 45 secs
 
         ## =============================================================
 
@@ -198,17 +198,22 @@ class MainWindow( QtBaseClass ):           # type: ignore
         history = self.data.history
         recentEntry = history.recentEntry()
         if recentEntry is None:
+            _LOGGER.warning( "unable to update -- no recent entry" )
             return
         currTime = datetime.today()
         timeDiff = currTime - recentEntry.endTime
         if timeDiff > timedelta( hours=2 ):
+            _LOGGER.warning( "unable to update -- recent entry end time to old" )
             return
         recentEntry.endTime = currTime
         self.refreshEntryView( recentEntry )
-        working = self.trayIcon.isWorkLogging()
-        if working != recentEntry.work:
-            newEntry = self.data.addNewEntry( working )
-            self.refreshEntryView( newEntry )
+        working = self.isWorking()
+        if working == recentEntry.work:
+            _LOGGER.warning( "unable to update -- work status not changed: %s %s", working, recentEntry.printData() )
+            return
+        newEntry = self.data.addNewEntry( working )
+        _LOGGER.warning( "adding new entry: %s", newEntry.printData() )
+        self.refreshEntryView( newEntry )
 
     def refreshEntryView(self, entity):
         self.ui.worklogTable.refreshEntry( entity )
@@ -222,16 +227,15 @@ class MainWindow( QtBaseClass ):           # type: ignore
         ### state:
         ###    True  -- screen saver started
         ###    False -- screen saver stopped
-        self.awayFromKeyboardChanged( state, "screen saver started" )
+        self.awayFromKeyboardChanged( state, "screen saver changed" )
+        self.refreshView()
 
     def _sessionChanged(self, state):
         ### state:
-        ###    True  -- session unlocked
-        ###    False -- session locked
-        if state is True:
-            self.awayFromKeyboardChanged( False, "session locked" )
-        else:
-            self.awayFromKeyboardChanged( True, "session locked" )
+        ###    True  -- session locked
+        ###    False -- session unlocked
+        self.awayFromKeyboardChanged( state, "session lock changed" )
+        self.refreshView()
 
     def awayFromKeyboardChanged(self, state, description="") -> WorkLogEntry:
         ### state:
@@ -240,22 +244,36 @@ class MainWindow( QtBaseClass ):           # type: ignore
         history = self.data.history
         recentEntry = history.recentEntry()
         if state is True:
+            ## away from keyboard
             if recentEntry.work is False:
+                _LOGGER.debug( "recent is not work -- ignore" )
                 return None
             newEntry = self.data.addNewEntry( False )
             newEntry.description = description
+            history.joinDown( recentEntry, newEntry )
+            _LOGGER.debug( "added new entry: %s", newEntry.printData() )
             return newEntry
         else:
+            ## returned to keyboard
             if self.trayIcon.isWorkLogging() is False:
                 return None
             ## if user went away for short period, then do not count break
             if recentEntry.getDuration() < timedelta( minutes=3 ):
                 recentEntry.description = ""
+                _LOGGER.debug( "merging entry up: %s", recentEntry.printData() )
                 history.mergeEntryUp( recentEntry )
                 return None
             newEntry = self.data.addNewEntry( True )
+            history.joinDown( recentEntry, newEntry )
+            _LOGGER.debug( "added new entry: %s", newEntry.printData() )
             return newEntry
-        self.refreshView()
+        
+    def isWorking(self):
+        if self.trayIcon.isWorkLogging() is False:
+            return False
+        if self.activity.isAwayFromKeyboard() is True:
+            return False
+        return True
 
     ## ====================================================================
 
