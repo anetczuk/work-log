@@ -60,3 +60,14 @@ class KernLogParserTest(unittest.TestCase):
         item = logList[0]
         self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=46 ) )
         self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=53 ) )
+
+    def test_parseKernLog_newyear(self):
+        kernlogPath = get_data_path( "kern.log_newyear" )
+        logList = KernLogParser.parseKernLog( kernlogPath )
+        self.assertEqual( len( logList ), 2 )
+        item1 = logList[0]
+        self.assertEqual( item1[0], datetime.datetime( year=2020, month=12, day=31, hour=18, minute=28 ) )
+        self.assertEqual( item1[1], datetime.datetime( year=2020, month=12, day=31, hour=18, minute=32 ) )
+        item2 = logList[1]
+        self.assertEqual( item2[0], datetime.datetime( year=2021, month=1, day=1, hour=20, minute=31 ) )
+        self.assertEqual( item2[1], datetime.datetime( year=2021, month=1, day=1, hour=20, minute=32 ) )

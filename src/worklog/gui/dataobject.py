@@ -26,6 +26,7 @@ import re
 from typing import Dict, List, Tuple
 import datetime
 from datetime import timedelta
+import pathlib
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtCore import QObject
@@ -278,7 +279,8 @@ class KernLogParser():
         self.datesList.clear()
         suspendDetected = False
         timestampList: List[ KernLogPair ] = []
-        currentDate = datetime.datetime.today()
+        ##currentDate = datetime.datetime.today()
+        fileDate = self._filemoddate( filePath )
         engLocale   = QtCore.QLocale(QtCore.QLocale.English)
         with open( filePath ) as fp:
             for line in fp:
@@ -299,7 +301,7 @@ class KernLogParser():
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
                 logTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
                 logTimestamp     = logTimestamp.toPyDateTime()
-                logTimestamp     = logTimestamp.replace( year=currentDate.year, second=0, microsecond=0 )
+                logTimestamp     = logTimestamp.replace( year=fileDate.year, second=0, microsecond=0 )
 
                 kernTimestampStr = matched.group(3).strip()
                 kernTimestamp    = float( kernTimestampStr )
@@ -321,7 +323,39 @@ class KernLogParser():
 
         self._addDates(timestampList)
 
+        ## fix years
+        i = len(self.datesList) - 1
+        if i >= 0:
+            recentPair = self.datesList[i]
+            recentDate = recentPair[1]
+            i -= 1
+            while ( i >= 0 ):
+                recentPair = self.datesList[i]
+                
+                currDate = recentPair[1]
+                if currDate > recentDate:
+                    ## last day of year found
+                    currDate = currDate.replace( year=currDate.year - 1 )
+                    recentPair = ( recentPair[0], currDate )
+                    self.datesList[i] = recentPair
+                    recentDate = currDate
+                    
+                currDate = recentPair[0]
+                if currDate > recentDate:
+                    ## last day of year found
+                    currDate = currDate.replace( year=currDate.year - 1 )
+                    recentPair = ( currDate, recentPair[1] )
+                    self.datesList[i] = recentPair
+                    recentDate = currDate
+
+                i -= 1
+        
         return self.datesList
+
+    def _filemoddate(self, filePath: str):
+        fname = pathlib.Path( filePath )
+        mtime = datetime.datetime.fromtimestamp( fname.stat().st_mtime )
+        return mtime
 
     def _addDates(self, timestampList):
         tsSize = len( timestampList )
