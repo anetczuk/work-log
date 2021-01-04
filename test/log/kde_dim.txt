@@ -1,0 +1,37 @@
+[2020-12-30 22:48:44] signal time=1609364923.996768 sender=org.freedesktop.DBus -> destination=:1.157 serial=2 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameAcquired
+[2020-12-30 22:48:44]    string ":1.157"
+[2020-12-30 22:48:44] signal time=1609364923.996859 sender=org.freedesktop.DBus -> destination=:1.157 serial=4 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameLost
+[2020-12-30 22:48:44]    string ":1.157"
+[2020-12-30 22:48:44] method call time=1609364923.998156 sender=:1.110 -> destination=org.freedesktop.DBus serial=487 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=GetConnectionUnixProcessID
+[2020-12-30 22:48:44]    string ":1.157"
+[2020-12-30 22:48:44] error time=1609364923.998164 sender=org.freedesktop.DBus -> destination=:1.110 error_name=org.freedesktop.DBus.Error.NameHasNoOwner reply_serial=487
+[2020-12-30 22:48:44]    string "Could not get PID of name ':1.157': no such name"
+[2020-12-30 22:48:52] signal time=1609364932.403811 sender=:1.151 -> destination=(null destination) serial=42 path=/StatusNotifierItem; interface=org.kde.StatusNotifierItem; member=NewToolTip
+[2020-12-30 22:48:52] method call time=1609364932.415163 sender=:1.19 -> destination=:1.151 serial=1233 path=/StatusNotifierItem; interface=org.freedesktop.DBus.Properties; member=GetAll
+[2020-12-30 22:48:52]    string "org.kde.StatusNotifierItem"
+
+[2020-12-30 22:49:02] signal time=1609364942.585356 sender=:1.68 -> destination=(null destination) serial=444 path=/StatusNotifierItem; interface=org.kde.StatusNotifierItem; member=NewIcon
+[2020-12-30 22:49:02] signal time=1609364942.585865 sender=:1.68 -> destination=(null destination) serial=445 path=/StatusNotifierItem; interface=org.kde.StatusNotifierItem; member=NewToolTip
+[2020-12-30 22:49:02] method call time=1609364942.596150 sender=:1.19 -> destination=:1.68 serial=1234 path=/StatusNotifierItem; interface=org.freedesktop.DBus.Properties; member=GetAll
+[2020-12-30 22:49:02]    string "org.kde.StatusNotifierItem"
+
+[2020-12-30 22:49:14] signal time=1609364954.084021 sender=:1.34 -> destination=(null destination) serial=503 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessChanged
+[2020-12-30 22:49:14]    int32 9000
+[2020-12-30 22:49:14] signal time=1609364954.084046 sender=:1.34 -> destination=(null destination) serial=504 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessMaxChanged
+[2020-12-30 22:49:14]    int32 60000
+[2020-12-30 22:49:29] signal time=1609364969.100498 sender=:1.34 -> destination=(null destination) serial=505 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessChanged
+[2020-12-30 22:49:29]    int32 2250
+[2020-12-30 22:49:29] signal time=1609364969.100510 sender=:1.34 -> destination=(null destination) serial=506 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessMaxChanged
+[2020-12-30 22:49:29]    int32 60000
+[2020-12-30 22:49:44] signal time=1609364984.291039 sender=:1.34 -> destination=(null destination) serial=507 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessChanged
+[2020-12-30 22:49:44]    int32 0
+[2020-12-30 22:49:44] signal time=1609364984.291051 sender=:1.34 -> destination=(null destination) serial=508 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessMaxChanged
+[2020-12-30 22:49:44]    int32 60000
+[2020-12-30 22:49:52] signal time=1609364992.403764 sender=:1.151 -> destination=(null destination) serial=44 path=/StatusNotifierItem; interface=org.kde.StatusNotifierItem; member=NewToolTip
+[2020-12-30 22:49:52] method call time=1609364992.414875 sender=:1.19 -> destination=:1.151 serial=1235 path=/StatusNotifierItem; interface=org.freedesktop.DBus.Properties; member=GetAll
+[2020-12-30 22:49:52]    string "org.kde.StatusNotifierItem"
+
+[2020-12-30 22:49:54] signal time=1609364994.573244 sender=:1.34 -> destination=(null destination) serial=509 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessChanged
+[2020-12-30 22:49:54]    int32 18000
+[2020-12-30 22:49:54] signal time=1609364994.573284 sender=:1.34 -> destination=(null destination) serial=510 path=/org/kde/Solid/PowerManagement/Actions/BrightnessControl; interface=org.kde.Solid.PowerManagement.Actions.BrightnessControl; member=brightnessMaxChanged
+[2020-12-30 22:49:54]    int32 60000
