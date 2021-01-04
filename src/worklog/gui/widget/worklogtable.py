@@ -121,10 +121,14 @@ class WorkLogTableModel( QAbstractTableModel ):
             return get_entry_fgcolor( entry )
 
         if role == Qt.BackgroundRole:
-            entry = self._rawData.getEntry( index.row() )
-            weekday = entry.startTime.weekday()
-            if weekday == 5 or weekday == 6:
+            colorIndex = self._getBGColorIndex( index.row() )
+            if colorIndex == 0:
                 return QColor( "#FFCC00" )
+            if colorIndex == 1:
+                return QColor( "#F7C200" )
+            if colorIndex == 2:
+                return QColor( "white" )
+            return QColor( "#F7F5F3" )
 
         return None
 
@@ -163,6 +167,36 @@ class WorkLogTableModel( QAbstractTableModel ):
     @staticmethod
     def attributeLabels():
         return ( "Start time", "End time", "Duration", "Work", "Description" )
+    
+    ## 0 -- weekend 1
+    ## 1 -- weekend 2
+    ## 2 -- white
+    ## 3 -- gray
+    def _getBGColorIndex(self, rowIndex):
+        entry = self._rawData.getEntry( rowIndex )
+        weekday = entry.startTime.weekday()
+        if weekday == 5:
+            return 0
+        if weekday == 6:
+            return 1
+        if rowIndex == 0:
+            ## first row
+            return 2
+        
+        prevColorIndex = self._getBGColorIndex( rowIndex - 1 )
+        
+        entryDays     = (entry.startTime - datetime(1970,1,1)).days
+        prevEntry     = self._rawData.getEntry( rowIndex - 1 )
+        prevEntryDays = (prevEntry.startTime - datetime(1970,1,1)).days
+        
+        if entryDays == prevEntryDays:
+            ## the same day -- the same color
+            return prevColorIndex
+        
+        ## other day -- other color
+        if prevColorIndex == 2:
+            return 3
+        return 2
 
 
 ## ===========================================================
@@ -213,14 +247,25 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
         if self._monthDate is None:
             return True
 
-        if startData.year > self._monthDate.year or endData.year < self._monthDate.year:
-            return False
-        if startData.year == self._monthDate.year:
-            if startData.month > self._monthDate.month:
+        if endData > startData:
+            if startData.year > self._monthDate.year or endData.year < self._monthDate.year:
                 return False
-        if endData.year == self._monthDate.year:
-            if endData.month < self._monthDate.month:
+            if startData.year == self._monthDate.year:
+                if startData.month > self._monthDate.month:
+                    return False
+            if endData.year == self._monthDate.year:
+                if endData.month < self._monthDate.month:
+                    return False
+        else:
+            ## negative duration case
+            if startData.year < self._monthDate.year or endData.year > self._monthDate.year:
                 return False
+            if startData.year == self._monthDate.year:
+                if startData.month < self._monthDate.month:
+                    return False
+            if endData.year == self._monthDate.year:
+                if endData.month > self._monthDate.month:
+                    return False
 
         return True
 
