@@ -26,7 +26,7 @@ import logging
 from PyQt5.QtCore import QObject, pyqtSignal
 
 from worklog.dbus.useractivitydetector import ScreenSaverDetector
-from worklog.dbus.useractivitydetector import SessionDetector
+# from worklog.dbus.useractivitydetector import SessionDetector
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -49,16 +49,17 @@ class UserActivity( QObject ):
         self.screenSaverDetector = ScreenSaverDetector()
         self.screenSaverDetector.setCallback( self._screenSaverActivationCallback )
 
-        self.sessionDetector = SessionDetector()
-        self.sessionDetector.setCallback( self._sessionActivityCallback )
+        ## disable session detector -- causes problems under KDE on suspend (lid close)
+#         self.sessionDetector = SessionDetector()
+#         self.sessionDetector.setCallback( self._sessionActivityCallback )
 
     def isAwayFromKeyboard(self):
         if self.screenSaverDetector.isActivated():
             _LOGGER.info( "screen saver active" )
             return True
-        if self.sessionDetector.isLocked():
-            _LOGGER.info( "session locked" )
-            return True
+#         if self.sessionDetector.isLocked():
+#             _LOGGER.info( "session locked" )
+#             return True
         return False
 
     def _screenSaverActivationCallback(self, activated):
