@@ -1,0 +1,6 @@
+May  7 23:24:41 work kernel: [ 8558.580202] aaa1
+May  7 23:24:41 work kernel: [ 8558.580203] aaa2
+May  7 23:24:41 work kernel: [ 8558.580204] aaa3May  8 21:35:45 work kernel: [    0.000000] aaa4
+May  8 21:35:45 work kernel: [    0.000000] bbb1
+May  8 21:35:45 work kernel: [    0.000000] bbb2
+May  8 21:35:45 work kernel: [    0.000000] bbb3

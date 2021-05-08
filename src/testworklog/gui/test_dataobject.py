@@ -71,3 +71,15 @@ class KernLogParserTest(unittest.TestCase):
         item2 = logList[1]
         self.assertEqual( item2[0], datetime.datetime( year=2021, month=1, day=1, hour=20, minute=31 ) )
         self.assertEqual( item2[1], datetime.datetime( year=2021, month=1, day=1, hour=20, minute=32 ) )
+
+    def test_parseKernLog_joinline(self):
+        ## sometimes can happen that two lines of log are joined together without newline separator
+        kernlogPath = get_data_path( "kern.log_joinline" )
+        logList = KernLogParser.parseKernLog( kernlogPath )
+        self.assertEqual( len( logList ), 2 )
+        item1 = logList[0]
+        self.assertEqual( item1[0], datetime.datetime( year=2021, month=5, day=7, hour=23, minute=24 ) )
+        self.assertEqual( item1[1], datetime.datetime( year=2021, month=5, day=7, hour=23, minute=24 ) )
+        item2 = logList[1]
+        self.assertEqual( item2[0], datetime.datetime( year=2021, month=5, day=8, hour=21, minute=35 ) )
+        self.assertEqual( item2[1], datetime.datetime( year=2021, month=5, day=8, hour=21, minute=35 ) )

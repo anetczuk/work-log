@@ -280,12 +280,12 @@ class KernLogParser():
         suspendDetected = False
         timestampList: List[ KernLogPair ] = []
         ##currentDate = datetime.datetime.today()
-        fileDate = self._filemoddate( filePath )
-        engLocale   = QtCore.QLocale(QtCore.QLocale.English)
+        fileDate  = self._filemoddate( filePath )
+        engLocale = QtCore.QLocale(QtCore.QLocale.English)
         with open( filePath ) as fp:
             for line in fp:
                 ## Oct 29 21:02:01 wxyz kernel: [ 8353.210086] abc log entry
-                matched = re.match( r'^(.*) (\S+) kernel: \[(.*?)\] (.*)$', line )
+                matched = re.match( r'^(.*?) (\S+?) kernel: \[(.*?)\] (.*?)$', line )
                 if matched is None:
                     _LOGGER.warning("log parsing failed: %s", line)
                     continue
@@ -296,8 +296,12 @@ class KernLogParser():
 
                 ## can happen that there is some trashy \0 signs in front of string
                 logTimestampStr  = logTimestampStr.strip('\0')
-                ## print( "timestamp:", ".join([ str(ord(c)) for c in logTimestampStr]) )
-
+#                 print( "timestamp:", "".join([ str(ord(c)) for c in logTimestampStr]) )
+                
+#                 print("xxxx1:", line)
+#                 print("xxxx2:", logTimestampStr)
+#                 print("xxxx3:", matched)
+                
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
                 logTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
                 logTimestamp     = logTimestamp.toPyDateTime()
