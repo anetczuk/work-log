@@ -76,7 +76,11 @@ class ScreenSaverDetector():
     def isActivated(self):
         if self.saver_interface is None:
             return 0
-        return self.saver_interface.GetActive()
+        try:
+            return self.saver_interface.GetActive()
+        except dbus.exceptions.DBusException:
+            ## unable to get information about screen saver -- assume not activated
+            return 0
 
     def setEnabled(self, new_state=True):
         self.enabledCallback = new_state
