@@ -25,7 +25,8 @@ import logging
 from datetime import datetime, date, time, timedelta
 
 from PyQt5 import QtCore, QtGui
-from PyQt5.QtCore import Qt, QModelIndex
+from PyQt5.QtCore import Qt
+from PyQt5.QtCore import QModelIndex
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import QAbstractTableModel
 from PyQt5.QtWidgets import QTableView
@@ -35,7 +36,6 @@ from worklog.gui.datatypes import WorkLogData, WorkLogEntry
 from worklog.gui.dataobject import DataObject, create_entry_contextmenu
 
 from .. import guistate
-
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -71,23 +71,23 @@ class WorkLogTableModel( QAbstractTableModel ):
         return len( attrsList )
 
     def headerData(self, section, orientation, role):
-        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
+        if orientation == Qt.Horizontal and role == Qt.ItemDataRole.DisplayRole:
             attrsList = self.attributeLabels()
             return attrsList[ section ]
         return super().headerData( section, orientation, role )
 
     ## for invalid parent return elements form root list
-    def index(self, row, column, parent: QModelIndex):
+    def index(self, row, column, parent: QModelIndex = QModelIndex()):
         if not self.hasIndex(row, column, parent):
             return QModelIndex()
         entry = self._rawData.getEntry( row )
         return self.createIndex(row, column, entry)
 
-    def data(self, index: QModelIndex, role=Qt.DisplayRole):
+    def data(self, index: QModelIndex, role=Qt.ItemDataRole.DisplayRole):
         if not index.isValid():
             return None
 
-        if role == Qt.DisplayRole:
+        if role == Qt.ItemDataRole.DisplayRole:
             entry = self._rawData.getEntry( index.row() )
             rawData = self.attribute( entry, index.column() )
             if rawData is None:
@@ -101,26 +101,26 @@ class WorkLogTableModel( QAbstractTableModel ):
             strData = str(rawData)
             return strData
 
-        if role == Qt.UserRole:
+        if role == Qt.ItemDataRole.UserRole:
             entry = self._rawData.getEntry( index.row() )
             rawData = self.attribute( entry, index.column() )
             return rawData
 
-        if role == Qt.EditRole:
+        if role == Qt.ItemDataRole.EditRole:
             entry = self._rawData.getEntry( index.row() )
             rawData = self.attribute( entry, index.column() )
             return rawData
 
-        if role == Qt.TextAlignmentRole:
+        if role == Qt.ItemDataRole.TextAlignmentRole:
             if index.column() == 4:
-                return Qt.AlignLeft | Qt.AlignVCenter
-            return Qt.AlignHCenter | Qt.AlignVCenter
+                return Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
+            return Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter
 
-        if role == Qt.ForegroundRole:
+        if role == Qt.ItemDataRole.ForegroundRole:
             entry = self._rawData.getEntry( index.row() )
             return get_entry_fgcolor( entry )
 
-        if role == Qt.BackgroundRole:
+        if role == Qt.ItemDataRole.BackgroundRole:
             colorIndex = self._getBGColorIndex( index.row() )
             if colorIndex == 0:
                 return QColor( "#FFCC00" )
@@ -136,7 +136,7 @@ class WorkLogTableModel( QAbstractTableModel ):
         if parentIndex is None:
             parentIndex = QModelIndex()
         if parentIndex.isValid():
-            # dataTask = parentIndex.data( Qt.UserRole )
+            # dataTask = parentIndex.data( Qt.ItemDataRole.UserRole )
             dataTask = parentIndex.internalPointer()
             if dataTask == item:
                 return parentIndex
@@ -145,7 +145,7 @@ class WorkLogTableModel( QAbstractTableModel ):
             index = self.index( i, column, parentIndex )
             if index.isValid() is False:
                 continue
-            # dataTask = parentIndex.data( Qt.UserRole )
+            # dataTask = parentIndex.data( Qt.ItemDataRole.UserRole )
             dataTask = index.internalPointer()
             if dataTask == item:
                 return index
@@ -233,14 +233,14 @@ class WorkLogSortFilterProxyModel( QtCore.QSortFilterProxyModel ):
     def filterAcceptsRow(self, sourceRow, sourceParent: QModelIndex):
         if self._workOnly:
             workIndex = self.sourceModel().index( sourceRow, 3, sourceParent )
-            workState = self.sourceModel().data(workIndex, QtCore.Qt.EditRole)
+            workState = self.sourceModel().data(workIndex, QtCore.Qt.ItemDataRole.EditRole)
             if workState is False:
                 return False
 
         startIndex = self.sourceModel().index( sourceRow, 0, sourceParent )
         endIndex   = self.sourceModel().index( sourceRow, 1, sourceParent )
-        startData = self.sourceModel().data(startIndex, QtCore.Qt.EditRole)
-        endData   = self.sourceModel().data(endIndex, QtCore.Qt.EditRole)
+        startData = self.sourceModel().data(startIndex, QtCore.Qt.ItemDataRole.EditRole)
+        endData   = self.sourceModel().data(endIndex, QtCore.Qt.ItemDataRole.EditRole)
         if startData is None or endData is None:
             return True
 

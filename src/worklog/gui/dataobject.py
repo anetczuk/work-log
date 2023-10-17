@@ -93,12 +93,13 @@ class DataObject( QObject ):
 
     def addEntry(self, entryDate: QtCore.QDate = None):
         entry = WorkLogEntry()
+        item_date =None
         if entryDate is not None:
-            entryDate = entryDate.toPyDate()
+            item_date = entryDate.toPyDate()
         else:
-            entryDate = datetime.datetime.today().date()
-        entry.startTime = datetime.datetime.combine( entryDate, datetime.time( hour=9 ) )
-        entry.endTime   = datetime.datetime.combine( entryDate, datetime.time( hour=17 ) )
+            item_date = datetime.datetime.today().date()
+        entry.startTime = datetime.datetime.combine( item_date, datetime.time( hour=9 ) )
+        entry.endTime   = datetime.datetime.combine( item_date, datetime.time( hour=17 ) )
         self.addEntryNew( entry )
 
     def addEntry2(self, startTime: datetime.datetime):
@@ -303,8 +304,8 @@ class KernLogParser():
 #                 print("xxxx3:", matched)
                 
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
-                logTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
-                logTimestamp     = logTimestamp.toPyDateTime()
+                qtTimestamp      = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
+                logTimestamp     = qtTimestamp.toPyDateTime()
                 logTimestamp     = logTimestamp.replace( year=fileDate.year, second=0, microsecond=0 )
 
                 kernTimestampStr = matched.group(3).strip()
