@@ -45,7 +45,7 @@ class ScreenSaverDetector():
             self.bus = dbus.SessionBus( mainloop=dbus_loop )
         else:
             self.bus = dbus.SessionBus()
-        
+
         interfaces = ('org.freedesktop.ScreenSaver', 'org.kde.screensaver', 'org.gnome.ScreenSaver')
         for iface in interfaces:
             try:
@@ -160,7 +160,7 @@ class SessionDetector():
         Callback receives one parameter: bool
         """
         self.activityCallback = callback
-        
+
     def isLocked(self):
         if self.lockState != 0:
             return True

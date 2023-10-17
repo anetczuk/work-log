@@ -267,7 +267,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
             history.joinDown( recentEntry, newEntry )
             _LOGGER.debug( "added new entry: %s", newEntry.printData() )
             return newEntry
-        
+
     def isWorking(self):
         if self.trayIcon.isWorkLogging() is False:
             return False
@@ -352,7 +352,7 @@ class MainWindow( QtBaseClass ):           # type: ignore
 
     ## ====================================================================
 
-    def setStatusMessage(self, firstStatus, changeStatus: list=None, timeout=6000):
+    def setStatusMessage(self, firstStatus, changeStatus: list = None, timeout=6000):
         if not changeStatus:
             changeStatus = [ firstStatus + " +", firstStatus + " =" ]
         statusBar = self.statusBar()

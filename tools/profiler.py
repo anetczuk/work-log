@@ -25,19 +25,18 @@
 
 
 import sys
+import os
 import time
 import logging
 import argparse
 import cProfile
 
-import sys
-import os
 
 #### append source root
 sys.path.append(os.path.abspath( os.path.join(os.path.dirname(__file__), "../src") ))
 
 
-from worklog.main import create_parser, main
+from worklog.main import create_parser, main                # pylint: disable=C0413
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -85,6 +84,6 @@ finally:
         _LOGGER.info( "if missing then pyprof2calltree can be installed by: pip3 install --user pyprof2calltree" )
 
     timeDiff = (time.time() - starttime) * 1000.0
-    _LOGGER.info( "Calculation time: {:13.8f}ms".format(timeDiff) )
+    _LOGGER.info( "Calculation time: {:13.8f}ms".format(timeDiff) )                 # pylint: disable=C0209
 
     sys.exit(exitCode)

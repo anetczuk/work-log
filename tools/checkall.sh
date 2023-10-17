@@ -13,3 +13,10 @@ cd $SCRIPT_DIR
 ./typecheck.sh
 ./codecheck.sh
 ./doccheck.sh
+
+
+echo "checking links in MD files"
+./md_check_links.py -d $SCRIPT_DIR/.. -i ".*venv.*;.*site-packages.*"
+
+
+echo -e "\n\nall checks done"

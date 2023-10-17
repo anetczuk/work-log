@@ -52,7 +52,7 @@ class DataObject( QObject ):
 
     entryChanged = pyqtSignal()
 
-    def __init__(self, parent: QWidget=None):
+    def __init__(self, parent: QWidget = None):
         super().__init__( parent )
         self.parentWidget = parent
 
@@ -93,7 +93,7 @@ class DataObject( QObject ):
 
     def addEntry(self, entryDate: QtCore.QDate = None):
         entry = WorkLogEntry()
-        item_date =None
+        item_date = None
         if entryDate is not None:
             item_date = entryDate.toPyDate()
         else:
@@ -225,7 +225,7 @@ class DataObject( QObject ):
 
 
 def create_entry_contextmenu( parent: QWidget, dataObject: DataObject,
-                              editEntry: WorkLogEntry, addEntry: WorkLogEntry=None ):
+                              editEntry: WorkLogEntry, addEntry: WorkLogEntry = None ):
     contextMenu      = QtWidgets.QMenu( parent )
     addAction        = contextMenu.addAction("Add Entry")
     editAction       = contextMenu.addAction("Edit Entry")
@@ -298,11 +298,11 @@ class KernLogParser():
                 ## can happen that there is some trashy \0 signs in front of string
                 logTimestampStr  = logTimestampStr.strip('\0')
 #                 print( "timestamp:", "".join([ str(ord(c)) for c in logTimestampStr]) )
-                
+
 #                 print("xxxx1:", line)
 #                 print("xxxx2:", logTimestampStr)
 #                 print("xxxx3:", matched)
-                
+
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
                 qtTimestamp      = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
                 logTimestamp     = qtTimestamp.toPyDateTime()
@@ -336,7 +336,7 @@ class KernLogParser():
             i -= 1
             while ( i >= 0 ):
                 recentPair = self.datesList[i]
-                
+
                 currDate = recentPair[1]
                 if currDate > recentDate:
                     ## last day of year found
@@ -344,7 +344,7 @@ class KernLogParser():
                     recentPair = ( recentPair[0], currDate )
                     self.datesList[i] = recentPair
                     recentDate = currDate
-                    
+
                 currDate = recentPair[0]
                 if currDate > recentDate:
                     ## last day of year found
@@ -354,7 +354,7 @@ class KernLogParser():
                     recentDate = currDate
 
                 i -= 1
-        
+
         return self.datesList
 
     def _filemoddate(self, filePath: str):

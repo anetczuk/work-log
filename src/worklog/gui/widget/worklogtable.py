@@ -132,7 +132,7 @@ class WorkLogTableModel( QAbstractTableModel ):
 
         return None
 
-    def getIndex(self, item, parentIndex: QModelIndex=None, column: int = 0):
+    def getIndex(self, item, parentIndex: QModelIndex = None, column: int = 0):
         if parentIndex is None:
             parentIndex = QModelIndex()
         if parentIndex.isValid():
@@ -167,7 +167,7 @@ class WorkLogTableModel( QAbstractTableModel ):
     @staticmethod
     def attributeLabels():
         return ( "Start time", "End time", "Duration", "Work", "Description" )
-    
+
     ## 0 -- weekend 1
     ## 1 -- weekend 2
     ## 2 -- white
@@ -182,17 +182,17 @@ class WorkLogTableModel( QAbstractTableModel ):
         if rowIndex == 0:
             ## first row
             return 2
-        
+
         prevColorIndex = self._getBGColorIndex( rowIndex - 1 )
-        
-        entryDays     = (entry.startTime - datetime(1970,1,1)).days
+
+        entryDays     = (entry.startTime - datetime(1970, 1, 1)).days
         prevEntry     = self._rawData.getEntry( rowIndex - 1 )
-        prevEntryDays = (prevEntry.startTime - datetime(1970,1,1)).days
-        
+        prevEntryDays = (prevEntry.startTime - datetime(1970, 1, 1)).days
+
         if entryDays == prevEntryDays:
             ## the same day -- the same color
             return prevColorIndex
-        
+
         ## other day -- other color
         if prevColorIndex == 2:
             return 3
@@ -336,7 +336,7 @@ class WorkLogTable( QTableView ):
         self.clearSelection()
 #         _LOGGER.debug( "entries: %s\n%s", type(history), history.printData() )
 
-    def refreshEntry(self, entry: WorkLogEntry=None):
+    def refreshEntry(self, entry: WorkLogEntry = None):
         if entry is None:
             ## unable to refresh entry row -- refresh whole model
             self.refreshData()
