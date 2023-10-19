@@ -99,7 +99,7 @@ def create_window( parent=None ):
     widget = LogWidget( logWindow )
     logWindow.addWidget( widget )
     logWindow.move( 0, 0 )
-    
+
     deskRec = QApplication.desktop().screenGeometry()
     deskWidth = deskRec.width()
     logWindow.resize( deskWidth, 600 )

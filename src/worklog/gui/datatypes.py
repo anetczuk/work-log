@@ -69,10 +69,10 @@ class WorkLogEntry( persist.Versionable ):
 
         # pylint: disable=W0201
         self.__dict__ = dict_
-        
+
 #     def __str__(self):
 #         return self.printData()
-#         
+#
 #     def __repr__(self):
 #         return self.printData()
 

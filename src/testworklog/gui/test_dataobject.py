@@ -22,13 +22,22 @@
 #
 
 import unittest
+import os
 import datetime
 
-from worklog.gui.dataobject import KernLogParser
+from worklog.gui.dataobject import SysLogParser
 from testworklog.data import get_data_path
 
 
-class KernLogParserTest(unittest.TestCase):
+class SysLogParserTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # set datetime of file to properly deduce and test log year
+        kernlogPath = get_data_path( "kern.log_regular" )
+        mod_datetime = datetime.datetime( year=2020, month=10, day=2, hour=0, minute=1 )
+        dt_epoch = mod_datetime.timestamp()
+        os.utime(kernlogPath, (dt_epoch, dt_epoch))
+
     def setUp(self):
         ## Called before testfunction is executed
         pass
@@ -37,45 +46,45 @@ class KernLogParserTest(unittest.TestCase):
         ## Called after testfunction was executed
         pass
 
-    def test_parseKernLog_regular(self):
+    def test_parseLogFile_regular(self):
         kernlogPath = get_data_path( "kern.log_regular" )
-        logList = KernLogParser.parseKernLog( kernlogPath )
+        logList = SysLogParser.parseLogFile( kernlogPath )
         self.assertEqual( len( logList ), 9 )
         item = logList[0]
         self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=26, hour=0, minute=9 ) )
         self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=26, hour=1, minute=22 ) )
 
-    def test_parseKernLog_fail(self):
+    def test_parseLogFile_fail(self):
         kernlogPath = get_data_path( "kern.log_fail" )
-        logList = KernLogParser.parseKernLog( kernlogPath )
+        logList = SysLogParser.parseLogFile( kernlogPath )
         self.assertEqual( len( logList ), 1 )
         item = logList[0]
         self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49 ) )
         self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49 ) )
 
-    def test_parseKernLog_suspend(self):
+    def test_parseLogFile_suspend(self):
         kernlogPath = get_data_path( "kern.log_suspend" )
-        logList = KernLogParser.parseKernLog( kernlogPath )
+        logList = SysLogParser.parseLogFile( kernlogPath )
         self.assertEqual( len( logList ), 4 )
         item = logList[0]
         self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=46 ) )
         self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=31, hour=10, minute=53 ) )
 
-    def test_parseKernLog_newyear(self):
+    def test_parseLogFile_newyear(self):
         kernlogPath = get_data_path( "kern.log_newyear" )
-        logList = KernLogParser.parseKernLog( kernlogPath )
+        logList = SysLogParser.parseLogFile( kernlogPath )
         self.assertEqual( len( logList ), 2 )
         item1 = logList[0]
         self.assertEqual( item1[0], datetime.datetime( year=2020, month=12, day=31, hour=18, minute=28 ) )
         self.assertEqual( item1[1], datetime.datetime( year=2020, month=12, day=31, hour=18, minute=32 ) )
         item2 = logList[1]
-        self.assertEqual( item2[0], datetime.datetime( year=2021, month=1, day=1, hour=20, minute=31 ) )
+        self.assertEqual( item2[0], datetime.datetime( year=2021, month=1, day=1, hour=20, minute=30 ) )
         self.assertEqual( item2[1], datetime.datetime( year=2021, month=1, day=1, hour=20, minute=32 ) )
 
-    def test_parseKernLog_joinline(self):
+    def test_parseLogFile_joinline(self):
         ## sometimes can happen that two lines of log are joined together without newline separator
         kernlogPath = get_data_path( "kern.log_joinline" )
-        logList = KernLogParser.parseKernLog( kernlogPath )
+        logList = SysLogParser.parseLogFile( kernlogPath )
         self.assertEqual( len( logList ), 2 )
         item1 = logList[0]
         self.assertEqual( item1[0], datetime.datetime( year=2021, month=5, day=7, hour=23, minute=24 ) )
@@ -83,3 +92,15 @@ class KernLogParserTest(unittest.TestCase):
         item2 = logList[1]
         self.assertEqual( item2[0], datetime.datetime( year=2021, month=5, day=8, hour=21, minute=35 ) )
         self.assertEqual( item2[1], datetime.datetime( year=2021, month=5, day=8, hour=21, minute=35 ) )
+
+    def test_parseSysLog_regular(self):
+        kernlogPath = get_data_path( "syslog_regular" )
+        logList = SysLogParser.parseLogFile( kernlogPath )
+        self.assertEqual( len( logList ), 2 )
+        # year of last modification
+        item = logList[0]
+        self.assertEqual( item[0], datetime.datetime( year=2023, month=10, day=26, hour=0, minute=8 ) )
+        self.assertEqual( item[1], datetime.datetime( year=2023, month=10, day=26, hour=1, minute=32 ) )
+        item = logList[1]
+        self.assertEqual( item[0], datetime.datetime( year=2023, month=10, day=26, hour=15, minute=48 ) )
+        self.assertEqual( item[1], datetime.datetime( year=2023, month=10, day=26, hour=16, minute=38 ) )

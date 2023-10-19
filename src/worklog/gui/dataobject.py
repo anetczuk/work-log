@@ -194,13 +194,24 @@ class DataObject( QObject ):
             if newEntry != oldEntry:
                 newEntry.work = recentWorking
 
+    def readFromSyslog(self, recentWorking=True):
+        oldEntry = self.history.recentEntry()
+
+        self._readKeylogFile( "/var/log/syslog.1" )
+        self._readKeylogFile( "/var/log/syslog" )
+
+        newEntry = self.history.recentEntry()
+        if newEntry is not None:
+            if newEntry != oldEntry:
+                newEntry.work = recentWorking
+
     def _readKeylogFile(self, filePath: str):
         recentEntry = self.history.recentEntry()
         recentDate = None
         if recentEntry is not None:
             recentDate = recentEntry.endTime
 
-        items: List[ DateTimePair ] = KernLogParser.parseKernLog( filePath )
+        items: List[ DateTimePair ] = SysLogParser.parseLogFile( filePath )
         for item in items:
             if recentDate is not None:
                 if item[1] < recentDate:
@@ -267,11 +278,26 @@ def create_entry_contextmenu( parent: QWidget, dataObject: DataObject,
 ## ===================================================
 
 
+# contains two values:
+#    1 - wall clock of log entry
+#    2 - time from boot (it helps detect when boot happened)
 KernLogPair  = Tuple[datetime.datetime, float]
 DateTimePair = Tuple[datetime.datetime, datetime.datetime]
 
 
-class KernLogParser():
+# class TimeRange():
+#
+#     def __init__(self):
+#         self.start_time: datetime.datetime = None
+#         self.end_time: datetime.datetime = None
+#
+#     def setTime(self, next_time: datetime.datetime):
+#         if self.start_time is None:
+#             self.start_time = next_time
+#         self.end_time = next_time
+
+
+class SysLogParser():
 
     def __init__(self):
         self.datesList: List[ DateTimePair ] = []
@@ -283,78 +309,72 @@ class KernLogParser():
         ##currentDate = datetime.datetime.today()
         fileDate  = self._filemoddate( filePath )
         engLocale = QtCore.QLocale(QtCore.QLocale.English)
+        recentKernTimestamp = 0.0
+
+        # kernLogTimestampRange = TimeRange()
+
         with open( filePath ) as fp:
             for line in fp:
                 ## Oct 29 21:02:01 wxyz kernel: [ 8353.210086] abc log entry
-                matched = re.match( r'^(.*?) (\S+?) kernel: \[(.*?)\] (.*?)$', line )
+                ## Oct 26 00:09:42 wxyz ccc.dddd-browsed[1549]: [12927.909529] abc log entry
+                matched = re.match( r'^(.*?) (\S+?) (\S+?): (.*?)$', line )
                 if matched is None:
                     _LOGGER.warning("log parsing failed: %s", line)
                     continue
-                logTimestampStr  = matched.group(1)
+                logTimestampStr = matched.group(1)             # timestamp
 
-                logTimestampStr  = logTimestampStr.strip()
-                logTimestampStr  = logTimestampStr.replace("  ", " ")
+                logTimestampStr = logTimestampStr.strip()
+                logTimestampStr = logTimestampStr.replace("  ", " ")
 
                 ## can happen that there is some trashy \0 signs in front of string
-                logTimestampStr  = logTimestampStr.strip('\0')
+                logTimestampStr = logTimestampStr.strip('\0')
 #                 print( "timestamp:", "".join([ str(ord(c)) for c in logTimestampStr]) )
 
-#                 print("xxxx1:", line)
-#                 print("xxxx2:", logTimestampStr)
-#                 print("xxxx3:", matched)
-
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
-                qtTimestamp      = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
-                logTimestamp     = qtTimestamp.toPyDateTime()
-                logTimestamp     = logTimestamp.replace( year=fileDate.year, second=0, microsecond=0 )
+                qtTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
+                logTimestamp    = qtTimestamp.toPyDateTime()
+                logTimestamp    = logTimestamp.replace( year=fileDate.year, second=0, microsecond=0 )
 
-                kernTimestampStr = matched.group(3).strip()
-                kernTimestamp    = float( kernTimestampStr )
-
-                logEntry         = matched.group(4)
-
-                if "PM: suspend entry" in logEntry:
-                    self._addDates(timestampList)
-                    timestampList.clear()
-                    suspendDetected = True
-                    continue
-                elif "PM: suspend exit" in logEntry:
-                    suspendDetected = False
-                else:
-                    if suspendDetected:
+                process = matched.group(3)
+                if process == "kernel":
+                    messageStr = matched.group(4)
+                    matched = re.match( r'^\[(.*?)\] (.*?)$', messageStr )
+                    if matched is None:
+                        _LOGGER.warning("kernel log parsing failed: %s", line)
                         continue
 
-                timestampList.append( (logTimestamp, kernTimestamp) )
+                    kernTimestampStr  = matched.group(1).strip()
+                    currKernTimestamp = float( kernTimestampStr )
+                    logEntry          = matched.group(2)
 
+                    if currKernTimestamp < recentKernTimestamp:
+                        # reboot detected
+                        timestampList.append( (logTimestamp, currKernTimestamp) )     # will be trimmed
+                        self._fixYear(timestampList)
+                        trimmed_list, next_part_list = self._trimTime(timestampList)
+                        self._addDates(trimmed_list)
+                        timestampList = next_part_list
+
+                    recentKernTimestamp = currKernTimestamp
+                    if "PM: suspend entry" in logEntry:
+                        # entering suspend
+                        self._addDates(timestampList)
+                        timestampList.clear()
+                        suspendDetected = True
+                        continue
+
+                    elif "PM: suspend exit" in logEntry:
+                        # exiting from suspend
+                        suspendDetected = False
+
+                if suspendDetected:
+                    continue
+
+                timestampList.append( (logTimestamp, recentKernTimestamp) )
+
+        # end of file
         self._addDates(timestampList)
-
-        ## fix years
-        i = len(self.datesList) - 1
-        if i >= 0:
-            recentPair = self.datesList[i]
-            recentDate = recentPair[1]
-            i -= 1
-            while ( i >= 0 ):
-                recentPair = self.datesList[i]
-
-                currDate = recentPair[1]
-                if currDate > recentDate:
-                    ## last day of year found
-                    currDate = currDate.replace( year=currDate.year - 1 )
-                    recentPair = ( recentPair[0], currDate )
-                    self.datesList[i] = recentPair
-                    recentDate = currDate
-
-                currDate = recentPair[0]
-                if currDate > recentDate:
-                    ## last day of year found
-                    currDate = currDate.replace( year=currDate.year - 1 )
-                    recentPair = ( currDate, recentPair[1] )
-                    self.datesList[i] = recentPair
-                    recentDate = currDate
-
-                i -= 1
-
+        self._fixYear(self.datesList)
         return self.datesList
 
     def _filemoddate(self, filePath: str):
@@ -391,7 +411,44 @@ class KernLogParser():
             entry: DateTimePair = ( firstLog[0], lastLog[0] )
             self.datesList.append( entry )
 
+    # (logTimestamp, recentKernTimestamp)
+    def _trimTime(self, timestamp_list):
+        list_size = len( timestamp_list )
+        if list_size < 2:
+            return (timestamp_list, [])
+        last_entry = timestamp_list[-1]
+        last_timestamp: datetime.datetime = last_entry[0]
+        reboot_margin_timestamp = (last_timestamp - timedelta(minutes=2))
+        for index, curr_entry in enumerate( timestamp_list ):
+            curr_timestamp: datetime.datetime = curr_entry[0]
+            if curr_timestamp > reboot_margin_timestamp:
+                rest_list = timestamp_list[index: ]
+                timestamp_list = timestamp_list[0: index]
+                return (timestamp_list, rest_list)
+        return (timestamp_list, [])
+
+    def _fixYear(self, timestamp_list):
+        ## fix years
+        i = len(timestamp_list) - 1
+        if i <= 0:
+            return
+        recentPair = timestamp_list[i]
+        recentDate = recentPair[0]
+
+        i -= 1
+        while ( i >= 0 ):
+            recentPair = timestamp_list[i]
+            currDate = recentPair[0]
+            if currDate > recentDate:
+                ## last day of year found
+                currDate = currDate.replace( year=currDate.year - 1 )
+                recentPair = ( currDate, recentPair[1] )
+                timestamp_list[i] = recentPair
+                recentDate = currDate
+
+            i -= 1
+
     @staticmethod
-    def parseKernLog( filePath: str ) -> List[ DateTimePair ]:
-        parser = KernLogParser()
+    def parseLogFile( filePath: str ) -> List[ DateTimePair ]:
+        parser = SysLogParser()
         return parser.parse( filePath )

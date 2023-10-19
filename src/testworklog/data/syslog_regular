@@ -1,0 +1,9 @@
+Oct 26 00:08:42 wxyz aaa-bbb[222]: abc log entry
+Oct 26 00:09:42 wxyz kernel: [12927.905490] abc log entry
+Oct 26 01:22:57 wxyz kernel: [17323.060523] abc log entry
+Oct 26 01:32:57 wxyz aaa-bbb[222]: aaa last log before boot
+
+Oct 26 15:48:39 wxyz aaa-bbb[222]: aaa first log after boot
+Oct 26 15:49:40 wxyz kernel: [    0.000000] abc log entry
+Oct 26 16:37:42 wxyz kernel: [ 2888.898628] abc log entry
+Oct 26 16:38:42 wxyz aaa-bbb[222]: aaa last before shutdown
