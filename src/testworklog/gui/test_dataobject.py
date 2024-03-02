@@ -93,6 +93,15 @@ class SysLogParserTest(unittest.TestCase):
         self.assertEqual( item2[0], datetime.datetime( year=2021, month=5, day=8, hour=21, minute=35 ) )
         self.assertEqual( item2[1], datetime.datetime( year=2021, month=5, day=8, hour=21, minute=35 ) )
 
+    def test_parseLogFile_leapyear(self):
+        ## parse date Feb 29
+        kernlogPath = get_data_path( "kern.log_leap" )
+        logList = SysLogParser.parseLogFile( kernlogPath )
+        self.assertEqual( len( logList ), 1 )
+        item1 = logList[0]
+        self.assertEqual( item1[0], datetime.datetime( year=2024, month=2, day=29, hour=0, minute=0 ) )
+        self.assertEqual( item1[1], datetime.datetime( year=2024, month=2, day=29, hour=0, minute=0 ) )
+
     def test_parseSysLog_regular(self):
         kernlogPath = get_data_path( "syslog_regular" )
         logList = SysLogParser.parseLogFile( kernlogPath )

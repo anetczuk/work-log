@@ -206,6 +206,7 @@ class DataObject( QObject ):
                 newEntry.work = recentWorking
 
     def _readKeylogFile(self, filePath: str):
+        _LOGGER.info("reading log file: %s", filePath)
         recentEntry = self.history.recentEntry()
         recentDate = None
         if recentEntry is not None:
@@ -328,12 +329,23 @@ class SysLogParser():
 
                 ## can happen that there is some trashy \0 signs in front of string
                 logTimestampStr = logTimestampStr.strip('\0')
-#                 print( "timestamp:", "".join([ str(ord(c)) for c in logTimestampStr]) )
 
                 ## have to use Qt, because Qt corrupts native "datetime.strptime"
-                qtTimestamp     = engLocale.toDateTime( logTimestampStr, "MMM d HH:mm:ss")
-                logTimestamp    = qtTimestamp.toPyDateTime()
-                logTimestamp    = logTimestamp.replace( year=fileDate.year, second=0, microsecond=0 )
+                # logTimestamp = datetime.datetime.strptime(logTimestampStr, '%b %d %H:%M:%S')
+                # _LOGGER.info("parsed: %s | %s", logTimestampStr, logTimestamp)
+
+                try:
+                    ## add year to properly handle leap year date (Feb 29)
+                    logTimestampStr = f"{fileDate.year} {logTimestampStr}"
+                    qtTimestamp  = engLocale.toDateTime( logTimestampStr, "yyyy MMM d HH:mm:ss")
+                    if not qtTimestamp.isValid():
+                        _LOGGER.error("unable to parse date: '%s'", logTimestampStr)
+
+                    logTimestamp = qtTimestamp.toPyDateTime()
+                    logTimestamp = logTimestamp.replace( second=0, microsecond=0 )
+                except ValueError as exc:
+                    _LOGGER.error("unable to parse '%s', reason: %s, parsed: %s", logTimestampStr, exc, qtTimestamp.toString())
+                    raise
 
                 process = matched.group(3)
                 if process == "kernel":

@@ -15,6 +15,12 @@ Track Your work sessions. Simply mark working time periods.
 [![Stock chart](doc/mainwindow-day-small.png "Day view")](doc/mainwindow-day-big.png)
 
 
+## Installation
+
+Download ZIP or clone repositorium. Install requirements by `src/install-deps.sh` script. Then execute 
+`src/startworklog` to start application.
+
+
 ### Examples of not obvious Python mechanisms
 
 - processing data in background thread preventing GUI blockage
