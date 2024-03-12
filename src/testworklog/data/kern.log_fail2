@@ -1,0 +1,7 @@
+Mar  6 13:05:55 thinkpad kernel: [16643.331102] docker0: port 1(vethb4e9abc) entered blocking state
+Mar  6 13:05:55 thinkpad kernel: [16643.331106] docker0: port 1(vethb4e9abc) entered disabled state
+Mar  6 13:05:55 thinkpad kernel: [16643.331383] device vethb4e9abc entered promiscuous mode
+Mar  6 13:05:56 thinkpad kernel: [1664Mar  6 13:13:00 thinkpad kernel: [17066.598261] docker0: port 1(veth99ef8f2) entered blocking state
+Mar  6 13:13:00 thinkpad kernel: [17066.598265] docker0: port 1(veth99ef8f2) entered disabled state
+Mar  6 13:13:00 thinkpad kernel: [17066.598370] device veth99ef8f2 entered promiscuous mode
+Mar  6 13:13:00 thinkpad kernel: [17066.911743] eth0: renamed from vethc8dbf2e

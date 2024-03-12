@@ -62,6 +62,14 @@ class SysLogParserTest(unittest.TestCase):
         self.assertEqual( item[0], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49 ) )
         self.assertEqual( item[1], datetime.datetime( year=2020, month=10, day=26, hour=15, minute=49 ) )
 
+    def test_parseLogFile_fail2(self):
+        kernlogPath = get_data_path( "kern.log_fail2" )
+        logList = SysLogParser.parseLogFile( kernlogPath )
+        self.assertEqual( len( logList ), 1 )
+        item = logList[0]
+        self.assertEqual( item[0], datetime.datetime( year=2024, month=3, day=6, hour=13, minute=5 ) )
+        self.assertEqual( item[1], datetime.datetime( year=2024, month=3, day=6, hour=13, minute=13 ) )
+
     def test_parseLogFile_suspend(self):
         kernlogPath = get_data_path( "kern.log_suspend" )
         logList = SysLogParser.parseLogFile( kernlogPath )

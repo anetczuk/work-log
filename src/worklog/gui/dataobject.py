@@ -355,19 +355,25 @@ class SysLogParser():
                         _LOGGER.warning("kernel log parsing failed: %s", line)
                         continue
 
-                    kernTimestampStr  = matched.group(1).strip()
-                    currKernTimestamp = float( kernTimestampStr )
-                    logEntry          = matched.group(2)
+                    try:
+                        logEntry          = matched.group(2)
+                        kernTimestampStr  = matched.group(1).strip()
+                        currKernTimestamp = float( kernTimestampStr )
 
-                    if currKernTimestamp < recentKernTimestamp:
-                        # reboot detected
-                        timestampList.append( (logTimestamp, currKernTimestamp) )     # will be trimmed
-                        self._fixYear(timestampList)
-                        trimmed_list, next_part_list = self._trimTime(timestampList)
-                        self._addDates(trimmed_list)
-                        timestampList = next_part_list
+                        if currKernTimestamp < recentKernTimestamp:
+                            # reboot detected
+                            timestampList.append( (logTimestamp, currKernTimestamp) )     # will be trimmed
+                            self._fixYear(timestampList)
+                            trimmed_list, next_part_list = self._trimTime(timestampList)
+                            self._addDates(trimmed_list)
+                            timestampList = next_part_list
 
-                    recentKernTimestamp = currKernTimestamp
+                        recentKernTimestamp = currKernTimestamp
+
+                    except ValueError as exc:
+                        # happens when log line is mangled/corrupt
+                        _LOGGER.warning("unable to parse log line: %s", exc)
+
                     if "PM: suspend entry" in logEntry:
                         # entering suspend
                         self._addDates(timestampList)
